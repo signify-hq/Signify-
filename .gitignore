@@ -205,3 +205,23 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Node / Frontend
+node_modules/
+.next/
+out/
+dist/
+
+# Audio files (too large for git)
+*.mp3
+*.wav
+*.flac
+*.ogg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

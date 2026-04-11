@@ -1,0 +1,8 @@
+librosa==0.10.2
+numpy
+soundfile
+anthropic
+fastapi
+uvicorn
+python-multipart
+python-dotenv
