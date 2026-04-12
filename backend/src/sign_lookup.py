@@ -13,12 +13,24 @@ def load_dictionary() -> dict:
         return json.load(f)
 
 
+def _find_key(token: str, dictionary: dict):
+    """Try exact match, then strip common suffixes (ASL doesn't inflect)."""
+    key = token.upper()
+    if key in dictionary:
+        return key
+    for suffix in ["S", "ES", "ED", "ING", "LY", "ER", "EST"]:
+        stripped = key.removesuffix(suffix)
+        if stripped != key and stripped in dictionary:
+            return stripped
+    return None
+
+
 def lookup(gloss_tokens: list) -> list:
     dictionary = load_dictionary()
     results = []
     for token in gloss_tokens:
-        key = token.upper()
-        if key in dictionary:
+        key = _find_key(token, dictionary)
+        if key:
             filepath = os.path.join(SIGNS_DIR, dictionary[key])
             results.append({
                 "gloss": token,

@@ -12,3 +12,11 @@ def detect_beats(audio_path: str) -> dict:
         "tempo": round(float(np.asarray(tempo).item()), 1),
         "beats": [round(float(t), 3) for t in beat_times],
     }
+
+
+if __name__ == "__main__":
+    import json, sys
+    path = sys.argv[1] if len(sys.argv) > 1 else "data/songs/test.mp3"
+    result = detect_beats(path)
+    print(json.dumps(result, indent=2))
+    print(f"\n{result['tempo']} BPM, {len(result['beats'])} beats, {result['duration']}s")
