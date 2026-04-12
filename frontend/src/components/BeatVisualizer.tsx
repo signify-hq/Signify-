@@ -10,6 +10,7 @@ interface Props {
   moodBg: string
   moodGlow: string
   analyser: AnalyserNode | null
+  calm?: boolean
 }
 
 /* ---------- helpers ---------- */
@@ -83,6 +84,7 @@ const sharedState = {
   beatPulse: false,
   prevBeatPulse: false,
   chromaStrength: 0,
+  calm: false,
 }
 
 /* ---------- Particle system (GPU instanced) ---------- */
@@ -753,26 +755,28 @@ function Scene() {
     <>
       <color attach="background" args={['#0a0a0a']} />
       <StarField />
-      <Particles />
+      {!sharedState.calm && <Particles />}
       <SpectrumBars />
-      <SideSpectrumPillars />
-      <CenterOrb />
+      {!sharedState.calm && <SideSpectrumPillars />}
+      {!sharedState.calm && <CenterOrb />}
       <WaveformRing />
-      <ShockwaveRings />
+      {!sharedState.calm && <ShockwaveRings />}
       <ChromaController offsetRef={chromaOffset} />
       <EffectComposer>
         <Bloom
-          intensity={1.5}
-          luminanceThreshold={0.2}
+          intensity={sharedState.calm ? 0.4 : 1.5}
+          luminanceThreshold={sharedState.calm ? 0.5 : 0.2}
           luminanceSmoothing={0.9}
           mipmapBlur
         />
-        <ChromaticAberration
-          blendFunction={BlendFunction.NORMAL}
-          offset={chromaOffset.current}
-          radialModulation={false}
-          modulationOffset={0}
-        />
+        {!sharedState.calm && (
+          <ChromaticAberration
+            blendFunction={BlendFunction.NORMAL}
+            offset={chromaOffset.current}
+            radialModulation={false}
+            modulationOffset={0}
+          />
+        )}
       </EffectComposer>
     </>
   )
@@ -780,12 +784,16 @@ function Scene() {
 
 /* ---------- Main component ---------- */
 
-export function BeatVisualizer({ beatPulse, mood, moodBg, moodGlow, analyser }: Props) {
+export function BeatVisualizer({ beatPulse, mood, moodBg, moodGlow, analyser, calm = false }: Props) {
   // Sync props into shared state for R3F components
   useEffect(() => {
     sharedState.moodGlow = moodGlow
     sharedState.moodBg = moodBg
   }, [moodGlow, moodBg])
+
+  useEffect(() => {
+    sharedState.calm = calm
+  }, [calm])
 
   useEffect(() => {
     sharedState.beatPulse = beatPulse

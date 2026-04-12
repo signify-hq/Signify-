@@ -571,6 +571,7 @@ function MainApp({ onShowLearning }: { onShowLearning: () => void }) {
     songLoggedRef.current = false
   }, [timeline])
 
+  const [calmMode, setCalmMode] = useState(false)
   const mood = currentSegment?.mood || 'tender'
   const colors = MOOD_COLORS[mood] || MOOD_COLORS.tender
 
@@ -726,6 +727,22 @@ function MainApp({ onShowLearning }: { onShowLearning: () => void }) {
           </div>
         )}
         <button
+          onClick={() => setCalmMode(c => !c)}
+          title="Calm mode — reduced visual effects for sensory sensitivity"
+          style={{
+            background: calmMode ? '#334155' : '#1e293b',
+            border: `1px solid ${calmMode ? '#60a5fa' : '#334155'}`,
+            borderRadius: 999,
+            padding: '8px 12px',
+            color: calmMode ? '#60a5fa' : '#94a3b8',
+            fontSize: 13,
+            fontWeight: 600,
+            cursor: 'pointer',
+          }}
+        >
+          Calm
+        </button>
+        <button
           onClick={onShowLearning}
           style={{
             background: '#1e293b',
@@ -751,12 +768,13 @@ function MainApp({ onShowLearning }: { onShowLearning: () => void }) {
         moodBg={colors.bg}
         moodGlow={colors.glow}
         analyser={analyserRef.current}
+        calm={calmMode}
       />
 
       <div className="player-top">
         <AvatarDisplay
           token={currentToken}
-          beatPulse={beatPulse}
+          beatPulse={calmMode ? false : beatPulse}
           moodGlow={colors.glow}
           moodBg={colors.bg}
           currentTime={currentTime}
