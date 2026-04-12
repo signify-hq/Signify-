@@ -1,4 +1,8 @@
-import { useRef, useEffect, useCallback } from 'react'
+import { useRef, useEffect, useMemo, useCallback } from 'react'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import * as THREE from 'three'
+import { EffectComposer, Bloom, ChromaticAberration } from '@react-three/postprocessing'
+import { BlendFunction } from 'postprocessing'
 
 interface Props {
   beatPulse: boolean
@@ -10,41 +14,38 @@ interface Props {
 
 /* ---------- helpers ---------- */
 
-function hexToRgb(hex: string): [number, number, number] {
+function hexToVec3(hex: string): THREE.Vector3 {
   const h = hex.replace('#', '')
-  return [
-    parseInt(h.substring(0, 2), 16),
-    parseInt(h.substring(2, 4), 16),
-    parseInt(h.substring(4, 6), 16),
-  ]
+  return new THREE.Vector3(
+    parseInt(h.substring(0, 2), 16) / 255,
+    parseInt(h.substring(2, 4), 16) / 255,
+    parseInt(h.substring(4, 6), 16) / 255,
+  )
 }
 
-function lerpColor(
-  a: [number, number, number],
-  b: [number, number, number],
-  t: number,
-): [number, number, number] {
-  return [
-    a[0] + (b[0] - a[0]) * t,
-    a[1] + (b[1] - a[1]) * t,
-    a[2] + (b[2] - a[2]) * t,
-  ]
+function hexToColor(hex: string): THREE.Color {
+  return new THREE.Color(hex)
 }
 
-/* ---------- audio energy extraction ---------- */
+/* ---------- audio energy ---------- */
 
 interface AudioEnergy {
-  bass: number     // 0-1: sub-bass + bass (20-250 Hz) — kick drums, bass drops
-  mid: number      // 0-1: mids (250-2000 Hz) — vocals, snare body
-  high: number     // 0-1: highs (2000-16000 Hz) — hi-hats, cymbals, sizzle
-  overall: number  // 0-1: total energy
+  bass: number
+  mid: number
+  high: number
+  overall: number
+  bassTransient: number
 }
 
-function getAudioEnergy(analyser: AnalyserNode, freqData: Uint8Array): AudioEnergy {
+const energyState: AudioEnergy = { bass: 0, mid: 0, high: 0, overall: 0, bassTransient: 0 }
+let prevBass = 0
+
+function updateAudioEnergy(analyser: AnalyserNode | null, freqData: Uint8Array | null) {
+  if (!analyser || !freqData) return
   analyser.getByteFrequencyData(freqData)
-  const len = freqData.length // 128 bins for fftSize=256
-  // Each bin = sampleRate / fftSize Hz wide. At 44100Hz, each bin ~ 172Hz
-  // bass: bins 0-1 (~0-344 Hz), mid: bins 2-11 (~344-2064 Hz), high: bins 12+ (~2064Hz+)
+  // Also grab waveform
+  if (sharedState.waveData) analyser.getByteTimeDomainData(sharedState.waveData)
+  const len = freqData.length
   const bassEnd = 2
   const midEnd = 12
 
@@ -57,567 +58,771 @@ function getAudioEnergy(analyser: AnalyserNode, freqData: Uint8Array): AudioEner
     else highSum += v
   }
 
+  const rawBass = Math.min(1, bassSum / bassEnd)
+  const rawMid = Math.min(1, midSum / (midEnd - bassEnd) * 1.2)
+  const rawHigh = Math.min(1, highSum / (len - midEnd) * 2.5)
+  const rawOverall = Math.min(1, total / len * 2)
+
+  const smooth = 0.3
+  energyState.bass += (rawBass - energyState.bass) * smooth
+  energyState.mid += (rawMid - energyState.mid) * smooth
+  energyState.high += (rawHigh - energyState.high) * smooth
+  energyState.overall += (rawOverall - energyState.overall) * smooth
+  energyState.bassTransient = Math.max(0, energyState.bass - prevBass - 0.05)
+  prevBass = energyState.bass
+}
+
+/* ---------- Shared state for passing data into R3F ---------- */
+
+const sharedState = {
+  analyser: null as AnalyserNode | null,
+  freqData: null as Uint8Array | null,
+  waveData: null as Uint8Array | null, // time-domain waveform for oscilloscope ring
+  moodGlow: '#a78bfa',
+  moodBg: '#7c3aed',
+  beatPulse: false,
+  prevBeatPulse: false,
+  chromaStrength: 0,
+}
+
+/* ---------- Particle system (GPU instanced) ---------- */
+
+const PARTICLE_COUNT = 600
+const BAR_COUNT = 64
+
+// Pre-allocate particle data
+interface PData {
+  positions: Float32Array
+  velocities: Float32Array
+  lives: Float32Array    // [life, maxLife] interleaved
+  sizes: Float32Array
+  colors: Float32Array   // rgb interleaved
+  alive: Uint8Array
+}
+
+function createParticleData(): PData {
   return {
-    bass: Math.min(1, bassSum / bassEnd),
-    mid: Math.min(1, midSum / (midEnd - bassEnd) * 1.2),
-    high: Math.min(1, highSum / (len - midEnd) * 2.5),
-    overall: Math.min(1, total / len * 2),
+    positions: new Float32Array(PARTICLE_COUNT * 3),
+    velocities: new Float32Array(PARTICLE_COUNT * 3),
+    lives: new Float32Array(PARTICLE_COUNT * 2),
+    sizes: new Float32Array(PARTICLE_COUNT),
+    colors: new Float32Array(PARTICLE_COUNT * 3),
+    alive: new Uint8Array(PARTICLE_COUNT),
   }
 }
 
-/* ---------- particle types ---------- */
-
-const enum ParticleKind {
-  Burst = 0,
-  Spiral = 1,
-  Float = 2,
-  Spark = 3,
-}
-
-interface Particle {
-  alive: boolean
-  kind: ParticleKind
-  x: number
-  y: number
-  vx: number
-  vy: number
-  life: number
-  maxLife: number
-  size: number
-  angle: number
-  angularV: number
-  radialV: number
-  radius: number
-  color: [number, number, number]
-  alpha: number
-  trail: boolean
-  prevX: number
-  prevY: number
-}
-
-interface Shockwave {
-  x: number
-  y: number
-  radius: number
-  maxRadius: number
-  life: number
-  color: [number, number, number]
-  lineWidth: number
-}
-
-/* ---------- pool ---------- */
-
-const MAX_PARTICLES = 400
-const MAX_SHOCKWAVES = 6
-
-function createPool(): Particle[] {
-  const pool: Particle[] = []
-  for (let i = 0; i < MAX_PARTICLES; i++) {
-    pool.push({
-      alive: false, kind: ParticleKind.Burst,
-      x: 0, y: 0, vx: 0, vy: 0,
-      life: 0, maxLife: 1, size: 2, angle: 0,
-      angularV: 0, radialV: 0, radius: 0,
-      color: [255, 255, 255], alpha: 1,
-      trail: false, prevX: 0, prevY: 0,
-    })
+function getSlot(pd: PData): number {
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    if (!pd.alive[i]) return i
   }
-  return pool
+  return -1
 }
 
-function getParticle(pool: Particle[]): Particle | null {
-  for (let i = 0; i < pool.length; i++) {
-    if (!pool[i].alive) return pool[i]
+function spawnBurst(pd: PData, cx: number, cy: number, count: number, speed: number, size: number, color: THREE.Vector3, life: number) {
+  for (let n = 0; n < count; n++) {
+    const i = getSlot(pd)
+    if (i === -1) return
+    const angle = Math.random() * Math.PI * 2
+    const s = speed * (0.6 + Math.random() * 0.8)
+    pd.positions[i * 3] = cx + (Math.random() - 0.5) * 0.3
+    pd.positions[i * 3 + 1] = cy + (Math.random() - 0.5) * 0.3
+    pd.positions[i * 3 + 2] = 0
+    pd.velocities[i * 3] = Math.cos(angle) * s
+    pd.velocities[i * 3 + 1] = Math.sin(angle) * s
+    pd.velocities[i * 3 + 2] = (Math.random() - 0.5) * s * 0.3
+    pd.lives[i * 2] = 1
+    pd.lives[i * 2 + 1] = life
+    pd.sizes[i] = size * (0.5 + Math.random())
+    const white = Math.random() * 0.4
+    pd.colors[i * 3] = color.x + (1 - color.x) * white
+    pd.colors[i * 3 + 1] = color.y + (1 - color.y) * white
+    pd.colors[i * 3 + 2] = color.z + (1 - color.z) * white
+    pd.alive[i] = 1
   }
-  return null
 }
 
-/* ---------- component ---------- */
+function spawnSparks(pd: PData, cx: number, cy: number, count: number, speed: number, color: THREE.Vector3) {
+  for (let n = 0; n < count; n++) {
+    const i = getSlot(pd)
+    if (i === -1) return
+    const angle = Math.random() * Math.PI * 2
+    const s = speed * (0.5 + Math.random())
+    pd.positions[i * 3] = cx + (Math.random() - 0.5) * 0.8
+    pd.positions[i * 3 + 1] = cy + (Math.random() - 0.5) * 0.8
+    pd.positions[i * 3 + 2] = 0
+    pd.velocities[i * 3] = Math.cos(angle) * s
+    pd.velocities[i * 3 + 1] = Math.sin(angle) * s
+    pd.velocities[i * 3 + 2] = 0
+    pd.lives[i * 2] = 1
+    pd.lives[i * 2 + 1] = 0.2 + Math.random() * 0.3
+    pd.sizes[i] = 0.02 + Math.random() * 0.03
+    pd.colors[i * 3] = Math.min(1, color.x + 0.5)
+    pd.colors[i * 3 + 1] = Math.min(1, color.y + 0.5)
+    pd.colors[i * 3 + 2] = Math.min(1, color.z + 0.5)
+    pd.alive[i] = 1
+  }
+}
 
-export function BeatVisualizer({ beatPulse, mood, moodBg, moodGlow, analyser }: Props) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const poolRef = useRef<Particle[]>(createPool())
-  const shockwavesRef = useRef<Shockwave[]>([])
-  const animRef = useRef<number>(0)
-  const lastTimeRef = useRef<number>(0)
+/* ---------- Particles mesh component ---------- */
 
-  // Frequency data buffer — allocated once
-  const freqDataRef = useRef<Uint8Array | null>(null)
+function Particles() {
+  const meshRef = useRef<THREE.InstancedMesh>(null)
+  const pdRef = useRef<PData>(createParticleData())
+  const dummy = useMemo(() => new THREE.Object3D(), [])
+  const colorArr = useMemo(() => new Float32Array(PARTICLE_COUNT * 3), [])
 
-  // Smoothed energy values (for visual continuity)
-  const bassRef = useRef(0)
-  const midRef = useRef(0)
-  const highRef = useRef(0)
-  const overallRef = useRef(0)
-  const prevBassRef = useRef(0) // for detecting bass transients (kicks)
+  useFrame((_, delta) => {
+    const mesh = meshRef.current
+    if (!mesh) return
+    const pd = pdRef.current
+    const dt = Math.min(delta, 0.05)
 
-  const glowRef = useRef(0)
-  const shakeRef = useRef(0)
-  const shakeXRef = useRef(0)
-  const shakeYRef = useRef(0)
+    // Update audio
+    updateAudioEnergy(sharedState.analyser, sharedState.freqData)
+    const { bass, mid, high, bassTransient } = energyState
+    const glowV = hexToVec3(sharedState.moodGlow)
 
-  // Colors as refs for the animation loop
-  const moodBgRef = useRef(moodBg)
-  const moodGlowRef = useRef(moodGlow)
-  const moodRef = useRef(mood)
-  const analyserRef = useRef(analyser)
+    // Spawn points — edges and bottom, NOT center (avoid obscuring skeleton)
+    // Bottom center (above spectrum bars)
+    const bottomY = -3.2
+    // Left and right edges
+    const edgeX = 5.5
+    const side = Math.random() < 0.5 ? -1 : 1
 
-  useEffect(() => {
-    moodBgRef.current = moodBg
-    moodGlowRef.current = moodGlow
-    moodRef.current = mood
-  }, [moodBg, moodGlow, mood])
-
-  useEffect(() => {
-    analyserRef.current = analyser
-    if (analyser && !freqDataRef.current) {
-      freqDataRef.current = new Uint8Array(analyser.frequencyBinCount)
+    // Beat-triggered burst — from bottom and sides
+    if (sharedState.beatPulse && !sharedState.prevBeatPulse) {
+      // Burst from bottom
+      spawnBurst(pd, 0, bottomY, Math.floor(5 + bass * 12), 3 + bass * 5, 0.06 + bass * 0.08, glowV, 0.6 + bass * 0.6)
+      // Burst from sides
+      spawnBurst(pd, edgeX * side, 0, Math.floor(3 + bass * 8), 2 + bass * 4, 0.05 + bass * 0.06, glowV, 0.5 + bass * 0.5)
+      sharedState.chromaStrength = 0.003 + bass * 0.008
     }
-  }, [analyser])
+    sharedState.prevBeatPulse = sharedState.beatPulse
 
-  /* ---- beat trigger (still used for shockwaves on detected beats) ---- */
-  const prevBeatPulseRef = useRef(false)
-
-  useEffect(() => {
-    if (beatPulse && !prevBeatPulseRef.current) {
-      onBeatDetected()
+    // Bass transient → burst from bottom
+    if (bassTransient > 0.15) {
+      spawnBurst(pd, (Math.random() - 0.5) * 4, bottomY, Math.floor(3 + bassTransient * 10), 2 + bassTransient * 5, 0.05 + bassTransient * 0.06, glowV, 0.5 + bassTransient * 0.5)
     }
-    prevBeatPulseRef.current = beatPulse
-  }, [beatPulse])
 
-  const onBeatDetected = useCallback(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const dpr = window.devicePixelRatio || 1
-    const cx = (canvas.width / dpr) / 2
-    const cy = (canvas.height / dpr) / 2
-    const glowRgb = hexToRgb(moodGlowRef.current)
-    const bgRgb = hexToRgb(moodBgRef.current)
-    const bass = bassRef.current
+    // High → sparks from edges (not center)
+    if (high > 0.25 && Math.random() < high * 0.4) {
+      spawnSparks(pd, edgeX * side + (Math.random() - 0.5) * 2, (Math.random() - 0.5) * 4, Math.floor(1 + high * 3), 4 + high * 8, glowV)
+    }
 
-    // Shockwave on beat — size scales with current bass energy
-    const waves = shockwavesRef.current
-    if (waves.length < MAX_SHOCKWAVES) {
-      waves.push({
-        x: cx, y: cy,
-        radius: 10,
-        maxRadius: 150 + bass * 350,
-        life: 1,
-        color: glowRgb,
-        lineWidth: 2 + bass * 5,
-      })
-      if (bass > 0.6) {
-        waves.push({
-          x: cx, y: cy,
-          radius: 5,
-          maxRadius: 100 + bass * 200,
+    // Mid → slow floaters from bottom edges
+    if (mid > 0.3 && Math.random() < mid * 0.12) {
+      const i = getSlot(pd)
+      if (i !== -1) {
+        pd.positions[i * 3] = (Math.random() - 0.5) * 10
+        pd.positions[i * 3 + 1] = -4.5
+        pd.positions[i * 3 + 2] = 0
+        pd.velocities[i * 3] = (Math.random() - 0.5) * 0.3
+        pd.velocities[i * 3 + 1] = 0.5 + mid * 1.5
+        pd.velocities[i * 3 + 2] = 0
+        pd.lives[i * 2] = 1
+        pd.lives[i * 2 + 1] = 2 + Math.random() * 2
+        pd.sizes[i] = 0.03 + mid * 0.04
+        pd.colors[i * 3] = glowV.x * 0.7
+        pd.colors[i * 3 + 1] = glowV.y * 0.7
+        pd.colors[i * 3 + 2] = glowV.z * 0.7
+        pd.alive[i] = 1
+      }
+    }
+
+    // Update all particles
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      if (!pd.alive[i]) {
+        dummy.position.set(0, 0, -100) // hide
+        dummy.scale.setScalar(0)
+        dummy.updateMatrix()
+        mesh.setMatrixAt(i, dummy.matrix)
+        continue
+      }
+
+      pd.lives[i * 2] -= dt / pd.lives[i * 2 + 1]
+      if (pd.lives[i * 2] <= 0) {
+        pd.alive[i] = 0
+        dummy.position.set(0, 0, -100)
+        dummy.scale.setScalar(0)
+        dummy.updateMatrix()
+        mesh.setMatrixAt(i, dummy.matrix)
+        continue
+      }
+
+      // Move
+      pd.positions[i * 3] += pd.velocities[i * 3] * dt
+      pd.positions[i * 3 + 1] += pd.velocities[i * 3 + 1] * dt
+      pd.positions[i * 3 + 2] += pd.velocities[i * 3 + 2] * dt
+      // Drag
+      pd.velocities[i * 3] *= 0.97
+      pd.velocities[i * 3 + 1] *= 0.97
+      pd.velocities[i * 3 + 2] *= 0.97
+
+      const life = pd.lives[i * 2]
+      const alpha = life < 0.3 ? life / 0.3 : 1
+      const sz = pd.sizes[i] * (0.5 + alpha * 0.5)
+
+      dummy.position.set(pd.positions[i * 3], pd.positions[i * 3 + 1], pd.positions[i * 3 + 2])
+      dummy.scale.setScalar(sz)
+      dummy.updateMatrix()
+      mesh.setMatrixAt(i, dummy.matrix)
+
+      colorArr[i * 3] = pd.colors[i * 3] * alpha
+      colorArr[i * 3 + 1] = pd.colors[i * 3 + 1] * alpha
+      colorArr[i * 3 + 2] = pd.colors[i * 3 + 2] * alpha
+    }
+
+    mesh.instanceMatrix.needsUpdate = true
+    const colorAttr = mesh.geometry.getAttribute('instanceColor') as THREE.InstancedBufferAttribute
+    if (colorAttr) {
+      colorAttr.array = colorArr
+      colorAttr.needsUpdate = true
+    }
+
+    // Decay chroma
+    sharedState.chromaStrength *= 0.92
+  })
+
+  return (
+    <instancedMesh ref={meshRef} args={[undefined, undefined, PARTICLE_COUNT]}>
+      <sphereGeometry args={[1, 6, 6]}>
+        <instancedBufferAttribute attach="attributes-instanceColor" args={[colorArr, 3]} />
+      </sphereGeometry>
+      <meshBasicMaterial toneMapped={false} />
+    </instancedMesh>
+  )
+}
+
+/* ---------- Spectrum Bars ---------- */
+
+function SpectrumBars() {
+  const groupRef = useRef<THREE.Group>(null)
+  const barRefs = useRef<THREE.Mesh[]>([])
+  const capRefs = useRef<THREE.Mesh[]>([])
+
+  const barGeo = useMemo(() => new THREE.BoxGeometry(1, 1, 0.1), [])
+  const capGeo = useMemo(() => new THREE.BoxGeometry(1, 0.06, 0.12), [])
+
+  const barMats = useMemo(() => {
+    const mats: THREE.MeshBasicMaterial[] = []
+    for (let i = 0; i < BAR_COUNT; i++) {
+      mats.push(new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.4, toneMapped: false }))
+    }
+    return mats
+  }, [])
+
+  const capMats = useMemo(() => {
+    const mats: THREE.MeshBasicMaterial[] = []
+    for (let i = 0; i < BAR_COUNT; i++) {
+      mats.push(new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.7, toneMapped: false }))
+    }
+    return mats
+  }, [])
+
+  useFrame(() => {
+    const fd = sharedState.freqData
+    const an = sharedState.analyser
+    if (!fd || !an || !groupRef.current) return
+
+    const glowColor = hexToColor(sharedState.moodGlow)
+    const bgColor = hexToColor(sharedState.moodBg)
+    const totalW = 12
+    const gap = 0.02
+    const barW = (totalW - gap * BAR_COUNT) / BAR_COUNT
+    const startX = -totalW / 2
+    const maxH = 2.5
+    const binStep = Math.max(1, Math.floor(fd.length / BAR_COUNT))
+
+    for (let i = 0; i < BAR_COUNT; i++) {
+      const bar = barRefs.current[i]
+      const cap = capRefs.current[i]
+      if (!bar || !cap) continue
+
+      let sum = 0
+      for (let j = 0; j < binStep; j++) {
+        sum += fd[i * binStep + j] || 0
+      }
+      const v = Math.pow((sum / binStep) / 255, 0.7)
+      const barH = Math.max(0.02, v * maxH)
+
+      const x = startX + i * (barW + gap) + barW / 2
+
+      bar.position.set(x, -4.8 + barH / 2, -0.5)
+      bar.scale.set(barW, barH, 0.1)
+
+      cap.position.set(x, -4.8 + barH, -0.5)
+      cap.scale.set(barW, 1, 1)
+
+      // Color gradient
+      const t = i / BAR_COUNT
+      const c = t < 0.15
+        ? glowColor
+        : t < 0.5
+          ? glowColor.clone().lerp(bgColor, (t - 0.15) / 0.35)
+          : bgColor.clone().lerp(new THREE.Color(0.8, 0.8, 1), (t - 0.5) / 0.5)
+
+      barMats[i].color.copy(c)
+      barMats[i].opacity = 0.25 + v * 0.5
+      capMats[i].color.copy(c)
+      capMats[i].opacity = 0.5 + v * 0.5
+    }
+  })
+
+  const bars = useMemo(() => {
+    const items: JSX.Element[] = []
+    for (let i = 0; i < BAR_COUNT; i++) {
+      items.push(
+        <mesh
+          key={`bar-${i}`}
+          ref={(el) => { if (el) barRefs.current[i] = el }}
+          geometry={barGeo}
+          material={barMats[i]}
+        />,
+        <mesh
+          key={`cap-${i}`}
+          ref={(el) => { if (el) capRefs.current[i] = el }}
+          geometry={capGeo}
+          material={capMats[i]}
+        />,
+      )
+    }
+    return items
+  }, [barGeo, capGeo, barMats, capMats])
+
+  return <group ref={groupRef}>{bars}</group>
+}
+
+/* ---------- Center Orb ---------- */
+
+function CenterOrb() {
+  const meshRef = useRef<THREE.Mesh>(null)
+  const glowRef = useRef<THREE.Mesh>(null)
+  const matRef = useRef<THREE.MeshBasicMaterial>(null)
+  const glowMatRef = useRef<THREE.MeshBasicMaterial>(null)
+  // Position orb at bottom, above spectrum bars, out of skeleton's way
+  const orbY = -3.0
+
+  useFrame(({ clock }) => {
+    const { bass, overall } = energyState
+    const t = clock.getElapsedTime()
+    const orbR = 0.1 + bass * 0.25 + Math.sin(t * 3) * 0.02
+    const glowColor = hexToColor(sharedState.moodGlow)
+
+    if (meshRef.current) {
+      meshRef.current.scale.setScalar(orbR)
+      meshRef.current.position.y = orbY
+    }
+    if (matRef.current) {
+      matRef.current.color.set(0xffffff)
+      matRef.current.opacity = 0.3 + bass * 0.5
+    }
+    if (glowRef.current) {
+      glowRef.current.scale.setScalar(orbR * 4 + overall * 1)
+      glowRef.current.position.y = orbY
+    }
+    if (glowMatRef.current) {
+      glowMatRef.current.color.copy(glowColor)
+      glowMatRef.current.opacity = 0.05 + bass * 0.1
+    }
+  })
+
+  return (
+    <>
+      <mesh ref={glowRef} position={[0, orbY, 0]}>
+        <sphereGeometry args={[1, 16, 16]} />
+        <meshBasicMaterial ref={glowMatRef} transparent toneMapped={false} />
+      </mesh>
+      <mesh ref={meshRef} position={[0, orbY, 0]}>
+        <sphereGeometry args={[1, 12, 12]} />
+        <meshBasicMaterial ref={matRef} transparent toneMapped={false} />
+      </mesh>
+    </>
+  )
+}
+
+/* ---------- Shockwave Rings ---------- */
+
+function ShockwaveRings() {
+  const ringsRef = useRef<{ radius: number; maxRadius: number; life: number; color: THREE.Color }[]>([])
+  const meshRefs = useRef<THREE.Mesh[]>([])
+  const matRefs = useRef<THREE.MeshBasicMaterial[]>([])
+  const MAX_RINGS = 6
+
+  // Pre-create ring meshes
+  const rings = useMemo(() => {
+    const items: JSX.Element[] = []
+    for (let i = 0; i < MAX_RINGS; i++) {
+      items.push(
+        <mesh
+          key={i}
+          ref={(el) => { if (el) meshRefs.current[i] = el }}
+          position={[0, -3.0, 0]}
+          rotation-x={Math.PI / 2}
+        >
+          <ringGeometry args={[0.95, 1, 64]} />
+          <meshBasicMaterial
+            ref={(el) => { if (el) matRefs.current[i] = el }}
+            transparent
+            toneMapped={false}
+            side={THREE.DoubleSide}
+            opacity={0}
+          />
+        </mesh>,
+      )
+    }
+    return items
+  }, [])
+
+  useFrame((_, delta) => {
+    const dt = Math.min(delta, 0.05)
+    const ringData = ringsRef.current
+    const { bass } = energyState
+
+    // Spawn on beat — rings expand from bottom area
+    if (sharedState.beatPulse && !sharedState.prevBeatPulse) {
+      if (ringData.length < MAX_RINGS) {
+        ringData.push({
+          radius: 0.2,
+          maxRadius: 2.5 + bass * 4,
           life: 1,
-          color: bgRgb,
-          lineWidth: 1 + bass * 2,
+          color: hexToColor(sharedState.moodGlow),
         })
       }
     }
-  }, [])
 
-  /* ---- spawn particles driven by audio energy ---- */
-  const spawnFromEnergy = useCallback((
-    bass: number, mid: number, high: number,
-    bassTransient: number, // spike detection
-    cx: number, cy: number,
-  ) => {
-    const pool = poolRef.current
-    const glowRgb = hexToRgb(moodGlowRef.current)
-    const bgRgb = hexToRgb(moodBgRef.current)
-    const white: [number, number, number] = [255, 255, 255]
-
-    // --- Bass transients → burst particles (kick drums, bass drops) ---
-    if (bassTransient > 0.15) {
-      const count = Math.floor(5 + bassTransient * 20)
-      for (let i = 0; i < count; i++) {
-        const p = getParticle(pool)
-        if (!p) break
-        const angle = Math.random() * Math.PI * 2
-        const speed = 60 + bassTransient * 300
-        p.alive = true
-        p.kind = ParticleKind.Burst
-        p.x = cx + (Math.random() - 0.5) * 20
-        p.y = cy + (Math.random() - 0.5) * 20
-        p.prevX = p.x; p.prevY = p.y
-        p.vx = Math.cos(angle) * speed
-        p.vy = Math.sin(angle) * speed
-        p.life = 1
-        p.maxLife = 0.6 + bassTransient * 0.8
-        p.size = 2 + bassTransient * 5
-        p.color = lerpColor(white, glowRgb, 0.2 + Math.random() * 0.5)
-        p.alpha = 0.7 + bassTransient * 0.3
-        p.trail = Math.random() < 0.5
-        p.angle = 0; p.angularV = 0; p.radialV = 0; p.radius = 0
+    // Update rings
+    for (let i = ringData.length - 1; i >= 0; i--) {
+      const r = ringData[i]
+      r.radius += (r.maxRadius - r.radius) * 0.06 + dt * 4
+      r.life -= dt * 1.5
+      if (r.life <= 0) {
+        ringData.splice(i, 1)
       }
     }
 
-    // --- Sustained bass → slow expanding spirals ---
-    if (bass > 0.4 && Math.random() < bass * 0.3) {
-      const p = getParticle(pool)
-      if (p) {
-        const angle = Math.random() * Math.PI * 2
-        p.alive = true
-        p.kind = ParticleKind.Spiral
-        p.x = cx; p.y = cy
-        p.prevX = cx; p.prevY = cy
-        p.vx = 0; p.vy = 0
-        p.life = 1
-        p.maxLife = 1.5 + bass * 0.5
-        p.size = 2 + bass * 2
-        p.angle = angle
-        p.angularV = (1 + Math.random() * 2) * (Math.random() < 0.5 ? 1 : -1)
-        p.radialV = 40 + bass * 100
-        p.radius = 5
-        p.color = lerpColor(bgRgb, glowRgb, 0.3 + bass * 0.5)
-        p.alpha = 0.6 + bass * 0.3
-        p.trail = false
-      }
-    }
+    // Apply to meshes
+    for (let i = 0; i < MAX_RINGS; i++) {
+      const mesh = meshRefs.current[i]
+      const mat = matRefs.current[i]
+      if (!mesh || !mat) continue
 
-    // --- High frequency energy → sparks (hi-hats, cymbals, sizzle) ---
-    if (high > 0.25 && Math.random() < high * 0.5) {
-      const count = Math.floor(1 + high * 4)
-      for (let i = 0; i < count; i++) {
-        const p = getParticle(pool)
-        if (!p) break
-        const angle = Math.random() * Math.PI * 2
-        const speed = 100 + high * 350
-        p.alive = true
-        p.kind = ParticleKind.Spark
-        p.x = cx + (Math.random() - 0.5) * 60
-        p.y = cy + (Math.random() - 0.5) * 60
-        p.prevX = p.x; p.prevY = p.y
-        p.vx = Math.cos(angle) * speed
-        p.vy = Math.sin(angle) * speed
-        p.life = 1
-        p.maxLife = 0.2 + high * 0.3
-        p.size = 0.8 + high * 1.5
-        p.color = lerpColor(white, glowRgb, Math.random() * 0.3)
-        p.alpha = 0.8 + high * 0.2
-        p.trail = true
-        p.angle = 0; p.angularV = 0; p.radialV = 0; p.radius = 0
-      }
-    }
-
-    // --- Mid energy → ambient floaters rising (vocals, melody) ---
-    if (mid > 0.3 && Math.random() < mid * 0.15) {
-      const p = getParticle(pool)
-      if (p) {
-        const dpr = window.devicePixelRatio || 1
-        const canvas = canvasRef.current
-        const logicalW = canvas ? canvas.width / dpr : 800
-        const logicalH = canvas ? canvas.height / dpr : 600
-        p.alive = true
-        p.kind = ParticleKind.Float
-        p.x = Math.random() * logicalW
-        p.y = logicalH + 10
-        p.prevX = p.x; p.prevY = p.y
-        p.vx = (Math.random() - 0.5) * 15
-        p.vy = -(10 + mid * 40)
-        p.life = 1
-        p.maxLife = 2 + Math.random() * 3
-        p.size = 1 + mid * 2
-        p.color = lerpColor(bgRgb, glowRgb, 0.3 + mid * 0.4)
-        p.alpha = 0.1 + mid * 0.2
-        p.trail = false
-        p.angle = 0; p.angularV = 0; p.radialV = 0; p.radius = 0
-      }
-    }
-  }, [])
-
-  /* ---- animation loop ---- */
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d', { alpha: true })
-    if (!ctx) return
-
-    const resize = () => {
-      const parent = canvas.parentElement
-      if (!parent) return
-      const dpr = window.devicePixelRatio || 1
-      const rect = parent.getBoundingClientRect()
-      canvas.width = rect.width * dpr
-      canvas.height = rect.height * dpr
-      canvas.style.width = `${rect.width}px`
-      canvas.style.height = `${rect.height}px`
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-    }
-    resize()
-    window.addEventListener('resize', resize)
-
-    const loop = (time: number) => {
-      const dt = Math.min((time - (lastTimeRef.current || time)) / 1000, 0.05)
-      lastTimeRef.current = time
-
-      const dpr = window.devicePixelRatio || 1
-      const w = canvas.width / dpr
-      const h = canvas.height / dpr
-      const cx = w / 2
-      const cy = h / 2
-
-      // --- Read audio frequency data ---
-      const an = analyserRef.current
-      const fd = freqDataRef.current
-      if (an && fd) {
-        const energy = getAudioEnergy(an, fd)
-        // Smooth with exponential moving average
-        const smooth = 0.3 // higher = more responsive
-        bassRef.current += (energy.bass - bassRef.current) * smooth
-        midRef.current += (energy.mid - midRef.current) * smooth
-        highRef.current += (energy.high - highRef.current) * smooth
-        overallRef.current += (energy.overall - overallRef.current) * smooth
-      }
-
-      const bass = bassRef.current
-      const mid = midRef.current
-      const high = highRef.current
-      const overall = overallRef.current
-
-      // Detect bass transients (sudden increases = kick/snare hits)
-      const bassTransient = Math.max(0, bass - prevBassRef.current - 0.05)
-      prevBassRef.current = bass
-
-      // Drive glow from bass energy
-      const targetGlow = bass * 0.8 + overall * 0.2
-      glowRef.current += (targetGlow - glowRef.current) * 0.15
-
-      // Shake from bass transients
-      if (bassTransient > 0.2) {
-        shakeRef.current = Math.max(shakeRef.current, bassTransient * 15)
-      }
-
-      // --- Spawn particles from audio energy ---
-      spawnFromEnergy(bass, mid, high, bassTransient, cx, cy)
-
-      // --- shake ---
-      if (shakeRef.current > 0.1) {
-        shakeXRef.current = (Math.random() - 0.5) * shakeRef.current
-        shakeYRef.current = (Math.random() - 0.5) * shakeRef.current
-        shakeRef.current *= 0.88
+      const r = ringData[i]
+      if (r) {
+        mesh.scale.setScalar(r.radius)
+        mat.color.copy(r.color)
+        mat.opacity = r.life * 0.5
       } else {
-        shakeXRef.current = 0
-        shakeYRef.current = 0
-        shakeRef.current = 0
+        mat.opacity = 0
       }
-
-      ctx.save()
-      ctx.translate(shakeXRef.current, shakeYRef.current)
-      ctx.clearRect(-10, -10, w + 20, h + 20)
-
-      const glowRgb = hexToRgb(moodGlowRef.current)
-      const bgRgb = hexToRgb(moodBgRef.current)
-      const glow = glowRef.current
-
-      // --- Ambient glow — driven by bass ---
-      if (glow > 0.03) {
-        ctx.fillStyle = `rgba(${glowRgb[0]},${glowRgb[1]},${glowRgb[2]},${glow * 0.12})`
-        ctx.beginPath()
-        ctx.arc(cx, cy, w * 0.4 + bass * w * 0.15, 0, Math.PI * 2)
-        ctx.fill()
-      }
-
-      // --- Frequency bars — mirrored from center, prominent ---
-      if (an && fd) {
-        const barCount = 64
-        const gap = 2
-        const totalW = w * 0.85
-        const barWidth = (totalW - gap * barCount) / barCount
-        const maxBarH = h * 0.38
-        const binStep = Math.max(1, Math.floor(fd.length / barCount))
-        const startX = (w - totalW) / 2
-
-        for (let i = 0; i < barCount; i++) {
-          let sum = 0
-          for (let j = 0; j < binStep; j++) {
-            sum += fd[i * binStep + j] || 0
-          }
-          const v = (sum / binStep) / 255
-          // Apply power curve to make quiet parts more visible
-          const vCurved = Math.pow(v, 0.7)
-          const barH = vCurved * maxBarH
-
-          // Color: bass bins glow bright, mids are mood color, highs are lighter
-          const t = i / barCount
-          const barColor = t < 0.1
-            ? glowRgb
-            : t < 0.4
-              ? lerpColor(glowRgb, bgRgb, (t - 0.1) / 0.3)
-              : lerpColor(bgRgb, [200, 200, 255] as [number, number, number], (t - 0.4) / 0.6)
-
-          const x = startX + i * (barWidth + gap)
-
-          // Main bar — solid, from bottom
-          const barAlpha = 0.25 + v * 0.45
-          ctx.fillStyle = `rgba(${barColor[0]},${barColor[1]},${barColor[2]},${barAlpha})`
-          ctx.fillRect(x, h - barH, barWidth, barH)
-
-          // Top cap — brighter accent line
-          if (barH > 3) {
-            ctx.fillStyle = `rgba(${barColor[0]},${barColor[1]},${barColor[2]},${0.5 + v * 0.4})`
-            ctx.fillRect(x, h - barH, barWidth, 2)
-          }
-
-          // Reflection above (mirrored, shorter, faded)
-          if (barH > 8) {
-            const reflH = barH * 0.25
-            ctx.fillStyle = `rgba(${barColor[0]},${barColor[1]},${barColor[2]},${barAlpha * 0.3})`
-            ctx.fillRect(x, h - barH - reflH - 2, barWidth, reflH)
-          }
-        }
-      }
-
-      // --- Shockwaves ---
-      const waves = shockwavesRef.current
-      for (let i = waves.length - 1; i >= 0; i--) {
-        const sw = waves[i]
-        sw.radius += (sw.maxRadius - sw.radius) * 0.06 + dt * 300
-        sw.life -= dt * 1.5
-        if (sw.life <= 0) {
-          waves.splice(i, 1)
-          continue
-        }
-        ctx.beginPath()
-        ctx.arc(sw.x, sw.y, sw.radius, 0, Math.PI * 2)
-        ctx.strokeStyle = `rgba(${sw.color[0]},${sw.color[1]},${sw.color[2]},${sw.life * 0.5})`
-        ctx.lineWidth = sw.lineWidth * sw.life
-        ctx.stroke()
-      }
-
-      // --- Particles ---
-      const pool = poolRef.current
-      for (let i = 0; i < pool.length; i++) {
-        const p = pool[i]
-        if (!p.alive) continue
-
-        p.prevX = p.x
-        p.prevY = p.y
-        p.life -= dt / p.maxLife
-
-        if (p.life <= 0) { p.alive = false; continue }
-
-        switch (p.kind) {
-          case ParticleKind.Burst:
-            p.x += p.vx * dt
-            p.y += p.vy * dt
-            p.vx *= 0.97
-            p.vy *= 0.97
-            p.vy += 15 * dt
-            break
-          case ParticleKind.Spiral:
-            p.angle += p.angularV * dt
-            p.radius += p.radialV * dt
-            p.radialV *= 0.99
-            p.x = cx + Math.cos(p.angle) * p.radius
-            p.y = cy + Math.sin(p.angle) * p.radius
-            break
-          case ParticleKind.Float:
-            p.x += p.vx * dt + Math.sin(time * 0.001 + i) * 0.3
-            p.y += p.vy * dt
-            break
-          case ParticleKind.Spark:
-            p.x += p.vx * dt
-            p.y += p.vy * dt
-            p.vx *= 0.94
-            p.vy *= 0.94
-            break
-        }
-
-        const lifeAlpha = p.life < 0.3 ? p.life / 0.3 : 1
-        const drawAlpha = p.alpha * lifeAlpha
-        if (drawAlpha < 0.01) { p.alive = false; continue }
-
-        // Trail
-        if (p.trail && (p.kind === ParticleKind.Burst || p.kind === ParticleKind.Spark)) {
-          const dx = p.x - p.prevX
-          const dy = p.y - p.prevY
-          if (dx * dx + dy * dy > 4) {
-            ctx.beginPath()
-            ctx.moveTo(p.prevX, p.prevY)
-            ctx.lineTo(p.x, p.y)
-            ctx.strokeStyle = `rgba(${p.color[0]},${p.color[1]},${p.color[2]},${drawAlpha * 0.4})`
-            ctx.lineWidth = p.size * 0.6
-            ctx.stroke()
-          }
-        }
-
-        // Particle dot
-        ctx.fillStyle = `rgba(${p.color[0]},${p.color[1]},${p.color[2]},${drawAlpha})`
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-        ctx.fill()
-
-        // Cheap glow halo
-        if (p.size > 2 && drawAlpha > 0.3) {
-          ctx.fillStyle = `rgba(${p.color[0]},${p.color[1]},${p.color[2]},${drawAlpha * 0.12})`
-          ctx.beginPath()
-          ctx.arc(p.x, p.y, p.size * 2.5, 0, Math.PI * 2)
-          ctx.fill()
-        }
-      }
-
-      // --- Center orb — pulses with bass ---
-      const orbR = 6 + bass * 18 + Math.sin(time * 0.003) * 2
-      if (bass > 0.05 || glow > 0.05) {
-        ctx.fillStyle = `rgba(${glowRgb[0]},${glowRgb[1]},${glowRgb[2]},${Math.min(0.15, glow * 0.1 + bass * 0.08)})`
-        ctx.beginPath()
-        ctx.arc(cx, cy, orbR * 4, 0, Math.PI * 2)
-        ctx.fill()
-
-        ctx.fillStyle = `rgba(255,255,255,${Math.min(0.5, bass * 0.4 + glow * 0.2)})`
-        ctx.beginPath()
-        ctx.arc(cx, cy, orbR, 0, Math.PI * 2)
-        ctx.fill()
-      }
-
-      // --- Energy ring — radius breathes with mid, alpha with overall ---
-      const ringR = 35 + mid * 50 + Math.sin(time * 0.002) * 5
-      const ringAlpha = 0.03 + overall * 0.1
-      ctx.fillStyle = `rgba(${glowRgb[0]},${glowRgb[1]},${glowRgb[2]},${ringAlpha})`
-      const ringSegs = 30
-      const ringRot = time * 0.0005
-      for (let s = 0; s < ringSegs; s++) {
-        const a = (s / ringSegs) * Math.PI * 2 + ringRot
-        const mod = 0.5 + 0.5 * Math.sin(a * 3 + time * 0.004)
-        if (mod < 0.3) continue
-        ctx.beginPath()
-        ctx.arc(cx + Math.cos(a) * ringR, cy + Math.sin(a) * ringR, 1 + overall * 1.5, 0, Math.PI * 2)
-        ctx.fill()
-      }
-
-      ctx.restore()
-
-      // --- Mood label ---
-      const moodLabel = moodRef.current
-      if (moodLabel) {
-        ctx.save()
-        ctx.translate(shakeXRef.current, shakeYRef.current)
-        ctx.font = '600 11px system-ui, -apple-system, sans-serif'
-        ctx.textAlign = 'center'
-        ctx.fillStyle = `rgba(${glowRgb[0]},${glowRgb[1]},${glowRgb[2]},${0.3 + glow * 0.4})`
-        ctx.fillText(moodLabel.toUpperCase(), cx, h - 16)
-        ctx.restore()
-      }
-
-      animRef.current = requestAnimationFrame(loop)
     }
+  })
 
-    animRef.current = requestAnimationFrame(loop)
+  return <>{rings}</>
+}
 
-    return () => {
-      cancelAnimationFrame(animRef.current)
-      window.removeEventListener('resize', resize)
+/* ---------- Waveform Ring (circular oscilloscope) ---------- */
+
+const WAVE_SEGMENTS = 128
+
+function WaveformRing() {
+  const lineRef = useRef<THREE.Line>(null)
+  const positions = useMemo(() => new Float32Array((WAVE_SEGMENTS + 1) * 3), [])
+  const geometry = useMemo(() => {
+    const geo = new THREE.BufferGeometry()
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+    return geo
+  }, [positions])
+
+  useFrame(({ clock }) => {
+    const line = lineRef.current
+    if (!line) return
+    const wd = sharedState.waveData
+    const { bass, overall } = energyState
+    const t = clock.getElapsedTime()
+
+    // Ring sits around the orb at the bottom
+    const ringCenterY = -3.0
+    const baseRadius = 1.2 + overall * 0.5
+    const waveAmp = 0.15 + bass * 0.6 // how much waveform displaces the ring
+
+    const posAttr = line.geometry.getAttribute('position') as THREE.BufferAttribute
+
+    for (let i = 0; i <= WAVE_SEGMENTS; i++) {
+      const angle = (i / WAVE_SEGMENTS) * Math.PI * 2 + t * 0.2
+      // Sample waveform — map ring segment to waveform index
+      const waveIdx = wd ? Math.floor((i / WAVE_SEGMENTS) * wd.length) % wd.length : 0
+      const waveVal = wd ? (wd[waveIdx] - 128) / 128 : 0 // -1 to 1
+      const r = baseRadius + waveVal * waveAmp
+      positions[i * 3] = Math.cos(angle) * r
+      positions[i * 3 + 1] = ringCenterY + Math.sin(angle) * r
+      positions[i * 3 + 2] = 0
     }
-  }, [spawnFromEnergy])
+    posAttr.needsUpdate = true
+
+    // Update color
+    const mat = line.material as THREE.LineBasicMaterial
+    mat.color.copy(hexToColor(sharedState.moodGlow))
+    mat.opacity = 0.3 + overall * 0.5
+  })
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="beat-visualizer-canvas"
-    />
+    <line ref={lineRef as any} geometry={geometry}>
+      <lineBasicMaterial transparent toneMapped={false} linewidth={1.5} />
+    </line>
+  )
+}
+
+/* ---------- Side Spectrum Pillars (vertical bars on edges) ---------- */
+
+const SIDE_BAR_COUNT = 24
+
+function SideSpectrumPillars() {
+  const leftRefs = useRef<THREE.Mesh[]>([])
+  const rightRefs = useRef<THREE.Mesh[]>([])
+  const barGeo = useMemo(() => new THREE.BoxGeometry(1, 1, 0.08), [])
+
+  const leftMats = useMemo(() => {
+    const m: THREE.MeshBasicMaterial[] = []
+    for (let i = 0; i < SIDE_BAR_COUNT; i++) {
+      m.push(new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.3, toneMapped: false }))
+    }
+    return m
+  }, [])
+  const rightMats = useMemo(() => {
+    const m: THREE.MeshBasicMaterial[] = []
+    for (let i = 0; i < SIDE_BAR_COUNT; i++) {
+      m.push(new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.3, toneMapped: false }))
+    }
+    return m
+  }, [])
+
+  useFrame(() => {
+    const fd = sharedState.freqData
+    if (!fd) return
+
+    const glowColor = hexToColor(sharedState.moodGlow)
+    const bgColor = hexToColor(sharedState.moodBg)
+    const edgeX = 6.2
+    const barH = 0.18
+    const gap = 0.04
+    const totalH = SIDE_BAR_COUNT * (barH + gap)
+    const startY = -totalH / 2
+    const maxW = 1.8
+    const binStep = Math.max(1, Math.floor(fd.length / SIDE_BAR_COUNT))
+
+    for (let i = 0; i < SIDE_BAR_COUNT; i++) {
+      let sum = 0
+      for (let j = 0; j < binStep; j++) {
+        sum += fd[i * binStep + j] || 0
+      }
+      const v = Math.pow((sum / binStep) / 255, 0.7)
+      const barW = Math.max(0.02, v * maxW)
+      const y = startY + i * (barH + gap)
+
+      const t = i / SIDE_BAR_COUNT
+      const c = t < 0.2
+        ? glowColor
+        : glowColor.clone().lerp(bgColor, (t - 0.2) / 0.8)
+
+      // Left side — grows leftward from edge
+      const lBar = leftRefs.current[i]
+      if (lBar) {
+        lBar.position.set(-edgeX - barW / 2, y, -0.3)
+        lBar.scale.set(barW, barH, 1)
+      }
+      leftMats[i].color.copy(c)
+      leftMats[i].opacity = 0.15 + v * 0.4
+
+      // Right side — mirrored
+      const rBar = rightRefs.current[i]
+      if (rBar) {
+        rBar.position.set(edgeX + barW / 2, y, -0.3)
+        rBar.scale.set(barW, barH, 1)
+      }
+      rightMats[i].color.copy(c)
+      rightMats[i].opacity = 0.15 + v * 0.4
+    }
+  })
+
+  const items = useMemo(() => {
+    const els: JSX.Element[] = []
+    for (let i = 0; i < SIDE_BAR_COUNT; i++) {
+      els.push(
+        <mesh key={`l-${i}`} ref={(el) => { if (el) leftRefs.current[i] = el }} geometry={barGeo} material={leftMats[i]} />,
+        <mesh key={`r-${i}`} ref={(el) => { if (el) rightRefs.current[i] = el }} geometry={barGeo} material={rightMats[i]} />,
+      )
+    }
+    return els
+  }, [barGeo, leftMats, rightMats])
+
+  return <>{items}</>
+}
+
+/* ---------- Star Field (ambient depth particles) ---------- */
+
+const STAR_COUNT = 200
+
+function StarField() {
+  const meshRef = useRef<THREE.Points>(null)
+  const positions = useMemo(() => {
+    const arr = new Float32Array(STAR_COUNT * 3)
+    for (let i = 0; i < STAR_COUNT; i++) {
+      arr[i * 3] = (Math.random() - 0.5) * 20     // x: spread wide
+      arr[i * 3 + 1] = (Math.random() - 0.5) * 12 // y: spread tall
+      arr[i * 3 + 2] = -2 - Math.random() * 6     // z: behind everything
+    }
+    return arr
+  }, [])
+  const baseSizes = useMemo(() => {
+    const arr = new Float32Array(STAR_COUNT)
+    for (let i = 0; i < STAR_COUNT; i++) {
+      arr[i] = 0.5 + Math.random() * 1.5
+    }
+    return arr
+  }, [])
+
+  useFrame(({ clock }) => {
+    const pts = meshRef.current
+    if (!pts) return
+    const t = clock.getElapsedTime()
+    const { overall, bass } = energyState
+    const posAttr = pts.geometry.getAttribute('position') as THREE.BufferAttribute
+    const sizeAttr = pts.geometry.getAttribute('size') as THREE.BufferAttribute
+
+    for (let i = 0; i < STAR_COUNT; i++) {
+      // Slow drift
+      positions[i * 3 + 1] += 0.003 // drift up slowly
+      if (positions[i * 3 + 1] > 7) positions[i * 3 + 1] = -7 // wrap
+
+      // Twinkle — size pulses with unique phase per star
+      const twinkle = 0.5 + 0.5 * Math.sin(t * (1.5 + (i % 7) * 0.3) + i * 1.7)
+      // React to overall energy — stars brighten with music
+      const energyBoost = 1 + overall * 1.5 + bass * 0.5
+      baseSizes[i] = (0.5 + Math.random() * 0.01) * twinkle * energyBoost
+    }
+
+    posAttr.needsUpdate = true
+    sizeAttr.needsUpdate = true
+
+    // Color reacts to mood
+    const mat = pts.material as THREE.PointsMaterial
+    const glowColor = hexToColor(sharedState.moodGlow)
+    mat.color.copy(glowColor)
+    mat.opacity = 0.2 + overall * 0.3
+  })
+
+  return (
+    <points ref={meshRef}>
+      <bufferGeometry>
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+        <bufferAttribute attach="attributes-size" args={[baseSizes, 1]} />
+      </bufferGeometry>
+      <pointsMaterial
+        transparent
+        toneMapped={false}
+        sizeAttenuation
+        size={0.08}
+        opacity={0.3}
+      />
+    </points>
+  )
+}
+
+/* ---------- Chromatic aberration controller ---------- */
+
+function ChromaController({ offsetRef }: { offsetRef: React.MutableRefObject<THREE.Vector2> }) {
+  useFrame(() => {
+    const s = sharedState.chromaStrength
+    offsetRef.current.set(s, s)
+  })
+  return null
+}
+
+/* ---------- Scene ---------- */
+
+function Scene() {
+  const { camera } = useThree()
+  const chromaOffset = useRef(new THREE.Vector2(0, 0))
+
+  useEffect(() => {
+    camera.position.set(0, 0, 8)
+    camera.lookAt(0, 0, 0)
+  }, [camera])
+
+  return (
+    <>
+      <color attach="background" args={['#0a0a0a']} />
+      <StarField />
+      <Particles />
+      <SpectrumBars />
+      <SideSpectrumPillars />
+      <CenterOrb />
+      <WaveformRing />
+      <ShockwaveRings />
+      <ChromaController offsetRef={chromaOffset} />
+      <EffectComposer>
+        <Bloom
+          intensity={1.5}
+          luminanceThreshold={0.2}
+          luminanceSmoothing={0.9}
+          mipmapBlur
+        />
+        <ChromaticAberration
+          blendFunction={BlendFunction.NORMAL}
+          offset={chromaOffset.current}
+          radialModulation={false}
+          modulationOffset={0}
+        />
+      </EffectComposer>
+    </>
+  )
+}
+
+/* ---------- Main component ---------- */
+
+export function BeatVisualizer({ beatPulse, mood, moodBg, moodGlow, analyser }: Props) {
+  // Sync props into shared state for R3F components
+  useEffect(() => {
+    sharedState.moodGlow = moodGlow
+    sharedState.moodBg = moodBg
+  }, [moodGlow, moodBg])
+
+  useEffect(() => {
+    sharedState.beatPulse = beatPulse
+  }, [beatPulse])
+
+  useEffect(() => {
+    sharedState.analyser = analyser
+    if (analyser && !sharedState.freqData) {
+      sharedState.freqData = new Uint8Array(analyser.frequencyBinCount)
+      sharedState.waveData = new Uint8Array(analyser.frequencyBinCount)
+    }
+  }, [analyser])
+
+  return (
+    <div className="beat-visualizer-canvas" style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+      <Canvas
+        gl={{ antialias: false, alpha: false, powerPreference: 'high-performance' }}
+        dpr={[1, 1.5]}
+        style={{ width: '100%', height: '100%' }}
+      >
+        <Scene />
+      </Canvas>
+      {/* Mood label overlay */}
+      <div style={{
+        position: 'absolute',
+        bottom: 16,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        color: moodGlow,
+        opacity: 0.5,
+        fontSize: 11,
+        fontWeight: 600,
+        letterSpacing: 3,
+        fontFamily: 'system-ui, -apple-system, sans-serif',
+      }}>
+        {mood.toUpperCase()}
+      </div>
+    </div>
   )
 }

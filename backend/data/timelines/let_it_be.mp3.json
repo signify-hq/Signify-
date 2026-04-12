@@ -1,0 +1,4494 @@
+{
+  "duration": 242.881,
+  "tempo": 139.7,
+  "beats": [
+    1.8,
+    2.218,
+    2.635,
+    3.065,
+    3.483,
+    3.901,
+    4.307,
+    4.725,
+    5.132,
+    5.55,
+    5.956,
+    6.374,
+    6.78,
+    7.187,
+    7.593,
+    8.011,
+    8.429,
+    8.835,
+    9.242,
+    9.66,
+    10.077,
+    10.484,
+    10.89,
+    11.297,
+    11.703,
+    12.109,
+    12.516,
+    12.945,
+    13.386,
+    13.816,
+    14.245,
+    14.675,
+    15.07,
+    15.511,
+    15.987,
+    16.463,
+    16.927,
+    17.392,
+    17.856,
+    18.332,
+    18.762,
+    19.203,
+    19.621,
+    20.05,
+    20.468,
+    20.886,
+    21.293,
+    21.734,
+    22.175,
+    22.605,
+    23.139,
+    23.568,
+    23.998,
+    24.427,
+    24.857,
+    25.298,
+    25.751,
+    26.204,
+    26.668,
+    27.133,
+    27.585,
+    27.945,
+    28.375,
+    28.816,
+    29.257,
+    29.698,
+    30.105,
+    30.534,
+    30.975,
+    31.347,
+    31.707,
+    32.125,
+    32.566,
+    32.996,
+    33.367,
+    33.739,
+    34.099,
+    34.528,
+    34.969,
+    35.41,
+    35.863,
+    36.304,
+    36.746,
+    37.117,
+    37.593,
+    38.069,
+    38.475,
+    38.87,
+    39.288,
+    39.718,
+    40.171,
+    40.588,
+    40.995,
+    41.413,
+    41.831,
+    42.237,
+    42.643,
+    43.038,
+    43.456,
+    43.897,
+    44.339,
+    44.78,
+    45.291,
+    45.708,
+    46.126,
+    46.544,
+    46.962,
+    47.369,
+    47.763,
+    48.158,
+    48.553,
+    48.948,
+    49.4,
+    49.853,
+    50.26,
+    50.701,
+    51.142,
+    51.583,
+    52.024,
+    52.465,
+    52.907,
+    53.348,
+    53.766,
+    54.184,
+    54.602,
+    55.008,
+    55.426,
+    55.809,
+    56.181,
+    56.575,
+    56.993,
+    57.365,
+    57.783,
+    58.189,
+    58.596,
+    59.002,
+    59.397,
+    59.803,
+    60.221,
+    60.639,
+    61.057,
+    61.475,
+    61.881,
+    62.288,
+    62.682,
+    63.089,
+    63.507,
+    63.936,
+    64.331,
+    64.749,
+    65.144,
+    65.562,
+    65.968,
+    66.374,
+    66.781,
+    67.21,
+    67.64,
+    68.046,
+    68.464,
+    68.882,
+    69.3,
+    69.706,
+    70.113,
+    70.496,
+    70.96,
+    71.367,
+    71.784,
+    72.202,
+    72.62,
+    73.027,
+    73.456,
+    73.886,
+    74.304,
+    74.733,
+    75.163,
+    75.581,
+    76.011,
+    76.428,
+    76.846,
+    77.264,
+    77.717,
+    78.124,
+    78.541,
+    78.971,
+    79.389,
+    79.807,
+    80.237,
+    80.713,
+    81.131,
+    81.548,
+    81.966,
+    82.396,
+    82.826,
+    83.244,
+    83.673,
+    84.091,
+    84.497,
+    84.915,
+    85.322,
+    85.751,
+    86.158,
+    86.587,
+    87.005,
+    87.423,
+    87.841,
+    88.259,
+    88.665,
+    89.095,
+    89.501,
+    89.908,
+    90.337,
+    90.744,
+    91.173,
+    91.591,
+    91.997,
+    92.415,
+    92.81,
+    93.217,
+    93.623,
+    94.076,
+    94.494,
+    94.9,
+    95.33,
+    95.747,
+    96.165,
+    96.583,
+    96.99,
+    97.419,
+    97.837,
+    98.255,
+    98.662,
+    99.091,
+    99.498,
+    99.915,
+    100.345,
+    100.763,
+    101.181,
+    101.599,
+    102.017,
+    102.435,
+    102.841,
+    103.259,
+    103.665,
+    104.083,
+    104.501,
+    104.931,
+    105.337,
+    105.779,
+    106.196,
+    106.603,
+    107.032,
+    107.45,
+    107.892,
+    108.321,
+    108.762,
+    109.192,
+    109.61,
+    110.039,
+    110.469,
+    110.933,
+    111.363,
+    111.816,
+    112.234,
+    112.675,
+    113.116,
+    113.58,
+    114.033,
+    114.486,
+    114.927,
+    115.368,
+    115.798,
+    116.227,
+    116.657,
+    117.087,
+    117.516,
+    117.957,
+    118.387,
+    118.828,
+    119.258,
+    119.71,
+    120.163,
+    120.57,
+    120.988,
+    121.429,
+    121.87,
+    122.276,
+    122.717,
+    123.135,
+    123.588,
+    124.018,
+    124.447,
+    124.877,
+    125.306,
+    125.736,
+    126.154,
+    126.584,
+    127.036,
+    127.466,
+    127.884,
+    128.313,
+    128.755,
+    129.184,
+    129.614,
+    130.032,
+    130.45,
+    130.879,
+    131.297,
+    131.75,
+    132.168,
+    132.598,
+    133.039,
+    133.48,
+    133.921,
+    134.327,
+    134.769,
+    135.187,
+    135.616,
+    136.069,
+    136.499,
+    136.94,
+    137.369,
+    137.81,
+    138.24,
+    138.681,
+    139.122,
+    139.552,
+    139.97,
+    140.399,
+    140.841,
+    141.259,
+    141.688,
+    142.129,
+    142.559,
+    142.977,
+    143.395,
+    143.824,
+    144.254,
+    144.684,
+    145.125,
+    145.554,
+    145.984,
+    146.413,
+    146.855,
+    147.284,
+    147.725,
+    148.167,
+    148.596,
+    149.037,
+    149.49,
+    149.931,
+    150.396,
+    150.837,
+    151.278,
+    151.719,
+    152.172,
+    152.613,
+    153.054,
+    153.507,
+    153.948,
+    154.401,
+    154.831,
+    155.272,
+    155.701,
+    156.166,
+    156.607,
+    157.06,
+    157.489,
+    157.942,
+    158.372,
+    158.813,
+    159.242,
+    159.695,
+    160.148,
+    160.589,
+    161.03,
+    161.495,
+    161.948,
+    162.389,
+    162.83,
+    163.271,
+    163.724,
+    164.142,
+    164.571,
+    165.013,
+    165.442,
+    165.883,
+    166.325,
+    166.766,
+    167.195,
+    167.613,
+    168.078,
+    168.507,
+    168.948,
+    169.378,
+    169.831,
+    170.26,
+    170.701,
+    171.119,
+    171.549,
+    171.99,
+    172.397,
+    172.826,
+    173.267,
+    173.72,
+    174.138,
+    174.568,
+    175.009,
+    175.473,
+    175.914,
+    176.321,
+    176.797,
+    177.238,
+    177.656,
+    178.109,
+    178.527,
+    178.979,
+    179.409,
+    179.804,
+    180.268,
+    180.721,
+    181.15,
+    181.568,
+    182.033,
+    182.462,
+    182.88,
+    183.287,
+    183.716,
+    184.157,
+    184.599,
+    185.028,
+    185.458,
+    185.911,
+    186.329,
+    186.758,
+    187.176,
+    187.629,
+    188.058,
+    188.488,
+    188.918,
+    189.347,
+    189.777,
+    190.195,
+    190.601,
+    191.042,
+    191.483,
+    191.913,
+    192.366,
+    192.807,
+    193.248,
+    193.678,
+    194.119,
+    194.56,
+    195.001,
+    195.442,
+    195.872,
+    196.313,
+    196.754,
+    197.195,
+    197.625,
+    198.078,
+    198.507,
+    198.949,
+    199.367,
+    199.808,
+    200.237,
+    200.678,
+    201.108,
+    201.549,
+    201.99,
+    202.42,
+    202.85,
+    203.267,
+    203.685,
+    204.115,
+    204.533,
+    204.963,
+    205.415,
+    205.845,
+    206.298,
+    206.727,
+    207.157,
+    207.598,
+    208.039,
+    208.48,
+    208.922,
+    209.363,
+    209.804,
+    210.245,
+    210.675,
+    211.116,
+    211.545,
+    212.01,
+    212.439,
+    212.869,
+    213.287,
+    213.728,
+    214.169,
+    214.61,
+    215.028,
+    215.47,
+    215.911,
+    216.34,
+    216.77,
+    217.188,
+    217.617,
+    218.024,
+    218.453,
+    218.883,
+    219.336,
+    219.777,
+    220.218,
+    220.659,
+    221.1,
+    221.553,
+    221.983,
+    222.424,
+    222.865,
+    223.318,
+    223.759,
+    224.177,
+    224.595,
+    225.013,
+    225.419,
+    225.884,
+    226.325,
+    226.766,
+    227.196,
+    227.66,
+    228.101,
+    228.554,
+    228.984,
+    229.46,
+    229.901,
+    230.33,
+    230.772,
+    231.224,
+    231.665,
+    232.107,
+    232.559,
+    233.001,
+    233.442,
+    233.906,
+    234.371,
+    234.823,
+    235.276,
+    235.741,
+    236.205,
+    236.739,
+    237.203,
+    237.575,
+    237.946,
+    238.318
+  ],
+  "segments": [
+    {
+      "line": 2,
+      "start": 16.145,
+      "end": 18.51,
+      "lyric": "When I find myself in times of trouble",
+      "mood": "sad",
+      "tokens": [
+        {
+          "gloss": "WHEN",
+          "start": 16.145,
+          "end": 17.328,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            }
+          ]
+        },
+        {
+          "gloss": "I",
+          "start": 17.328,
+          "end": 18.51,
+          "type": "sign",
+          "file": "i.mp4"
+        }
+      ],
+      "beats": [
+        16.463,
+        16.927,
+        17.392,
+        17.856,
+        18.332
+      ]
+    },
+    {
+      "line": 3,
+      "start": 18.51,
+      "end": 20.875,
+      "lyric": "Mother Mary comes to me",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "MOTHER",
+          "start": 18.51,
+          "end": 19.693,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "MARY",
+          "start": 19.693,
+          "end": 20.875,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        18.762,
+        19.203,
+        19.621,
+        20.05,
+        20.468
+      ]
+    },
+    {
+      "line": 4,
+      "start": 20.875,
+      "end": 23.24,
+      "lyric": "Speaking words of wisdom",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "SPEAK",
+          "start": 20.875,
+          "end": 22.057,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "k",
+              "file": "fs_k.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WORDS",
+          "start": 22.057,
+          "end": 23.24,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        20.886,
+        21.293,
+        21.734,
+        22.175,
+        22.605,
+        23.139
+      ]
+    },
+    {
+      "line": 5,
+      "start": 23.24,
+      "end": 26.775,
+      "lyric": "Let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 23.24,
+          "end": 24.418,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 24.418,
+          "end": 25.597,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 25.597,
+          "end": 26.775,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        23.568,
+        23.998,
+        24.427,
+        24.857,
+        25.298,
+        25.751,
+        26.204,
+        26.668
+      ]
+    },
+    {
+      "line": 6,
+      "start": 26.775,
+      "end": 30.31,
+      "lyric": "And in my hour of darkness",
+      "mood": "dark",
+      "tokens": [
+        {
+          "gloss": "AND",
+          "start": 26.775,
+          "end": 27.659,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        },
+        {
+          "gloss": "MY",
+          "start": 27.659,
+          "end": 28.542,
+          "type": "sign",
+          "file": "my.mp4"
+        },
+        {
+          "gloss": "HOUR",
+          "start": 28.542,
+          "end": 29.426,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "DARKNESS",
+          "start": 29.426,
+          "end": 30.31,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "k",
+              "file": "fs_k.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        27.133,
+        27.585,
+        27.945,
+        28.375,
+        28.816,
+        29.257,
+        29.698,
+        30.105
+      ]
+    },
+    {
+      "line": 7,
+      "start": 30.31,
+      "end": 33.845,
+      "lyric": "She is standing right in front of me",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "SHE",
+          "start": 30.31,
+          "end": 31.194,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "STANDING",
+          "start": 31.194,
+          "end": 32.078,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            }
+          ]
+        },
+        {
+          "gloss": "RIGHT",
+          "start": 32.078,
+          "end": 32.961,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "FRONT",
+          "start": 32.961,
+          "end": 33.845,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "f",
+              "file": "fs_f.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        30.534,
+        30.975,
+        31.347,
+        31.707,
+        32.125,
+        32.566,
+        32.996,
+        33.367,
+        33.739
+      ]
+    },
+    {
+      "line": 8,
+      "start": 33.845,
+      "end": 37.38,
+      "lyric": "Speaking words of wisdom",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "SPEAK",
+          "start": 33.845,
+          "end": 35.023,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "k",
+              "file": "fs_k.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WORDS",
+          "start": 35.023,
+          "end": 36.202,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WISDOM",
+          "start": 36.202,
+          "end": 37.38,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        34.099,
+        34.528,
+        34.969,
+        35.41,
+        35.863,
+        36.304,
+        36.746,
+        37.117
+      ]
+    },
+    {
+      "line": 9,
+      "start": 38.92,
+      "end": 41.965,
+      "lyric": "Let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 38.92,
+          "end": 39.935,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 39.935,
+          "end": 40.95,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 40.95,
+          "end": 41.965,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        39.288,
+        39.718,
+        40.171,
+        40.588,
+        40.995,
+        41.413,
+        41.831
+      ]
+    },
+    {
+      "line": 10,
+      "start": 41.965,
+      "end": 45.01,
+      "lyric": "Let it be, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 41.965,
+          "end": 42.98,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 42.98,
+          "end": 43.995,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 43.995,
+          "end": 45.01,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        42.237,
+        42.643,
+        43.038,
+        43.456,
+        43.897,
+        44.339,
+        44.78
+      ]
+    },
+    {
+      "line": 11,
+      "start": 45.01,
+      "end": 48.055,
+      "lyric": "Let it be, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 45.01,
+          "end": 46.025,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 46.025,
+          "end": 47.04,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 47.04,
+          "end": 48.055,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        45.291,
+        45.708,
+        46.126,
+        46.544,
+        46.962,
+        47.369,
+        47.763
+      ]
+    },
+    {
+      "line": 12,
+      "start": 48.055,
+      "end": 51.1,
+      "lyric": "Whisper words of wisdom",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "WHISPER",
+          "start": 48.055,
+          "end": 49.07,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WORDS",
+          "start": 49.07,
+          "end": 50.085,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WISDOM",
+          "start": 50.085,
+          "end": 51.1,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        48.158,
+        48.553,
+        48.948,
+        49.4,
+        49.853,
+        50.26,
+        50.701
+      ]
+    },
+    {
+      "line": 13,
+      "start": 53.3,
+      "end": 55.96,
+      "lyric": "Let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 53.3,
+          "end": 54.187,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 54.187,
+          "end": 55.073,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 55.073,
+          "end": 55.96,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        53.348,
+        53.766,
+        54.184,
+        54.602,
+        55.008,
+        55.426,
+        55.809
+      ]
+    },
+    {
+      "line": 14,
+      "start": 55.96,
+      "end": 58.62,
+      "lyric": "And when the broken-hearted people",
+      "mood": "sad",
+      "tokens": [
+        {
+          "gloss": "WHEN",
+          "start": 55.96,
+          "end": 56.847,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BROKEN-HEART",
+          "start": 56.847,
+          "end": 57.733,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "k",
+              "file": "fs_k.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "PEOPLE",
+          "start": 57.733,
+          "end": 58.62,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        56.181,
+        56.575,
+        56.993,
+        57.365,
+        57.783,
+        58.189,
+        58.596
+      ]
+    },
+    {
+      "line": 15,
+      "start": 58.62,
+      "end": 61.28,
+      "lyric": "Living in the world agree",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LIVE",
+          "start": 58.62,
+          "end": 59.507,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "v",
+              "file": "fs_v.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WORLD",
+          "start": 59.507,
+          "end": 60.393,
+          "type": "sign",
+          "file": "world.mp4"
+        },
+        {
+          "gloss": "AGREE",
+          "start": 60.393,
+          "end": 61.28,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        59.002,
+        59.397,
+        59.803,
+        60.221,
+        60.639,
+        61.057
+      ]
+    },
+    {
+      "line": 16,
+      "start": 61.28,
+      "end": 63.94,
+      "lyric": "There will be an answer",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "FUTURE",
+          "start": 61.28,
+          "end": 62.167,
+          "type": "sign",
+          "file": "future.mp4"
+        },
+        {
+          "gloss": "ANSWER",
+          "start": 62.167,
+          "end": 63.053,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "THERE",
+          "start": 63.053,
+          "end": 63.94,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        61.475,
+        61.881,
+        62.288,
+        62.682,
+        63.089,
+        63.507,
+        63.936
+      ]
+    },
+    {
+      "line": 17,
+      "start": 65.9,
+      "end": 68.68,
+      "lyric": "Let it be",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 65.9,
+          "end": 66.827,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 66.827,
+          "end": 67.753,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 67.753,
+          "end": 68.68,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        65.968,
+        66.374,
+        66.781,
+        67.21,
+        67.64,
+        68.046,
+        68.464
+      ]
+    },
+    {
+      "line": 18,
+      "start": 68.68,
+      "end": 71.46,
+      "lyric": "For though they may be parted",
+      "mood": "sad",
+      "tokens": [
+        {
+          "gloss": "THOUGH",
+          "start": 68.68,
+          "end": 69.607,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "THEY",
+          "start": 69.607,
+          "end": 70.533,
+          "type": "sign",
+          "file": "they.mp4"
+        },
+        {
+          "gloss": "SEPARATE",
+          "start": 70.533,
+          "end": 71.46,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        68.882,
+        69.3,
+        69.706,
+        70.113,
+        70.496,
+        70.96,
+        71.367
+      ]
+    },
+    {
+      "line": 19,
+      "start": 71.46,
+      "end": 74.24,
+      "lyric": "There is still a chance that they will see",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "STILL",
+          "start": 71.46,
+          "end": 72.387,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            }
+          ]
+        },
+        {
+          "gloss": "CHANCE",
+          "start": 72.387,
+          "end": 73.313,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "THEY",
+          "start": 73.313,
+          "end": 74.24,
+          "type": "sign",
+          "file": "they.mp4"
+        }
+      ],
+      "beats": [
+        71.784,
+        72.202,
+        72.62,
+        73.027,
+        73.456,
+        73.886
+      ]
+    },
+    {
+      "line": 20,
+      "start": 74.24,
+      "end": 77.02,
+      "lyric": "There will be an answer",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "WILL",
+          "start": 74.24,
+          "end": 75.63,
+          "type": "sign",
+          "file": "will.mp4"
+        },
+        {
+          "gloss": "ANSWER",
+          "start": 75.63,
+          "end": 77.02,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        74.304,
+        74.733,
+        75.163,
+        75.581,
+        76.011,
+        76.428,
+        76.846
+      ]
+    },
+    {
+      "line": 21,
+      "start": 78.8,
+      "end": 81.855,
+      "lyric": "Let it be",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 78.8,
+          "end": 79.818,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 79.818,
+          "end": 80.837,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 80.837,
+          "end": 81.855,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        78.971,
+        79.389,
+        79.807,
+        80.237,
+        80.713,
+        81.131,
+        81.548
+      ]
+    },
+    {
+      "line": 22,
+      "start": 81.855,
+      "end": 84.91,
+      "lyric": "Let it be, let it be",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 81.855,
+          "end": 82.873,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 82.873,
+          "end": 83.892,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 83.892,
+          "end": 84.91,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        81.966,
+        82.396,
+        82.826,
+        83.244,
+        83.673,
+        84.091,
+        84.497
+      ]
+    },
+    {
+      "line": 23,
+      "start": 84.91,
+      "end": 87.965,
+      "lyric": "Let it be, let it be",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 84.91,
+          "end": 85.928,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 85.928,
+          "end": 86.947,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 86.947,
+          "end": 87.965,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        84.915,
+        85.322,
+        85.751,
+        86.158,
+        86.587,
+        87.005,
+        87.423,
+        87.841
+      ]
+    },
+    {
+      "line": 24,
+      "start": 87.965,
+      "end": 91.02,
+      "lyric": "Yeah, there will be an answer",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "YES",
+          "start": 87.965,
+          "end": 88.983,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WILL",
+          "start": 88.983,
+          "end": 90.002,
+          "type": "sign",
+          "file": "will.mp4"
+        },
+        {
+          "gloss": "ANSWER",
+          "start": 90.002,
+          "end": 91.02,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        88.259,
+        88.665,
+        89.095,
+        89.501,
+        89.908,
+        90.337,
+        90.744
+      ]
+    },
+    {
+      "line": 25,
+      "start": 92.12,
+      "end": 95.12,
+      "lyric": "Let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 92.12,
+          "end": 93.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 93.12,
+          "end": 94.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 94.12,
+          "end": 95.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        92.415,
+        92.81,
+        93.217,
+        93.623,
+        94.076,
+        94.494,
+        94.9
+      ]
+    },
+    {
+      "line": 26,
+      "start": 95.12,
+      "end": 98.12,
+      "lyric": "Let it be, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 95.12,
+          "end": 96.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 96.12,
+          "end": 97.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 97.12,
+          "end": 98.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        95.33,
+        95.747,
+        96.165,
+        96.583,
+        96.99,
+        97.419,
+        97.837
+      ]
+    },
+    {
+      "line": 27,
+      "start": 98.12,
+      "end": 101.12,
+      "lyric": "Let it be, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 98.12,
+          "end": 99.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 99.12,
+          "end": 100.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 100.12,
+          "end": 101.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        98.255,
+        98.662,
+        99.091,
+        99.498,
+        99.915,
+        100.345,
+        100.763
+      ]
+    },
+    {
+      "line": 28,
+      "start": 101.12,
+      "end": 104.12,
+      "lyric": "Whisper words of wisdom",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "WHISPER",
+          "start": 101.12,
+          "end": 102.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WORDS",
+          "start": 102.12,
+          "end": 103.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WISDOM",
+          "start": 103.12,
+          "end": 104.12,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        101.181,
+        101.599,
+        102.017,
+        102.435,
+        102.841,
+        103.259,
+        103.665,
+        104.083
+      ]
+    },
+    {
+      "line": 29,
+      "start": 121.02,
+      "end": 126.02,
+      "lyric": "Let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 121.02,
+          "end": 122.687,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 122.687,
+          "end": 124.353,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 124.353,
+          "end": 126.02,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        121.429,
+        121.87,
+        122.276,
+        122.717,
+        123.135,
+        123.588,
+        124.018,
+        124.447,
+        124.877,
+        125.306,
+        125.736
+      ]
+    },
+    {
+      "line": 30,
+      "start": 126.02,
+      "end": 131.02,
+      "lyric": "Let it be, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 126.02,
+          "end": 126.853,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 126.853,
+          "end": 127.687,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 127.687,
+          "end": 128.52,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "LET",
+          "start": 128.52,
+          "end": 129.353,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 129.353,
+          "end": 130.187,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 130.187,
+          "end": 131.02,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        126.154,
+        126.584,
+        127.036,
+        127.466,
+        127.884,
+        128.313,
+        128.755,
+        129.184,
+        129.614,
+        130.032,
+        130.45,
+        130.879
+      ]
+    },
+    {
+      "line": 31,
+      "start": 131.02,
+      "end": 136.02,
+      "lyric": "Let it be, yeah, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 131.02,
+          "end": 131.853,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 131.853,
+          "end": 132.687,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 132.687,
+          "end": 133.52,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "YEAH",
+          "start": 133.52,
+          "end": 134.353,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "LET",
+          "start": 134.353,
+          "end": 135.187,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 135.187,
+          "end": 136.02,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        131.297,
+        131.75,
+        132.168,
+        132.598,
+        133.039,
+        133.48,
+        133.921,
+        134.327,
+        134.769,
+        135.187,
+        135.616
+      ]
+    },
+    {
+      "line": 32,
+      "start": 136.02,
+      "end": 141.02,
+      "lyric": "Whisper words of wisdom",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "WHISPER",
+          "start": 136.02,
+          "end": 137.687,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WORDS",
+          "start": 137.687,
+          "end": 139.353,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WISDOM",
+          "start": 139.353,
+          "end": 141.02,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        136.069,
+        136.499,
+        136.94,
+        137.369,
+        137.81,
+        138.24,
+        138.681,
+        139.122,
+        139.552,
+        139.97,
+        140.399,
+        140.841
+      ]
+    },
+    {
+      "line": 33,
+      "start": 146.86,
+      "end": 150.51,
+      "lyric": "Let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 146.86,
+          "end": 148.077,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 148.077,
+          "end": 149.293,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 149.293,
+          "end": 150.51,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        147.284,
+        147.725,
+        148.167,
+        148.596,
+        149.037,
+        149.49,
+        149.931,
+        150.396
+      ]
+    },
+    {
+      "line": 34,
+      "start": 150.51,
+      "end": 154.16,
+      "lyric": "And when the night is cloudy",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "NIGHT",
+          "start": 150.51,
+          "end": 151.727,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "CLOUDY",
+          "start": 151.727,
+          "end": 152.943,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WHEN",
+          "start": 152.943,
+          "end": 154.16,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        150.837,
+        151.278,
+        151.719,
+        152.172,
+        152.613,
+        153.054,
+        153.507,
+        153.948
+      ]
+    },
+    {
+      "line": 35,
+      "start": 155.16,
+      "end": 156.793,
+      "lyric": "There is still a light that shines on me",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "STILL",
+          "start": 155.16,
+          "end": 155.976,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            }
+          ]
+        },
+        {
+          "gloss": "LIGHT",
+          "start": 155.976,
+          "end": 156.793,
+          "type": "sign",
+          "file": "light.mp4"
+        }
+      ],
+      "beats": [
+        155.272,
+        155.701,
+        156.166,
+        156.607
+      ]
+    },
+    {
+      "line": 36,
+      "start": 156.793,
+      "end": 158.427,
+      "lyric": "Shine until tomorrow",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "SHINE",
+          "start": 156.793,
+          "end": 157.61,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "UNTIL",
+          "start": 157.61,
+          "end": 158.427,
+          "type": "sign",
+          "file": "until.mp4"
+        }
+      ],
+      "beats": [
+        157.06,
+        157.489,
+        157.942,
+        158.372
+      ]
+    },
+    {
+      "line": 37,
+      "start": 158.427,
+      "end": 160.06,
+      "lyric": "Let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 158.427,
+          "end": 159.243,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 159.243,
+          "end": 160.06,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        158.813,
+        159.242,
+        159.695
+      ]
+    },
+    {
+      "line": 38,
+      "start": 161.68,
+      "end": 165.41,
+      "lyric": "I wake up to the sound of music",
+      "mood": "joyful",
+      "tokens": [
+        {
+          "gloss": "I",
+          "start": 161.68,
+          "end": 162.612,
+          "type": "sign",
+          "file": "i.mp4"
+        },
+        {
+          "gloss": "WAKE-UP",
+          "start": 162.612,
+          "end": 163.545,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "k",
+              "file": "fs_k.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            }
+          ]
+        },
+        {
+          "gloss": "MUSIC",
+          "start": 163.545,
+          "end": 164.478,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            }
+          ]
+        },
+        {
+          "gloss": "SOUND",
+          "start": 164.478,
+          "end": 165.41,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        161.948,
+        162.389,
+        162.83,
+        163.271,
+        163.724,
+        164.142,
+        164.571,
+        165.013
+      ]
+    },
+    {
+      "line": 39,
+      "start": 165.41,
+      "end": 169.14,
+      "lyric": "Mother Mary comes to me",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "MOTHER",
+          "start": 165.41,
+          "end": 166.342,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "MARY",
+          "start": 166.342,
+          "end": 167.275,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        },
+        {
+          "gloss": "COME",
+          "start": 167.275,
+          "end": 168.207,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 168.207,
+          "end": 169.14,
+          "type": "sign",
+          "file": "me.mp4"
+        }
+      ],
+      "beats": [
+        165.442,
+        165.883,
+        166.325,
+        166.766,
+        167.195,
+        167.613,
+        168.078,
+        168.507,
+        168.948
+      ]
+    },
+    {
+      "line": 40,
+      "start": 169.7,
+      "end": 171.89,
+      "lyric": "Speaking words of wisdom",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "SPEAK",
+          "start": 169.7,
+          "end": 170.795,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "k",
+              "file": "fs_k.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WORDS",
+          "start": 170.795,
+          "end": 171.89,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        169.831,
+        170.26,
+        170.701,
+        171.119,
+        171.549
+      ]
+    },
+    {
+      "line": 41,
+      "start": 171.89,
+      "end": 174.08,
+      "lyric": "Let it be, yeah",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 171.89,
+          "end": 172.985,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 172.985,
+          "end": 174.08,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        171.99,
+        172.397,
+        172.826,
+        173.267,
+        173.72
+      ]
+    },
+    {
+      "line": 42,
+      "start": 176.62,
+      "end": 177.395,
+      "lyric": "Let it be, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 176.62,
+          "end": 177.395,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        176.797,
+        177.238
+      ]
+    },
+    {
+      "line": 43,
+      "start": 177.395,
+      "end": 178.17,
+      "lyric": "Let it be, yeah, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 177.395,
+          "end": 178.17,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        177.656,
+        178.109
+      ]
+    },
+    {
+      "line": 44,
+      "start": 178.17,
+      "end": 178.945,
+      "lyric": "Oh, there will be an answer",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "OH",
+          "start": 178.17,
+          "end": 178.945,
+          "type": "sign",
+          "file": "oh.mp4"
+        }
+      ],
+      "beats": [
+        178.527
+      ]
+    },
+    {
+      "line": 45,
+      "start": 178.945,
+      "end": 179.72,
+      "lyric": "Let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 178.945,
+          "end": 179.72,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        178.979,
+        179.409
+      ]
+    },
+    {
+      "line": 46,
+      "start": 179.72,
+      "end": 180.55,
+      "lyric": "Let it be, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 179.72,
+          "end": 180.55,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        179.804,
+        180.268
+      ]
+    },
+    {
+      "line": 47,
+      "start": 180.55,
+      "end": 181.38,
+      "lyric": "Let it be, yeah, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 180.55,
+          "end": 181.38,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        180.721,
+        181.15
+      ]
+    },
+    {
+      "line": 48,
+      "start": 181.38,
+      "end": 182.21,
+      "lyric": "Oh, there will be an answer",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "OH",
+          "start": 181.38,
+          "end": 182.21,
+          "type": "sign",
+          "file": "oh.mp4"
+        }
+      ],
+      "beats": [
+        181.568,
+        182.033
+      ]
+    },
+    {
+      "line": 49,
+      "start": 182.21,
+      "end": 183.04,
+      "lyric": "Let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 182.21,
+          "end": 183.04,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        182.462,
+        182.88
+      ]
+    },
+    {
+      "line": 50,
+      "start": 183.62,
+      "end": 188.06,
+      "lyric": "Let it be, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 183.62,
+          "end": 184.508,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 184.508,
+          "end": 185.396,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 185.396,
+          "end": 186.284,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "LET",
+          "start": 186.284,
+          "end": 187.172,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 187.172,
+          "end": 188.06,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        183.716,
+        184.157,
+        184.599,
+        185.028,
+        185.458,
+        185.911,
+        186.329,
+        186.758,
+        187.176,
+        187.629,
+        188.058
+      ]
+    },
+    {
+      "line": 51,
+      "start": 188.06,
+      "end": 190.64,
+      "lyric": "Let it be, yeah, let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 188.06,
+          "end": 188.92,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 188.92,
+          "end": 189.78,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 189.78,
+          "end": 190.64,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        188.488,
+        188.918,
+        189.347,
+        189.777,
+        190.195,
+        190.601
+      ]
+    },
+    {
+      "line": 52,
+      "start": 190.64,
+      "end": 193.22,
+      "lyric": "Whisper words of wisdom",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "WHISPER",
+          "start": 190.64,
+          "end": 191.5,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WORD",
+          "start": 191.5,
+          "end": 192.36,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WISDOM",
+          "start": 192.36,
+          "end": 193.22,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        191.042,
+        191.483,
+        191.913,
+        192.366,
+        192.807
+      ]
+    },
+    {
+      "line": 53,
+      "start": 193.22,
+      "end": 195.8,
+      "lyric": "Let it be",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "LET",
+          "start": 193.22,
+          "end": 194.08,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IT",
+          "start": 194.08,
+          "end": 194.94,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BE",
+          "start": 194.94,
+          "end": 195.8,
+          "type": "sign",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        193.248,
+        193.678,
+        194.119,
+        194.56,
+        195.001,
+        195.442
+      ]
+    }
+  ]
+}

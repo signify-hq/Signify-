@@ -263,24 +263,6 @@ export function AvatarDisplay({ token, beatPulse, moodGlow, moodBg, currentTime 
         overflow: 'hidden',
       }}
     >
-      {/* Logo watermark behind skeleton */}
-      <img
-        src="/logo.png"
-        alt=""
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -55%)',
-          width: 200,
-          height: 200,
-          objectFit: 'contain',
-          opacity: beatPulse ? 0.12 : 0.07,
-          pointerEvents: 'none',
-          transition: 'opacity 0.15s ease',
-          filter: 'saturate(0.6)',
-        }}
-      />
       {hasPose ? (
         <canvas
           ref={canvasRef}

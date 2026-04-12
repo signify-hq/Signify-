@@ -6,6 +6,9 @@ import { BeatVisualizer } from './components/BeatVisualizer'
 import { Controls } from './components/Controls'
 import { VrmAvatar, type PoseData } from './components/VrmAvatar'
 const VideoKalidokitTest = React.lazy(() => import('./components/VideoKalidokitTest').then(m => ({ default: m.VideoKalidokitTest })))
+const CreatePage = React.lazy(() => import('./components/CreatePage').then(m => ({ default: m.CreatePage })))
+import { LearningPage } from './components/LearningPage'
+import { logSong } from './learningStore'
 import { MOOD_COLORS } from './types'
 import type { Timeline } from './types'
 import './App.css'
@@ -498,7 +501,17 @@ function TestPage({ sign }: { sign: string }) {
 
 // Router component — no hooks, just delegates to the right page
 function App() {
-  const testSign = new URLSearchParams(window.location.search).get('test')
+  const params = new URLSearchParams(window.location.search)
+  const testSign = params.get('test')
+  const page = params.get('page')
+
+  if (page === 'create') {
+    return (
+      <Suspense fallback={<div style={{color:'#fff',padding:40}}>Loading Create...</div>}>
+        <CreatePage />
+      </Suspense>
+    )
+  }
   if (testSign === 'video') {
     return (
       <Suspense fallback={<div style={{color:'#fff',padding:40}}>Loading video test...</div>}>
@@ -507,14 +520,23 @@ function App() {
     )
   }
   if (testSign) return <TestPage sign={testSign} />
-  return <MainApp />
+  return <AppShell />
 }
 
-function MainApp() {
+function AppShell() {
+  const [page, setPage] = useState<'player' | 'learning'>('player')
+  if (page === 'learning') {
+    return <LearningPage onBack={() => setPage('player')} />
+  }
+  return <MainApp onShowLearning={() => setPage('learning')} />
+}
+
+function MainApp({ onShowLearning }: { onShowLearning: () => void }) {
   const [timeline, setTimeline] = useState<Timeline | null>(null)
   const [audioUrl, setAudioUrl] = useState<string>('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const songLoggedRef = useRef(false)
 
   // upload form state
   const [audioFile, setAudioFile] = useState<File | null>(null)
@@ -533,6 +555,21 @@ function MainApp() {
     pause,
     seek,
   } = usePlayer(timeline)
+
+  // Log song to history when it finishes (or when 90%+ is played)
+  useEffect(() => {
+    if (!timeline || songLoggedRef.current) return
+    const threshold = timeline.duration * 0.9
+    if (currentTime >= threshold && threshold > 0) {
+      songLoggedRef.current = true
+      logSong(title || 'Demo Song', artist || 'Unknown Artist', Math.round(timeline.duration))
+    }
+  }, [currentTime, timeline, title, artist])
+
+  // Reset log flag when a new song is loaded
+  useEffect(() => {
+    songLoggedRef.current = false
+  }, [timeline])
 
   const mood = currentSegment?.mood || 'tender'
   const colors = MOOD_COLORS[mood] || MOOD_COLORS.tender
@@ -563,13 +600,20 @@ function MainApp() {
   }
 
   // load pre-baked timeline for demo
-  async function loadDemo() {
+  async function loadDemo(song: 'ordinary' | 'let_it_be' = 'ordinary') {
     setLoading(true)
+    const file = song === 'let_it_be' ? 'let_it_be.mp3' : 'test.mp3'
+    const names = {
+      ordinary: { title: 'Ordinary', artist: 'Aries' },
+      let_it_be: { title: 'Let It Be', artist: 'The Beatles' },
+    }
     try {
-      const res = await fetch('/api/timeline/test.mp3')
+      const res = await fetch(`/api/timeline/${file}`)
       const data: Timeline = await res.json()
       setTimeline(data)
-      setAudioUrl('/api/audio/test.mp3')
+      setAudioUrl(`/api/audio/${file}`)
+      setTitle(names[song].title)
+      setArtist(names[song].artist)
     } catch {
       setError('Demo timeline not found. Run the backend first.')
     } finally {
@@ -611,9 +655,22 @@ function MainApp() {
           </button>
         </form>
 
-        <button className="demo-btn" onClick={loadDemo} disabled={loading}>
-          Load Demo Song
+        <div style={{ display: 'flex', gap: 10, marginTop: 4 }}>
+          <button className="demo-btn" onClick={() => loadDemo('ordinary')} disabled={loading} style={{ flex: 1 }}>
+            Ordinary — Aries
+          </button>
+          <button className="demo-btn" onClick={() => loadDemo('let_it_be')} disabled={loading} style={{ flex: 1 }}>
+            Let It Be — Beatles
+          </button>
+        </div>
+
+        <button className="demo-btn" onClick={onShowLearning} style={{ marginTop: 8 }}>
+          My Profile & Stats
         </button>
+
+        <a className="demo-btn" href="?page=create" style={{ marginTop: 8, display: 'inline-block', textDecoration: 'none', textAlign: 'center' }}>
+          Create — Sign with Webcam
+        </a>
 
         {error && <p className="error">{error}</p>}
       </div>
@@ -628,6 +685,65 @@ function MainApp() {
       }}
     >
       <audio ref={audioRef} src={audioUrl} />
+
+      <button
+        onClick={() => { pause(); setTimeline(null); setAudioUrl(''); }}
+        style={{
+          position: 'absolute',
+          top: 16,
+          left: 20,
+          zIndex: 10,
+          background: '#1e293b',
+          border: '1px solid #334155',
+          borderRadius: 999,
+          padding: '8px 16px',
+          color: '#94a3b8',
+          fontSize: 13,
+          fontWeight: 600,
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 6,
+        }}
+      >
+        <img src="/logo.png" alt="" style={{ width: 20, height: 20, objectFit: 'contain', opacity: 0.7 }} />
+        &larr; Back
+      </button>
+
+      <div style={{
+        position: 'absolute',
+        top: 16,
+        right: 20,
+        zIndex: 10,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+      }}>
+        {title && (
+          <div style={{ textAlign: 'right', lineHeight: 1.3 }}>
+            <div style={{ color: '#e2e8f0', fontSize: 13, fontWeight: 700 }}>{title}</div>
+            {artist && <div style={{ color: '#64748b', fontSize: 11 }}>{artist}</div>}
+          </div>
+        )}
+        <button
+          onClick={onShowLearning}
+          style={{
+            background: '#1e293b',
+            border: '1px solid #334155',
+            borderRadius: 999,
+            padding: '8px 16px',
+            color: '#94a3b8',
+            fontSize: 13,
+            fontWeight: 600,
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 6,
+          }}
+        >
+          <span style={{ fontSize: 16 }}>&#9733;</span> Profile
+        </button>
+      </div>
 
       <BeatVisualizer
         beatPulse={beatPulse}

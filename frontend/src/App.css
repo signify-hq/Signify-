@@ -224,6 +224,7 @@
   scrollbar-width: none;
   position: relative;
   z-index: 1;
+  background: linear-gradient(to bottom, transparent, rgba(10, 10, 10, 0.8) 15%, rgba(10, 10, 10, 0.9) 50%, rgba(10, 10, 10, 0.8) 85%, transparent);
 }
 .lyrics-display::-webkit-scrollbar {
   display: none;
