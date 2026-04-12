@@ -1,0 +1,578 @@
+======================================================================
+  SIGNIFY — PIPELINE OUTPUT REPORT
+  Song: Ordinary by Alex Warren
+  Tempo: 112.3 BPM | Duration: 191.611s
+  Total beats: 335 | Lyric segments: 44
+======================================================================
+
+--- Line 1 [7.7s - 12.4s] ---
+  Lyric:  They say, "The holy water's watered down
+  Mood:   dark
+  Beats:  8 in this segment
+  ASL:    THEY SAY HOLY WATER WATERED-DOWN
+  Signs:
+    [7.7s-8.7s] THEY -> they.mp4
+    [8.7s-9.6s] SAY -> say.mp4
+    [9.6s-10.5s] HOLY -> holy.mp4
+    [10.5s-11.4s] WATER -> fingerspell: water
+    [11.4s-12.4s] WATERED-DOWN -> fingerspell: watereddown
+
+--- Line 2 [12.4s - 17.0s] ---
+  Lyric:  And this town's lost its faith
+  Mood:   sad
+  Beats:  9 in this segment
+  ASL:    THIS TOWN LOSE FAITH
+  Signs:
+    [12.4s-13.5s] THIS -> this.mp4
+    [13.5s-14.7s] TOWN -> town.mp4
+    [14.7s-15.9s] LOSE -> lose.mp4
+    [15.9s-17.0s] FAITH -> fingerspell: faith
+
+--- Line 3 [17.0s - 21.7s] ---
+  Lyric:  Our colors will fade eventually"
+  Mood:   sad
+  Beats:  9 in this segment
+  ASL:    OUR COLOR FUTURE FADE EVENTUALLY
+  Signs:
+    [17.0s-18.0s] OUR -> our.mp4
+    [18.0s-18.9s] COLOR -> color.mp4
+    [18.9s-19.8s] FUTURE -> fingerspell: future
+    [19.8s-20.8s] FADE -> fingerspell: fade
+    [20.8s-21.7s] EVENTUALLY -> fingerspell: eventually
+
+--- Line 4 [21.7s - 26.4s] ---
+  Lyric:  So, if our time is runnin' out
+  Mood:   intense
+  Beats:  9 in this segment
+  ASL:    SO IF OUR TIME RUN-OUT
+  Signs:
+    [21.7s-22.6s] SO -> fingerspell: so
+    [22.6s-23.6s] IF -> if.mp4
+    [23.6s-24.5s] OUR -> our.mp4
+    [24.5s-25.4s] TIME -> time.mp4
+    [25.4s-26.4s] RUN-OUT -> fingerspell: runout
+
+--- Line 5 [26.4s - 31.6s] ---
+  Lyric:  Day after day
+  Mood:   tender
+  Beats:  9 in this segment
+  ASL:    DAY AFTER DAY
+  Signs:
+    [26.4s-28.1s] DAY -> day.mp4
+    [28.1s-29.8s] AFTER -> after.mp4
+    [29.8s-31.6s] DAY -> day.mp4
+
+--- Line 6 [31.6s - 36.8s] ---
+  Lyric:  We'll make the mundane our masterpiece
+  Mood:   hopeful
+  Beats:  10 in this segment
+  ASL:    WE FUTURE MAKE MUNDANE OUR MASTERPIECE
+  Signs:
+    [31.6s-32.4s] WE -> we.mp4
+    [32.4s-33.3s] FUTURE -> fingerspell: future
+    [33.3s-34.2s] MAKE -> make.mp4
+    [34.2s-35.0s] MUNDANE -> fingerspell: mundane
+    [35.0s-35.9s] OUR -> our.mp4
+    [35.9s-36.8s] MASTERPIECE -> fingerspell: masterpiece
+
+--- Line 7 [37.9s - 39.9s] ---
+  Lyric:  Oh, my, my
+  Mood:   tender
+  Beats:  4 in this segment
+  ASL:    OH MY MY
+  Signs:
+    [37.9s-38.5s] OH -> fingerspell: oh
+    [38.5s-39.2s] MY -> my.mp4
+    [39.2s-39.9s] MY -> my.mp4
+
+--- Line 8 [39.9s - 42.0s] ---
+  Lyric:  Oh, my, my love
+  Mood:   tender
+  Beats:  3 in this segment
+  ASL:    OH MY MY LOVE
+  Signs:
+    [39.9s-40.4s] OH -> fingerspell: oh
+    [40.4s-40.9s] MY -> my.mp4
+    [40.9s-41.5s] MY -> my.mp4
+    [41.5s-42.0s] LOVE -> love.mp4
+
+--- Line 9 [42.0s - 44.0s] ---
+  Lyric:  I take one look at you
+  Mood:   intense
+  Beats:  4 in this segment
+  ASL:    I LOOK-AT YOU ONE-TIME
+  Signs:
+    [42.0s-42.5s] I -> i.mp4
+    [42.5s-43.0s] LOOK-AT -> look-at.mp4
+    [43.0s-43.5s] YOU -> you.mp4
+    [43.5s-44.0s] ONE-TIME -> fingerspell: onetime
+
+--- Line 10 [44.0s - 46.1s] ---
+  Lyric:  You're takin' me out of the ordinary
+  Mood:   intense
+  Beats:  4 in this segment
+  ASL:    YOU TAKE ME OUT ORDINARY
+  Signs:
+    [44.0s-44.4s] YOU -> you.mp4
+    [44.4s-44.8s] TAKE -> take.mp4
+    [44.8s-45.3s] ME -> me.mp4
+    [45.3s-45.7s] OUT -> fingerspell: out
+    [45.7s-46.1s] ORDINARY -> fingerspell: ordinary
+
+--- Line 11 [47.1s - 48.8s] ---
+  Lyric:  I want you layin' me down 'til we're dead and buried
+  Mood:   dark
+  Beats:  3 in this segment
+  ASL:    I WANT YOU LAY-DOWN ME UNTIL WE DEAD BURY
+  Signs:
+    [47.1s-47.3s] I -> i.mp4
+    [47.3s-47.5s] WANT -> want.mp4
+    [47.5s-47.7s] YOU -> you.mp4
+    [47.7s-47.9s] LAY-DOWN -> fingerspell: laydown
+    [47.9s-48.1s] ME -> me.mp4
+    [48.1s-48.3s] UNTIL -> until.mp4
+    [48.3s-48.5s] WE -> we.mp4
+    [48.5s-48.7s] DEAD -> dead.mp4
+    [48.7s-48.8s] BURY -> fingerspell: bury
+
+--- Line 12 [48.8s - 50.5s] ---
+  Lyric:  On the edge of your knife, stayin' drunk on your vine
+  Mood:   dark
+  Beats:  3 in this segment
+  ASL:    ON EDGE YOUR KNIFE STAY DRUNK YOUR VINE
+  Signs:
+    [48.8s-49.1s] ON -> on.mp4
+    [49.1s-49.3s] EDGE -> fingerspell: edge
+    [49.3s-49.5s] YOUR -> fingerspell: your
+    [49.5s-49.7s] KNIFE -> knife.mp4
+    [49.7s-49.9s] STAY -> fingerspell: stay
+    [49.9s-50.1s] DRUNK -> drunk.mp4
+    [50.1s-50.3s] YOUR -> fingerspell: your
+    [50.3s-50.5s] VINE -> fingerspell: vine
+
+--- Line 13 [50.5s - 52.3s] ---
+  Lyric:  The angels up in the clouds are jealous knowin' we found
+  Mood:   intense
+  Beats:  4 in this segment
+  ASL:    ANGEL UP CLOUD JEALOUS KNOW WE FIND
+  Signs:
+    [50.5s-50.8s] ANGEL -> angel.mp4
+    [50.8s-51.0s] UP -> up.mp4
+    [51.0s-51.3s] CLOUD -> fingerspell: cloud
+    [51.3s-51.5s] JEALOUS -> jealous.mp4
+    [51.5s-51.8s] KNOW -> know.mp4
+    [51.8s-52.0s] WE -> we.mp4
+    [52.0s-52.3s] FIND -> find.mp4
+
+--- Line 14 [52.3s - 54.0s] ---
+  Lyric:  Somethin' so out of the ordinary
+  Mood:   intense
+  Beats:  3 in this segment
+  ASL:    SOMETHING SO OUT ORDINARY
+  Signs:
+    [52.3s-52.7s] SOMETHING -> something.mp4
+    [52.7s-53.1s] SO -> fingerspell: so
+    [53.1s-53.5s] OUT -> fingerspell: out
+    [53.5s-54.0s] ORDINARY -> fingerspell: ordinary
+
+--- Line 15 [55.0s - 58.4s] ---
+  Lyric:  You got me kissin' thе ground of your sanctuary
+  Mood:   intense
+  Beats:  6 in this segment
+  ASL:    YOU HAVE ME KISS GROUND YOUR SANCTUARY
+  Signs:
+    [55.0s-55.5s] YOU -> you.mp4
+    [55.5s-55.9s] HAVE -> have.mp4
+    [55.9s-56.4s] ME -> me.mp4
+    [56.4s-56.9s] KISS -> kiss.mp4
+    [56.9s-57.4s] GROUND -> fingerspell: ground
+    [57.4s-57.9s] YOUR -> fingerspell: your
+    [57.9s-58.4s] SANCTUARY -> fingerspell: sanctuary
+
+--- Line 16 [59.4s - 63.6s] ---
+  Lyric:  Shatter me with your touch, oh, Lord, return mе to dust
+  Mood:   dark
+  Beats:  8 in this segment
+  ASL:    SHATTER ME YOUR TOUCH OH LORD RETURN ME DUST
+  Signs:
+    [59.4s-59.9s] SHATTER -> fingerspell: shatter
+    [59.9s-60.4s] ME -> me.mp4
+    [60.4s-60.8s] YOUR -> fingerspell: your
+    [60.8s-61.3s] TOUCH -> touch.mp4
+    [61.3s-61.8s] OH -> fingerspell: oh
+    [61.8s-62.2s] LORD -> lord.mp4
+    [62.2s-62.7s] RETURN -> fingerspell: return
+    [62.7s-63.1s] ME -> me.mp4
+    [63.1s-63.6s] DUST -> fingerspell: dust
+
+--- Line 17 [64.6s - 69.2s] ---
+  Lyric:  The angels up in the clouds are jealous knowin' we found
+  Mood:   tender
+  Beats:  8 in this segment
+  ASL:    ANGEL CLOUD UP JEALOUS KNOW WE FIND
+  Signs:
+    [64.6s-65.3s] ANGEL -> angel.mp4
+    [65.3s-65.9s] CLOUD -> fingerspell: cloud
+    [65.9s-66.6s] UP -> up.mp4
+    [66.6s-67.2s] JEALOUS -> jealous.mp4
+    [67.2s-67.9s] KNOW -> know.mp4
+    [67.9s-68.6s] WE -> we.mp4
+    [68.6s-69.2s] FIND -> find.mp4
+
+--- Line 18 [70.2s - 71.2s] ---
+  Lyric:  Hopeless hallelujah
+  Mood:   sad
+  Beats:  2 in this segment
+  ASL:    HOPELESS HALLELUJAH
+  Signs:
+    [70.2s-70.7s] HOPELESS -> fingerspell: hopeless
+    [70.7s-71.2s] HALLELUJAH -> fingerspell: hallelujah
+
+--- Line 19 [71.2s - 72.2s] ---
+  Lyric:  On this side of Heaven's gate
+  Mood:   hopeful
+  Beats:  2 in this segment
+  ASL:    THIS SIDE HEAVEN GATE
+  Signs:
+    [71.2s-71.4s] THIS -> this.mp4
+    [71.4s-71.7s] SIDE -> side.mp4
+    [71.7s-71.9s] HEAVEN -> heaven.mp4
+    [71.9s-72.2s] GATE -> fingerspell: gate
+
+--- Line 20 [72.2s - 73.1s] ---
+  Lyric:  Oh, my life, how do ya
+  Mood:   tender
+  Beats:  2 in this segment
+  ASL:    OH MY LIFE HOW YOU
+  Signs:
+    [72.2s-72.3s] OH -> fingerspell: oh
+    [72.3s-72.5s] MY -> my.mp4
+    [72.5s-72.7s] LIFE -> fingerspell: life
+    [72.7s-72.9s] HOW -> how.mp4
+    [72.9s-73.1s] YOU -> you.mp4
+
+--- Line 21 [74.6s - 78.4s] ---
+  Lyric:  Breathe and take my breath away?
+  Mood:   intense
+  Beats:  7 in this segment
+  ASL:    BREATHE TAKE MY BREATH AWAY
+  Signs:
+    [74.6s-75.4s] BREATHE -> breathe.mp4
+    [75.4s-76.1s] TAKE -> take.mp4
+    [76.1s-76.9s] MY -> my.mp4
+    [76.9s-77.6s] BREATH -> fingerspell: breath
+    [77.6s-78.4s] AWAY -> away.mp4
+
+--- Line 22 [78.9s - 82.8s] ---
+  Lyric:  At your altar, I will pray
+  Mood:   tender
+  Beats:  8 in this segment
+  ASL:    YOUR ALTAR I WILL PRAY
+  Signs:
+    [78.9s-79.7s] YOUR -> fingerspell: your
+    [79.7s-80.5s] ALTAR -> fingerspell: altar
+    [80.5s-81.3s] I -> i.mp4
+    [81.3s-82.0s] WILL -> will.mp4
+    [82.0s-82.8s] PRAY -> pray.mp4
+
+--- Line 23 [82.8s - 86.7s] ---
+  Lyric:  You're the sculptor, I'm the clay
+  Mood:   tender
+  Beats:  7 in this segment
+  ASL:    YOU SCULPTOR I CLAY
+  Signs:
+    [82.8s-83.8s] YOU -> you.mp4
+    [83.8s-84.8s] SCULPTOR -> fingerspell: sculptor
+    [84.8s-85.7s] I -> i.mp4
+    [85.7s-86.7s] CLAY -> fingerspell: clay
+
+--- Line 24 [88.2s - 90.2s] ---
+  Lyric:  Oh, my, my
+  Mood:   tender
+  Beats:  3 in this segment
+  ASL:    OH MY MY
+  Signs:
+    [88.2s-88.9s] OH -> fingerspell: oh
+    [88.9s-89.5s] MY -> my.mp4
+    [89.5s-90.2s] MY -> my.mp4
+
+--- Line 25 [90.2s - 92.2s] ---
+  Lyric:  You're takin' me out of the ordinary
+  Mood:   intense
+  Beats:  4 in this segment
+  ASL:    YOU TAKE ME OUT ORDINARY
+  Signs:
+    [90.2s-90.6s] YOU -> you.mp4
+    [90.6s-91.0s] TAKE -> take.mp4
+    [91.0s-91.4s] ME -> me.mp4
+    [91.4s-91.8s] OUT -> fingerspell: out
+    [91.8s-92.2s] ORDINARY -> fingerspell: ordinary
+
+--- Line 26 [92.7s - 96.8s] ---
+  Lyric:  I want you layin' me down 'til we're dead and buried
+  Mood:   dark
+  Beats:  8 in this segment
+  ASL:    I WANT YOU LAY ME DOWN UNTIL WE DEAD BURIED
+  Signs:
+    [92.7s-93.1s] I -> i.mp4
+    [93.1s-93.5s] WANT -> want.mp4
+    [93.5s-94.0s] YOU -> you.mp4
+    [94.0s-94.4s] LAY -> fingerspell: lay
+    [94.4s-94.8s] ME -> me.mp4
+    [94.8s-95.2s] DOWN -> down.mp4
+    [95.2s-95.6s] UNTIL -> until.mp4
+    [95.6s-96.0s] WE -> we.mp4
+    [96.0s-96.4s] DEAD -> dead.mp4
+    [96.4s-96.8s] BURIED -> fingerspell: buried
+
+--- Line 27 [98.0s - 106.1s] ---
+  Lyric:  On the edge of your knife, stayin' drunk on your vine
+  Mood:   intense
+  Beats:  15 in this segment
+  ASL:    ON EDGE YOUR KNIFE STAY DRUNK YOUR VINE
+  Signs:
+    [98.0s-99.0s] ON -> on.mp4
+    [99.0s-100.0s] EDGE -> fingerspell: edge
+    [100.0s-101.1s] YOUR -> fingerspell: your
+    [101.1s-102.1s] KNIFE -> knife.mp4
+    [102.1s-103.1s] STAY -> fingerspell: stay
+    [103.1s-104.1s] DRUNK -> drunk.mp4
+    [104.1s-105.1s] YOUR -> fingerspell: your
+    [105.1s-106.1s] VINE -> fingerspell: vine
+
+--- Line 28 [107.3s - 110.6s] ---
+  Lyric:  The angels up in the clouds are jealous knowin' we found
+  Mood:   intense
+  Beats:  7 in this segment
+  ASL:    ANGELS UP CLOUDS JEALOUS KNOW WE FOUND
+  Signs:
+    [107.3s-107.8s] ANGELS -> angel.mp4
+    [107.8s-108.3s] UP -> up.mp4
+    [108.3s-108.7s] CLOUDS -> fingerspell: clouds
+    [108.7s-109.2s] JEALOUS -> jealous.mp4
+    [109.2s-109.7s] KNOW -> know.mp4
+    [109.7s-110.2s] WE -> we.mp4
+    [110.2s-110.6s] FOUND -> fingerspell: found
+
+--- Line 29 [110.6s - 113.9s] ---
+  Lyric:  Somethin' so out (Out) of the ordinary (Ordinary)
+  Mood:   intense
+  Beats:  6 in this segment
+  ASL:    SOMETHING SO OUT ORDINARY
+  Signs:
+    [110.6s-111.4s] SOMETHING -> something.mp4
+    [111.4s-112.3s] SO -> fingerspell: so
+    [112.3s-113.1s] OUT -> fingerspell: out
+    [113.1s-113.9s] ORDINARY -> fingerspell: ordinary
+
+--- Line 30 [115.4s - 118.3s] ---
+  Lyric:  You got me kissing the ground (Ground) of your sanctuary (Sanctuary)
+  Mood:   intense
+  Beats:  6 in this segment
+  ASL:    YOU HAVE ME KISS GROUND YOUR SANCTUARY
+  Signs:
+    [115.4s-115.8s] YOU -> you.mp4
+    [115.8s-116.2s] HAVE -> have.mp4
+    [116.2s-116.6s] ME -> me.mp4
+    [116.6s-117.1s] KISS -> kiss.mp4
+    [117.1s-117.5s] GROUND -> fingerspell: ground
+    [117.5s-117.9s] YOUR -> fingerspell: your
+    [117.9s-118.3s] SANCTUARY -> fingerspell: sanctuary
+
+--- Line 31 [118.3s - 123.4s] ---
+  Lyric:  Shatter me with your touch, oh, Lord, return me to dust
+  Mood:   intense
+  Beats:  10 in this segment
+  ASL:    SHATTER ME YOUR TOUCH OH LORD RETURN ME DUST
+  Signs:
+    [118.3s-118.9s] SHATTER -> fingerspell: shatter
+    [118.9s-119.5s] ME -> me.mp4
+    [119.5s-120.0s] YOUR -> fingerspell: your
+    [120.0s-120.6s] TOUCH -> touch.mp4
+    [120.6s-121.2s] OH -> fingerspell: oh
+    [121.2s-121.7s] LORD -> lord.mp4
+    [121.7s-122.3s] RETURN -> fingerspell: return
+    [122.3s-122.9s] ME -> me.mp4
+    [122.9s-123.4s] DUST -> fingerspell: dust
+
+--- Line 32 [124.4s - 128.9s] ---
+  Lyric:  The angels up in the clouds are jealous knowin' we found
+  Mood:   intense
+  Beats:  9 in this segment
+  ASL:    ANGELS UP CLOUDS JEALOUS KNOW WE FOUND
+  Signs:
+    [124.4s-125.1s] ANGELS -> angel.mp4
+    [125.1s-125.7s] UP -> up.mp4
+    [125.7s-126.3s] CLOUDS -> fingerspell: clouds
+    [126.3s-127.0s] JEALOUS -> jealous.mp4
+    [127.0s-127.6s] KNOW -> know.mp4
+    [127.6s-128.2s] WE -> we.mp4
+    [128.2s-128.9s] FOUND -> fingerspell: found
+
+--- Line 33 [129.7s - 132.5s] ---
+  Lyric:  Somethin' so heavenly, higher than ecstasy
+  Mood:   joyful
+  Beats:  6 in this segment
+  ASL:    SOMETHING SO HEAVENLY HIGHER THAN ECSTASY
+  Signs:
+    [129.7s-130.2s] SOMETHING -> something.mp4
+    [130.2s-130.6s] SO -> fingerspell: so
+    [130.6s-131.1s] HEAVENLY -> heaven.mp4
+    [131.1s-131.6s] HIGHER -> fingerspell: higher
+    [131.6s-132.1s] THAN -> than.mp4
+    [132.1s-132.5s] ECSTASY -> fingerspell: ecstasy
+
+--- Line 34 [132.5s - 135.4s] ---
+  Lyric:  Whenever you're next to me, oh, my, my
+  Mood:   tender
+  Beats:  5 in this segment
+  ASL:    WHENEVER YOU NEXT-TO ME OH MY MY
+  Signs:
+    [132.5s-132.9s] WHENEVER -> fingerspell: whenever
+    [132.9s-133.4s] YOU -> you.mp4
+    [133.4s-133.8s] NEXT-TO -> fingerspell: nextto
+    [133.8s-134.2s] ME -> me.mp4
+    [134.2s-134.6s] OH -> fingerspell: oh
+    [134.6s-135.0s] MY -> my.mp4
+    [135.0s-135.4s] MY -> my.mp4
+
+--- Line 35 [135.4s - 138.9s] ---
+  Lyric:  World was in black and white until I saw your light
+  Mood:   hopeful
+  Beats:  6 in this segment
+  ASL:    WORLD BLACK WHITE UNTIL I SEE YOUR LIGHT
+  Signs:
+    [135.4s-135.8s] WORLD -> fingerspell: world
+    [135.8s-136.3s] BLACK -> black.mp4
+    [136.3s-136.7s] WHITE -> white.mp4
+    [136.7s-137.2s] UNTIL -> until.mp4
+    [137.2s-137.6s] I -> i.mp4
+    [137.6s-138.0s] SEE -> see.mp4
+    [138.0s-138.5s] YOUR -> fingerspell: your
+    [138.5s-138.9s] LIGHT -> light.mp4
+
+--- Line 36 [138.9s - 142.4s] ---
+  Lyric:  I thought you had to die to find
+  Mood:   dark
+  Beats:  7 in this segment
+  ASL:    I THINK YOU MUST DIE FOR FIND
+  Signs:
+    [138.9s-139.4s] I -> i.mp4
+    [139.4s-139.9s] THINK -> think.mp4
+    [139.9s-140.4s] YOU -> you.mp4
+    [140.4s-140.9s] MUST -> must.mp4
+    [140.9s-141.4s] DIE -> die.mp4
+    [141.4s-141.9s] FOR -> for.mp4
+    [141.9s-142.4s] FIND -> find.mp4
+
+--- Line 37 [142.7s - 144.8s] ---
+  Lyric:  Somethin' so out of the ordinary
+  Mood:   intense
+  Beats:  5 in this segment
+  ASL:    SOMETHING SO OUT ORDINARY
+  Signs:
+    [142.7s-143.2s] SOMETHING -> something.mp4
+    [143.2s-143.7s] SO -> fingerspell: so
+    [143.7s-144.3s] OUT -> fingerspell: out
+    [144.3s-144.8s] ORDINARY -> fingerspell: ordinary
+
+--- Line 38 [144.8s - 147.0s] ---
+  Lyric:  I want you laying me down 'til we're dead and buried
+  Mood:   intense
+  Beats:  3 in this segment
+  ASL:    I WANT YOU LAY ME DOWN UNTIL WE DEAD BURIED
+  Signs:
+    [144.8s-145.0s] I -> i.mp4
+    [145.0s-145.3s] WANT -> want.mp4
+    [145.3s-145.5s] YOU -> you.mp4
+    [145.5s-145.7s] LAY -> fingerspell: lay
+    [145.7s-145.9s] ME -> me.mp4
+    [145.9s-146.1s] DOWN -> down.mp4
+    [146.1s-146.3s] UNTIL -> until.mp4
+    [146.3s-146.5s] WE -> we.mp4
+    [146.5s-146.8s] DEAD -> dead.mp4
+    [146.8s-147.0s] BURIED -> fingerspell: buried
+
+--- Line 39 [147.3s - 147.8s] ---
+  Lyric:  On the edge of your knife, stayin' drunk on your vine
+  Mood:   dark
+  Beats:  1 in this segment
+  ASL:    ON EDGE YOUR KNIFE STAY DRUNK YOUR VINE
+  Signs:
+    [147.3s-147.4s] ON -> on.mp4
+    [147.4s-147.4s] EDGE -> fingerspell: edge
+    [147.4s-147.5s] YOUR -> fingerspell: your
+    [147.5s-147.6s] KNIFE -> knife.mp4
+    [147.6s-147.6s] STAY -> fingerspell: stay
+    [147.6s-147.7s] DRUNK -> drunk.mp4
+    [147.7s-147.7s] YOUR -> fingerspell: your
+    [147.7s-147.8s] VINE -> fingerspell: vine
+
+--- Line 40 [147.8s - 148.3s] ---
+  Lyric:  The angels up in the clouds are jealous knowin' we found
+  Mood:   joyful
+  Beats:  1 in this segment
+  ASL:    ANGELS UP CLOUDS JEALOUS KNOW WE FOUND
+  Signs:
+    [147.8s-147.9s] ANGELS -> angel.mp4
+    [147.9s-147.9s] UP -> up.mp4
+    [147.9s-148.0s] CLOUDS -> fingerspell: clouds
+    [148.0s-148.1s] JEALOUS -> jealous.mp4
+    [148.1s-148.2s] KNOW -> know.mp4
+    [148.2s-148.2s] WE -> we.mp4
+    [148.2s-148.3s] FOUND -> fingerspell: found
+
+--- Line 41 [149.2s - 152.0s] ---
+  Lyric:  Somethin' so out (Out) of the ordinary
+  Mood:   intense
+  Beats:  5 in this segment
+  ASL:    SOMETHING SO OUT ORDINARY
+  Signs:
+    [149.2s-149.9s] SOMETHING -> something.mp4
+    [149.9s-150.6s] SO -> fingerspell: so
+    [150.6s-151.3s] OUT -> fingerspell: out
+    [151.3s-152.0s] ORDINARY -> fingerspell: ordinary
+
+--- Line 42 [152.0s - 154.8s] ---
+  Lyric:  You got me kissing the ground (Ground) of your sanctuary (Sanctuary)
+  Mood:   tender
+  Beats:  5 in this segment
+  ASL:    YOU MAKE ME KISS GROUND YOUR SANCTUARY
+  Signs:
+    [152.0s-152.4s] YOU -> you.mp4
+    [152.4s-152.8s] MAKE -> make.mp4
+    [152.8s-153.2s] ME -> me.mp4
+    [153.2s-153.6s] KISS -> kiss.mp4
+    [153.6s-154.0s] GROUND -> fingerspell: ground
+    [154.0s-154.4s] YOUR -> fingerspell: your
+    [154.4s-154.8s] SANCTUARY -> fingerspell: sanctuary
+
+--- Line 43 [154.8s - 157.7s] ---
+  Lyric:  Shatter me with your touch, oh, Lord, return me to dust
+  Mood:   intense
+  Beats:  5 in this segment
+  ASL:    SHATTER ME YOUR TOUCH OH LORD RETURN ME DUST
+  Signs:
+    [154.8s-155.2s] SHATTER -> fingerspell: shatter
+    [155.2s-155.5s] ME -> me.mp4
+    [155.5s-155.8s] YOUR -> fingerspell: your
+    [155.8s-156.1s] TOUCH -> touch.mp4
+    [156.1s-156.4s] OH -> fingerspell: oh
+    [156.4s-156.7s] LORD -> lord.mp4
+    [156.7s-157.0s] RETURN -> fingerspell: return
+    [157.0s-157.4s] ME -> me.mp4
+    [157.4s-157.7s] DUST -> fingerspell: dust
+
+--- Line 44 [158.7s - 165.4s] ---
+  Lyric:  The angels up in the clouds are jealous knowin' we found
+  Mood:   joyful
+  Beats:  13 in this segment
+  ASL:    ANGELS UP CLOUDS JEALOUS KNOW WE FOUND
+  Signs:
+    [158.7s-159.7s] ANGELS -> angel.mp4
+    [159.7s-160.6s] UP -> up.mp4
+    [160.6s-161.6s] CLOUDS -> fingerspell: clouds
+    [161.6s-162.5s] JEALOUS -> jealous.mp4
+    [162.5s-163.5s] KNOW -> know.mp4
+    [163.5s-164.4s] WE -> we.mp4
+    [164.4s-165.4s] FOUND -> fingerspell: found
