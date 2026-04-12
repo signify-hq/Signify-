@@ -1,26 +1,31 @@
-import { useRef, useEffect, useState, Component, type ReactNode } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import type { Token } from '../types'
-import { VrmAvatar, type PoseData } from './VrmAvatar'
 
-// MediaPipe Holistic pose landmark connections for body
-const POSE_CONNECTIONS = [
-  [11, 12], // shoulders
-  [11, 13], [13, 15], // left arm
-  [12, 14], [14, 16], // right arm
-  [11, 23], [12, 24], // torso
-  [23, 24], // hips
+// MediaPipe landmark connections
+const BODY_CONNECTIONS = [
+  [11, 12], [11, 13], [13, 15], [12, 14], [14, 16],
+  [11, 23], [12, 24], [23, 24],
 ]
-
-// Hand connections
 const HAND_CONNECTIONS = [
-  [0, 1], [1, 2], [2, 3], [3, 4],       // thumb
-  [0, 5], [5, 6], [6, 7], [7, 8],       // index
-  [0, 9], [9, 10], [10, 11], [11, 12],  // middle
-  [0, 13], [13, 14], [14, 15], [15, 16], // ring
-  [0, 17], [17, 18], [18, 19], [19, 20], // pinky
-  [5, 9], [9, 13], [13, 17],            // palm
+  [0, 1], [1, 2], [2, 3], [3, 4],
+  [0, 5], [5, 6], [6, 7], [7, 8],
+  [0, 9], [9, 10], [10, 11], [11, 12],
+  [0, 13], [13, 14], [14, 15], [15, 16],
+  [0, 17], [17, 18], [18, 19], [19, 20],
+  [5, 9], [9, 13], [13, 17],
 ]
 
+interface PoseFrame {
+  pose: number[][]
+  left_hand: number[][]
+  right_hand: number[][]
+}
+interface PoseData {
+  fps: number
+  width: number
+  height: number
+  frames: PoseFrame[]
+}
 interface Props {
   token: Token | null
   beatPulse: boolean
@@ -30,84 +35,72 @@ interface Props {
 }
 
 // ---------------------------------------------------------------------------
-// Pose cache & loader
+// Pose cache
 // ---------------------------------------------------------------------------
 
 const poseCache: Record<string, PoseData | null> = {}
 
 async function loadPose(gloss: string): Promise<PoseData | null> {
-  const key = gloss.toLowerCase().replace(/s$/, '')
+  const key = gloss.toLowerCase()
   if (key in poseCache) return poseCache[key]
-
   try {
-    const res = await fetch(`/api/pose/${key}`)
-    if (!res.ok) {
-      poseCache[key] = null
-      return null
+    // Try exact match first
+    let res = await fetch(`/api/pose/${key}`)
+    // If not found and ends with 's', try without trailing 's' (plural → singular)
+    if (!res.ok && key.endsWith('s') && key.length > 2) {
+      const singular = key.slice(0, -1)
+      res = await fetch(`/api/pose/${singular}`)
+      if (res.ok) {
+        const data = await res.json()
+        poseCache[key] = data
+        return data
+      }
     }
+    if (!res.ok) { poseCache[key] = null; return null }
     const data = await res.json()
     poseCache[key] = data
     return data
-  } catch {
-    poseCache[key] = null
-    return null
-  }
+  } catch { poseCache[key] = null; return null }
 }
 
 // ---------------------------------------------------------------------------
-// Error boundary — catches VRM/Three.js crashes, triggers fallback
+// Drawing
 // ---------------------------------------------------------------------------
 
-class VrmErrorBoundary extends Component<
-  { children: ReactNode; onError: (err: string) => void },
-  { hasError: boolean; errorMsg: string }
-> {
-  state = { hasError: false, errorMsg: '' }
-  static getDerivedStateFromError(err: Error) {
-    return { hasError: true, errorMsg: err.message }
-  }
-  componentDidCatch(err: Error) {
-    console.error('VRM CRASH:', err)
-    this.props.onError(err.message)
-  }
-  render() {
-    if (this.state.hasError) {
-      return <div style={{ color: '#f66', fontSize: 10, padding: 8, fontFamily: 'monospace', wordBreak: 'break-all' }}>VRM CRASH: {this.state.errorMsg}</div>
-    }
-    return this.props.children
-  }
-}
-
-// ---------------------------------------------------------------------------
-// Stick-figure canvas fallback
-// ---------------------------------------------------------------------------
-
-function drawSkeleton(
+function drawFrame(
   ctx: CanvasRenderingContext2D,
-  frame: { pose: number[][]; left_hand: number[][]; right_hand: number[][] },
+  frame: PoseFrame,
   srcW: number,
   srcH: number,
-  canvasW: number,
-  canvasH: number,
+  cW: number,
+  cH: number,
   color: string,
+  glowColor: string,
+  pulse: boolean,
 ) {
-  const scaleX = canvasW / srcW
-  const scaleY = canvasH / srcH
-  const scale = Math.min(scaleX, scaleY) * 0.8
-  const offsetX = (canvasW - srcW * scale) / 2
-  const offsetY = (canvasH - srcH * scale) / 2 + 20
+  ctx.clearRect(0, 0, cW, cH)
 
-  function tx(x: number, y: number): [number, number] {
-    return [x * scale + offsetX, y * scale + offsetY]
-  }
+  // Scale & center
+  const sc = Math.min(cW / srcW, cH / srcH) * 0.75
+  const ox = (cW - srcW * sc) / 2
+  const oy = (cH - srcH * sc) / 2 + 20
 
+  // Body landmarks are in pixel coords, hand landmarks are normalized 0-1
+  const tx = (x: number, y: number): [number, number] => [x * sc + ox, y * sc + oy]
+  const txHand = (x: number, y: number): [number, number] => [x * srcW * sc + ox, y * srcH * sc + oy]
+
+  // Glow effect
+  ctx.shadowColor = glowColor
+  ctx.shadowBlur = pulse ? 25 : 12
+
+  // Body connections — thick rounded lines
   ctx.strokeStyle = color
-  ctx.lineWidth = 3
+  ctx.lineWidth = pulse ? 5 : 4
   ctx.lineCap = 'round'
-  for (const [a, b] of POSE_CONNECTIONS) {
-    const pa = frame.pose[a]
-    const pb = frame.pose[b]
-    if (!pa || !pb || (pa[3] < 0.3 && pb[3] < 0.3)) continue
+  ctx.lineJoin = 'round'
+  for (const [a, b] of BODY_CONNECTIONS) {
+    const pa = frame.pose[a], pb = frame.pose[b]
+    if (!pa || !pb) continue
     const [x1, y1] = tx(pa[0], pa[1])
     const [x2, y2] = tx(pb[0], pb[1])
     ctx.beginPath()
@@ -116,153 +109,200 @@ function drawSkeleton(
     ctx.stroke()
   }
 
+  // Body joints
   ctx.fillStyle = color
   for (let i = 11; i <= 24; i++) {
     const p = frame.pose[i]
-    if (!p || p[3] < 0.3) continue
+    if (!p) continue
     const [x, y] = tx(p[0], p[1])
     ctx.beginPath()
-    ctx.arc(x, y, 4, 0, Math.PI * 2)
+    ctx.arc(x, y, pulse ? 6 : 5, 0, Math.PI * 2)
     ctx.fill()
   }
 
+  // Head circle
   const nose = frame.pose[0]
-  if (nose && nose[3] > 0.3) {
+  if (nose) {
     const [hx, hy] = tx(nose[0], nose[1])
     ctx.beginPath()
-    ctx.arc(hx, hy - 15, 25, 0, Math.PI * 2)
-    ctx.strokeStyle = color
+    ctx.arc(hx, hy - 18, 28, 0, Math.PI * 2)
     ctx.lineWidth = 3
+    ctx.strokeStyle = color
     ctx.stroke()
   }
 
-  function drawHand(landmarks: number[][]) {
-    ctx.strokeStyle = color
-    ctx.lineWidth = 2
+  // Hands — detailed with all 21 landmarks
+  ctx.shadowBlur = pulse ? 18 : 8
+
+  const drawHand = (landmarks: number[][], handColor: string) => {
+    if (!landmarks || landmarks.length < 21) return
+    const allZero = landmarks.every(lm => lm[0] === 0 && lm[1] === 0)
+    if (allZero) return
+
+    // Connections
+    ctx.strokeStyle = handColor
+    ctx.lineWidth = pulse ? 3 : 2.5
     for (const [a, b] of HAND_CONNECTIONS) {
-      const pa = landmarks[a]
-      const pb = landmarks[b]
-      if (!pa || !pb || (pa[0] === 0 && pa[1] === 0)) continue
-      const [x1, y1] = tx(pa[0], pa[1])
-      const [x2, y2] = tx(pb[0], pb[1])
+      const pa = landmarks[a], pb = landmarks[b]
+      if (!pa || !pb) continue
+      const [x1, y1] = txHand(pa[0], pa[1])
+      const [x2, y2] = txHand(pb[0], pb[1])
       ctx.beginPath()
       ctx.moveTo(x1, y1)
       ctx.lineTo(x2, y2)
       ctx.stroke()
     }
-    ctx.fillStyle = color
+
+    // Joints
+    ctx.fillStyle = handColor
     for (const p of landmarks) {
-      if (!p || (p[0] === 0 && p[1] === 0)) continue
-      const [x, y] = tx(p[0], p[1])
+      if (!p) continue
+      const [x, y] = txHand(p[0], p[1])
       ctx.beginPath()
-      ctx.arc(x, y, 2.5, 0, Math.PI * 2)
+      ctx.arc(x, y, pulse ? 3.5 : 3, 0, Math.PI * 2)
+      ctx.fill()
+    }
+
+    // Fingertips — brighter dots
+    ctx.fillStyle = '#fff'
+    for (const tip of [4, 8, 12, 16, 20]) {
+      const p = landmarks[tip]
+      if (!p) continue
+      const [x, y] = txHand(p[0], p[1])
+      ctx.beginPath()
+      ctx.arc(x, y, 2, 0, Math.PI * 2)
       ctx.fill()
     }
   }
 
-  drawHand(frame.left_hand)
-  drawHand(frame.right_hand)
+  drawHand(frame.left_hand, glowColor)
+  drawHand(frame.right_hand, glowColor)
+
+  // Reset shadow
+  ctx.shadowBlur = 0
+  ctx.shadowColor = 'transparent'
 }
 
-function StickFigure({
-  poseData,
-  token,
-  moodGlow,
-}: {
-  poseData: PoseData
-  token: Token
-  moodGlow: string
-}) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animRef = useRef<number>(0)
+// ---------------------------------------------------------------------------
+// Component
+// ---------------------------------------------------------------------------
 
+export function AvatarDisplay({ token, beatPulse, moodGlow, moodBg, currentTime }: Props) {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [poseData, setPoseData] = useState<PoseData | null>(null)
+  const [gloss, setGloss] = useState('')
+  const animRef = useRef<number>(0)
+  const frameRef = useRef(0)
+  const tokenStartRef = useRef(0)
+
+  // Load pose data when token changes
   useEffect(() => {
-    if (!canvasRef.current) return
+    if (!token || token.type !== 'sign') {
+      setPoseData(null)
+      setGloss(token?.gloss || '')
+      return
+    }
+    setGloss(token.gloss)
+    tokenStartRef.current = token.start
+    frameRef.current = 0
+    loadPose(token.gloss).then(setPoseData)
+  }, [token?.gloss, token?.start])
+
+  // Animation loop
+  useEffect(() => {
+    if (!poseData || !canvasRef.current) return
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    let frame = 0
-    const totalFrames = poseData.frames.length
-    const tokenMs = Math.max(100, (token.end - token.start) * 1000)
-    const interval = Math.max(16, tokenMs / totalFrames)
+    const total = poseData.frames.length
+    const tokenDur = token ? Math.max(0.1, token.end - token.start) : 1
+    const interval = Math.max(16, (tokenDur * 1000) / total)
 
     function render() {
-      if (!ctx) return
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      drawSkeleton(
-        ctx,
-        poseData.frames[frame % totalFrames],
-        poseData.width,
-        poseData.height,
-        canvas.width,
-        canvas.height,
-        moodGlow,
-      )
-      frame++
+      if (!ctx || !poseData) return
+      const f = poseData.frames[frameRef.current % total]
+      drawFrame(ctx, f, poseData.width, poseData.height, canvas.width, canvas.height, moodGlow, moodGlow, beatPulse)
+      frameRef.current++
       animRef.current = window.setTimeout(render, interval)
     }
 
     render()
     return () => clearTimeout(animRef.current)
-  }, [poseData, moodGlow, token.gloss, token.start])
+  }, [poseData, moodGlow, beatPulse, token?.start])
 
-  return <canvas ref={canvasRef} className="avatar-canvas" width={160} height={280} />
-}
-
-// ---------------------------------------------------------------------------
-// DEBUG: side-by-side skeleton + VRM, single sign looping
-// ---------------------------------------------------------------------------
-
-const TEST_SIGN = 'make' // big arm motion (88° Z-range)
-const LOOP_DURATION = 3  // seconds per loop
-
-function LoopingVrm({ poseData, moodGlow }: { poseData: PoseData; moodGlow: string }) {
-  return (
-    <VrmAvatar
-      poseData={poseData}
-      tokenStart={0}
-      tokenEnd={LOOP_DURATION}
-      currentTime={0}
-      moodGlow={moodGlow}
-    />
-  )
-}
-
-export function AvatarDisplay({ token: _token, beatPulse, moodGlow, moodBg, currentTime: _ct }: Props) {
-  const [poseData, setPoseData] = useState<PoseData | null>(null)
-  const [vrmError, setVrmError] = useState('')
-
-  useEffect(() => {
-    loadPose(TEST_SIGN).then((data) => setPoseData(data))
-  }, [])
+  // Fingerspell fallback
+  if (token?.type === 'fingerspell') {
+    return (
+      <div className="sign-display" style={{ boxShadow: `0 0 30px ${moodGlow}44` }}>
+        <div className="fingerspell">
+          {token.letters?.map((l, i) => (
+            <div key={i} className="fingerspell-letter" style={{ borderColor: moodGlow }}>
+              {l.letter}
+            </div>
+          ))}
+        </div>
+        <div className="sign-gloss" style={{ color: moodGlow }}>
+          {token.gloss.toUpperCase()}
+        </div>
+      </div>
+    )
+  }
 
   const hasPose = poseData && poseData.frames.length > 0
-  const fakeToken = { gloss: TEST_SIGN, start: 0, end: LOOP_DURATION, type: 'sign' as const } as any
 
   return (
     <div
       className="sign-display"
-      style={{ boxShadow: beatPulse ? `0 0 60px ${moodGlow}` : `0 0 20px ${moodGlow}44` }}
+      style={{
+        boxShadow: beatPulse
+          ? `0 0 60px ${moodGlow}, inset 0 0 30px ${moodGlow}22`
+          : `0 0 20px ${moodGlow}44`,
+        background: `radial-gradient(ellipse at center, ${moodBg}15 0%, #1e293b 70%)`,
+        position: 'relative',
+        overflow: 'hidden',
+      }}
     >
+      {/* Logo watermark behind skeleton */}
+      <img
+        src="/logo.png"
+        alt=""
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -55%)',
+          width: 200,
+          height: 200,
+          objectFit: 'contain',
+          opacity: beatPulse ? 0.12 : 0.07,
+          pointerEvents: 'none',
+          transition: 'opacity 0.15s ease',
+          filter: 'saturate(0.6)',
+        }}
+      />
       {hasPose ? (
-        <div style={{ display: 'flex', width: '100%', height: '100%', gap: 4, minHeight: 280 }}>
-          {/* Skeleton */}
-          <div style={{ width: 160, height: 280, position: 'relative', flexShrink: 0 }}>
-            <StickFigure poseData={poseData} token={fakeToken} moodGlow={moodGlow} />
-            <div style={{ position: 'absolute', bottom: 2, left: 2, color: moodGlow, fontSize: 10, fontWeight: 700 }}>SKELETON</div>
-          </div>
-          {/* VRM — fixed size, own stacking context to survive layout shifts */}
-          <div style={{ width: 200, height: 280, position: 'relative', flexShrink: 0, overflow: 'hidden' }}>
-            <LoopingVrm poseData={poseData} moodGlow={moodGlow} />
-            <div style={{ position: 'absolute', bottom: 2, right: 2, color: moodGlow, fontSize: 10, fontWeight: 700, zIndex: 5 }}>VRM</div>
-          </div>
-        </div>
+        <canvas
+          ref={canvasRef}
+          width={360}
+          height={300}
+          className="avatar-canvas"
+          style={{ position: 'relative', zIndex: 1 }}
+        />
       ) : (
-        <div className="sign-placeholder">LOADING {TEST_SIGN.toUpperCase()}...</div>
+        <div style={{
+          width: 360, height: 300,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontSize: gloss.length > 8 ? 28 : 42,
+          fontWeight: 800, letterSpacing: 4, color: moodGlow,
+          opacity: 0.6, textAlign: 'center', padding: 20,
+          position: 'relative', zIndex: 1,
+        }}>
+          {gloss ? gloss.toUpperCase() : ''}
+        </div>
       )}
-      <div className="sign-gloss" style={{ color: moodGlow }}>
-        {TEST_SIGN.toUpperCase()} (loop test)
+      <div className="sign-gloss" style={{ color: moodGlow, position: 'relative', zIndex: 1 }}>
+        {gloss ? gloss.toUpperCase() : 'LISTENING...'}
       </div>
     </div>
   )

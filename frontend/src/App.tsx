@@ -18,6 +18,7 @@ import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { VRMLoaderPlugin, VRM } from '@pixiv/three-vrm'
+import { Hand } from 'kalidokit'
 
 // Auto-frame camera to fit VRM model
 function CameraFramer({ vrm }: { vrm: VRM }) {
@@ -186,17 +187,78 @@ function VrmTestModel({
             }
           }
 
+          // --- HAND/FINGER ANIMATION via Kalidokit + dampened wrist ---
+          const handSlerp = Math.min(1, delta * 12)
+
+          const applyHandRig = (
+            handLandmarks: number[][] | undefined,
+            side: 'left' | 'right',
+            solveAs: 'Left' | 'Right',
+          ) => {
+            if (!handLandmarks || handLandmarks.length < 21) return
+            const nonZero = handLandmarks.some(lm => lm[0] !== 0 || lm[1] !== 0 || lm[2] !== 0)
+            if (!nonZero) return
+
+            const lms = handLandmarks.map(lm => ({ x: lm[0], y: lm[1], z: lm[2] }))
+            const rig = Hand.solve(lms, solveAs) as Record<string, { x: number; y: number; z: number }> | null
+            if (!rig) return
+
+            const S = side === 'left' ? 'Left' : 'Right'
+
+            const rotateBone = (boneName: string, rotation: { x: number; y: number; z: number } | undefined) => {
+              if (!rotation) return
+              const bone = hum.getNormalizedBoneNode(boneName as any)
+              if (!bone) return
+              bone.quaternion.slerp(
+                new THREE.Quaternion().setFromEuler(new THREE.Euler(rotation.x, rotation.y, -rotation.z)),
+                handSlerp,
+              )
+            }
+
+            // Wrist: Kalidokit values directly (no Z negation, matching Wawa Sensei approach)
+            const wristBone = hum.getNormalizedBoneNode(`${side}Hand` as any)
+            if (wristBone) {
+              const wr = rig[`${S}Wrist`]
+              if (wr) {
+                wristBone.quaternion.slerp(new THREE.Quaternion().setFromEuler(new THREE.Euler(
+                  wr.x,
+                  Math.max(-0.6, Math.min(0.6, wr.y)),
+                  Math.max(-1.0, Math.min(1.0, wr.z)),
+                )), handSlerp)
+              } else {
+                wristBone.quaternion.slerp(new THREE.Quaternion(), handSlerp)
+              }
+            }
+
+            // Thumb (Kalidokit offset: ThumbProximal → VRM ThumbMetacarpal, etc.)
+            rotateBone(`${side}ThumbMetacarpal`, rig[`${S}ThumbProximal`])
+            rotateBone(`${side}ThumbProximal`, rig[`${S}ThumbIntermediate`])
+            rotateBone(`${side}ThumbDistal`, rig[`${S}ThumbDistal`])
+            // Fingers (Kalidokit curl — confirmed working for open/close)
+            for (const finger of ['Index', 'Middle', 'Ring', 'Little']) {
+              for (const joint of ['Proximal', 'Intermediate', 'Distal']) {
+                rotateBone(`${side}${finger}${joint}`, rig[`${S}${finger}${joint}`])
+              }
+            }
+          }
+
+          applyHandRig(frame.left_hand, 'left', 'Left')
+          applyHandRig(frame.right_hand, 'right', 'Right')
+
           if (frameCount.current % 60 === 0) {
             const ld = lElbow.clone().sub(lShoulder).normalize()
             const rd = rElbow.clone().sub(rShoulder).normalize()
             const lr = restDirs.current['leftUpperArm']
             const rr = restDirs.current['rightUpperArm']
+            const lhOk = frame.left_hand && frame.left_hand.some((lm: number[]) => lm[0] !== 0 || lm[1] !== 0)
+            const rhOk = frame.right_hand && frame.right_hand.some((lm: number[]) => lm[0] !== 0 || lm[1] !== 0)
             onFrame(
               `f=${idx}/${totalFrames} ` +
               `Lrest=(${lr?.x.toFixed(2)},${lr?.y.toFixed(2)},${lr?.z.toFixed(2)}) ` +
               `Ltgt=(${ld.x.toFixed(2)},${ld.y.toFixed(2)},${ld.z.toFixed(2)}) ` +
               `Rrest=(${rr?.x.toFixed(2)},${rr?.y.toFixed(2)},${rr?.z.toFixed(2)}) ` +
-              `Rtgt=(${rd.x.toFixed(2)},${rd.y.toFixed(2)},${rd.z.toFixed(2)})`
+              `Rtgt=(${rd.x.toFixed(2)},${rd.y.toFixed(2)},${rd.z.toFixed(2)}) ` +
+              `hands:L=${lhOk ? 'Y' : 'N'},R=${rhOk ? 'Y' : 'N'}`
             )
           }
         }
@@ -323,6 +385,23 @@ function TestPage({ sign }: { sign: string }) {
         ctx.arc(p[0] * sc + ox, p[1] * sc + oy, 3, 0, Math.PI * 2)
         ctx.fill()
       }
+      // Draw hand landmarks (normalized 0-1 → pixel coords via width/height)
+      const w = poseData!.width, h = poseData!.height
+      const drawHand = (hand: number[][], color: string) => {
+        if (!hand || hand.length < 21) return
+        const nonZero = hand.some(lm => lm[0] !== 0 || lm[1] !== 0)
+        if (!nonZero) return
+        ctx.fillStyle = color
+        for (const lm of hand) {
+          const px = lm[0] * w * sc + ox
+          const py = lm[1] * h * sc + oy
+          ctx.beginPath()
+          ctx.arc(px, py, 2, 0, Math.PI * 2)
+          ctx.fill()
+        }
+      }
+      drawHand(f.left_hand, '#ff6600')
+      drawHand(f.right_hand, '#0066ff')
       frameRef.current++
     }
 
@@ -444,6 +523,7 @@ function MainApp() {
 
   const {
     audioRef,
+    analyserRef,
     playing,
     currentTime,
     currentSegment,
@@ -500,6 +580,7 @@ function MainApp() {
   if (!timeline) {
     return (
       <div className="upload-screen">
+        <img src="/logo.png" alt="Signify" style={{ width: 120, height: 120, objectFit: 'contain', marginBottom: 8 }} />
         <h1 className="logo">SIGNIFY</h1>
         <p className="tagline">Music made visible through sign language</p>
 
@@ -548,13 +629,15 @@ function MainApp() {
     >
       <audio ref={audioRef} src={audioUrl} />
 
+      <BeatVisualizer
+        beatPulse={beatPulse}
+        mood={mood}
+        moodBg={colors.bg}
+        moodGlow={colors.glow}
+        analyser={analyserRef.current}
+      />
+
       <div className="player-top">
-        <BeatVisualizer
-          beatPulse={beatPulse}
-          mood={mood}
-          moodBg={colors.bg}
-          moodGlow={colors.glow}
-        />
         <AvatarDisplay
           token={currentToken}
           beatPulse={beatPulse}

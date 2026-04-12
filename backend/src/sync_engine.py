@@ -29,8 +29,11 @@ def build_timeline(beats: dict, segments: list, translations: list, signs: list)
         gloss_tokens = trans.get("gloss", [])
         mood = trans.get("mood", "tender")
 
-        # distribute sign timing evenly across the segment
+        # distribute sign timing evenly — enforce minimum 0.8s per token
         seg_duration = seg["end"] - seg["start"]
+        MIN_TOKEN_DUR = 0.8
+        max_tokens = max(1, int(seg_duration / MIN_TOKEN_DUR))
+        gloss_tokens = gloss_tokens[:max_tokens]  # drop excess
         token_count = max(len(gloss_tokens), 1)
         time_per_token = seg_duration / token_count
 

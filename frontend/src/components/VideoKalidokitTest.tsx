@@ -30,7 +30,9 @@ const landmarkStore: {
   world: Landmark[] | null
   leftHand: Record<string, { x: number; y: number; z: number }> | null  // Kalidokit-solved VRM LEFT hand rig
   rightHand: Record<string, { x: number; y: number; z: number }> | null // Kalidokit-solved VRM RIGHT hand rig
-} = { world: null, leftHand: null, rightHand: null }
+  leftHandLandmarks: Landmark[] | null   // Raw MediaPipe hand landmarks for VRM left hand (subject's right)
+  rightHandLandmarks: Landmark[] | null  // Raw MediaPipe hand landmarks for VRM right hand (subject's left)
+} = { world: null, leftHand: null, rightHand: null, leftHandLandmarks: null, rightHandLandmarks: null }
 
 const statusStore = {
   mpLoaded: false,
@@ -163,6 +165,80 @@ function VrmModel({ modelUrl }: { modelUrl: string }) {
 
         const handSlerp = Math.min(1, delta * 12)
 
+        // Compute wrist quaternion from raw hand landmarks
+        const computeWristQ = (
+          handLms: Landmark[] | null,
+          side: 'left' | 'right',
+        ): THREE.Quaternion | null => {
+          if (!handLms || handLms.length < 21) return null
+          // Hand landmark indices: 0=wrist, 5=index_MCP, 9=middle_MCP, 17=pinky_MCP
+          // Build hand coordinate frame from landmarks (in screen-normalized space)
+          const w = new THREE.Vector3(handLms[0].x, handLms[0].y, handLms[0].z)
+          const midMCP = new THREE.Vector3(handLms[9].x, handLms[9].y, handLms[9].z)
+          const idxMCP = new THREE.Vector3(handLms[5].x, handLms[5].y, handLms[5].z)
+          const pnkMCP = new THREE.Vector3(handLms[17].x, handLms[17].y, handLms[17].z)
+
+          // Forward = wrist → middle_MCP
+          const forward = midMCP.clone().sub(w)
+          if (forward.lengthSq() < 1e-8) return null
+          forward.normalize()
+
+          // Palm lateral = index_MCP → pinky_MCP (across the palm)
+          const lateral = pnkMCP.clone().sub(idxMCP)
+          if (lateral.lengthSq() < 1e-8) return null
+          lateral.normalize()
+
+          // Palm normal (points out of palm)
+          const palmNormal = new THREE.Vector3().crossVectors(forward, lateral).normalize()
+
+          // Build rotation matrix from hand frame
+          // MediaPipe screen coords: x=right, y=down, z=toward_camera
+          // Mirror swap: subject's right hand landmarks → VRM left hand
+          // The landmarks have already been captured from the mirrored side,
+          // so we just need to convert their frame to VRM space.
+          //
+          // VRM T-pose: left hand points +X (left), right hand points -X (right)
+          // fingers point along the arm axis, palm faces down (-Y in VRM)
+          //
+          // In MediaPipe hand landmarks (screen normalized):
+          //   forward (wrist→finger) roughly along -Y (up in screen = negative Y)
+          //   palmNormal roughly along +Z or -Z depending on facing
+          //
+          // We compute a relative rotation: how much the hand has rotated
+          // from a neutral pose. We use small euler angles for simplicity.
+
+          // Convert to VRM-like coords: negate Y (MediaPipe Y is down, VRM Y is up),
+          // negate Z (MediaPipe Z is toward camera, VRM Z is toward viewer in mirror)
+          const fwd = new THREE.Vector3(forward.x, -forward.y, -forward.z)
+          const nrm = new THREE.Vector3(palmNormal.x, -palmNormal.y, -palmNormal.z)
+
+          // In a neutral pose (hand straight, palm down), for VRM left hand:
+          //   fwd would be roughly (1, 0, 0) — pointing left along the arm
+          //   nrm would be roughly (0, -1, 0) — palm facing down
+          // For VRM right hand:
+          //   fwd would be (-1, 0, 0), nrm = (0, -1, 0)
+
+          // Compute wrist angles as deviation from neutral
+          // Flexion/Extension (X): angle of forward vector in the Y direction
+          const flexion = Math.asin(Math.max(-1, Math.min(1, fwd.y)))
+          // Radial/Ulnar deviation (Z): forward vector's Z component
+          const deviation = Math.asin(Math.max(-1, Math.min(1, fwd.z)))
+          // Pronation/Supination (twist around arm axis): palm normal Y component
+          // In neutral, nrm.y ≈ -1 (palm down). As you twist, nrm.z changes.
+          const twist = Math.atan2(nrm.z, -nrm.y)
+
+          // Clamp to physiological wrist range
+          const cx = Math.max(-0.8, Math.min(0.8, flexion))    // flex/extend
+          const cz = Math.max(-0.4, Math.min(0.4, deviation))  // radial/ulnar
+          const cy = Math.max(-0.8, Math.min(0.8, twist * 0.5)) // pronate/supinate (damped)
+
+          const invert = side === 'left' ? 1 : -1
+          return new THREE.Quaternion().setFromEuler(
+            new THREE.Euler(cx, cy * invert, cz * invert)
+          )
+        }
+
+        // Kalidokit finger curl + dampened wrist
         const applyHandRig = (
           rig: Record<string, { x: number; y: number; z: number }> | null,
           side: 'left' | 'right',
@@ -174,20 +250,34 @@ function VrmModel({ modelUrl }: { modelUrl: string }) {
             if (!rotation) return
             const bone = hum.getNormalizedBoneNode(boneName as any)
             if (!bone) return
-            const targetQ = new THREE.Quaternion().setFromEuler(
-              new THREE.Euler(rotation.x, rotation.y, -rotation.z)
+            bone.quaternion.slerp(
+              new THREE.Quaternion().setFromEuler(new THREE.Euler(rotation.x, rotation.y, -rotation.z)),
+              handSlerp,
             )
-            bone.quaternion.slerp(targetQ, handSlerp)
             bonesSet++
           }
 
-          // Wrist
-          rotateBone(`${side}Hand`, rig[`${S}Wrist`])
-          // Thumb (Kalidokit names offset by one joint from VRM)
+          // Wrist: Kalidokit values applied directly (no Z negation, matching Wawa Sensei approach)
+          const wristBone = hum.getNormalizedBoneNode(`${side}Hand` as any)
+          if (wristBone) {
+            const wr = rig[`${S}Wrist`]
+            if (wr) {
+              wristBone.quaternion.slerp(new THREE.Quaternion().setFromEuler(new THREE.Euler(
+                wr.x,
+                Math.max(-0.6, Math.min(0.6, wr.y)),
+                Math.max(-1.0, Math.min(1.0, wr.z)),
+              )), handSlerp)
+            } else {
+              wristBone.quaternion.slerp(new THREE.Quaternion(), handSlerp)
+            }
+            bonesSet++
+          }
+
+          // Thumb (Kalidokit offset: ThumbProximal → VRM ThumbMetacarpal, etc.)
           rotateBone(`${side}ThumbMetacarpal`, rig[`${S}ThumbProximal`])
           rotateBone(`${side}ThumbProximal`, rig[`${S}ThumbIntermediate`])
           rotateBone(`${side}ThumbDistal`, rig[`${S}ThumbDistal`])
-          // Other fingers
+          // Fingers (Kalidokit curl — confirmed working for open/close)
           for (const finger of ['Index', 'Middle', 'Ring', 'Little']) {
             for (const joint of ['Proximal', 'Intermediate', 'Distal']) {
               rotateBone(`${side}${finger}${joint}`, rig[`${S}${finger}${joint}`])
@@ -310,20 +400,20 @@ export function VideoKalidokitTest({ sign = 'make' }: VideoKalidokitTestProps) {
     // Hands: Kalidokit Hand.solve() with mirror swap
     // Subject's RIGHT hand → VRM LEFT hand, Subject's LEFT → VRM RIGHT
     if (results.rightHandLandmarks) {
-      landmarkStore.leftHand = Hand.solve(
-        results.rightHandLandmarks.map((lm: Landmark) => ({ x: lm.x, y: lm.y, z: lm.z })),
-        'Left',
-      ) as Record<string, { x: number; y: number; z: number }> | null
+      const lms = results.rightHandLandmarks.map((lm: Landmark) => ({ x: lm.x, y: lm.y, z: lm.z }))
+      landmarkStore.leftHand = Hand.solve(lms, 'Left') as Record<string, { x: number; y: number; z: number }> | null
+      landmarkStore.leftHandLandmarks = lms
     } else {
       landmarkStore.leftHand = null
+      landmarkStore.leftHandLandmarks = null
     }
     if (results.leftHandLandmarks) {
-      landmarkStore.rightHand = Hand.solve(
-        results.leftHandLandmarks.map((lm: Landmark) => ({ x: lm.x, y: lm.y, z: lm.z })),
-        'Right',
-      ) as Record<string, { x: number; y: number; z: number }> | null
+      const lms = results.leftHandLandmarks.map((lm: Landmark) => ({ x: lm.x, y: lm.y, z: lm.z }))
+      landmarkStore.rightHand = Hand.solve(lms, 'Right') as Record<string, { x: number; y: number; z: number }> | null
+      landmarkStore.rightHandLandmarks = lms
     } else {
       landmarkStore.rightHand = null
+      landmarkStore.rightHandLandmarks = null
     }
 
     // FPS
