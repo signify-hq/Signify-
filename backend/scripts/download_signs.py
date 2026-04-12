@@ -9,12 +9,12 @@ SIGNS_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "signs")
 
 OUR_SIGNS = [
     "after", "angel", "away", "black", "breathe", "cloud", "color", "day",
-    "dead", "die", "down", "drunk", "find", "for", "have", "heaven", "holy",
-    "how", "i", "if", "jealous", "kiss", "knife", "know", "light", "look-at",
-    "lord", "lose", "love", "make", "me", "must", "my", "on", "our", "out",
-    "pray", "say", "see", "side", "something", "stay", "take", "than", "they",
-    "think", "this", "time", "touch", "town", "until", "up", "want", "water",
-    "we", "white", "will", "world", "you", "your",
+    "dead", "die", "down", "drunk", "find", "for", "future", "have", "heaven",
+    "holy", "how", "i", "if", "jealous", "kiss", "knife", "know", "light",
+    "look-at", "lord", "lose", "love", "make", "me", "must", "my", "on", "our",
+    "out", "pray", "say", "see", "side", "something", "stay", "take", "than",
+    "they", "think", "this", "time", "touch", "town", "until", "up", "want",
+    "water", "we", "white", "will", "world", "you", "your",
 ]
 
 

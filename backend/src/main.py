@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, UploadFile, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 
 from src.beat_detector import detect_beats
 from src.lyric_parser import parse_online, parse_offline
@@ -27,6 +27,7 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
 SIGNS_DIR = os.path.join(DATA_DIR, "signs")
 SONGS_DIR = os.path.join(DATA_DIR, "songs")
 TIMELINES_DIR = os.path.join(DATA_DIR, "timelines")
+POSES_DIR = os.path.join(DATA_DIR, "poses")
 os.makedirs(TIMELINES_DIR, exist_ok=True)
 
 app.mount("/signs", StaticFiles(directory=SIGNS_DIR), name="signs")
@@ -84,3 +85,12 @@ async def get_audio(filename: str):
     if not os.path.exists(path):
         return {"error": "not found"}
     return FileResponse(path, media_type="audio/mpeg")
+
+
+@app.get("/api/pose/{name}")
+async def get_pose(name: str):
+    path = os.path.join(POSES_DIR, f"{name}.json")
+    if not os.path.exists(path):
+        return JSONResponse({"error": "not found"}, status_code=404)
+    with open(path) as f:
+        return json.load(f)

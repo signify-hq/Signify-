@@ -1,0 +1,119 @@
+ASL SIGN GIF SHOPPING LIST — "Ordinary" by Alex Warren
+======================================================
+
+HOW TO:
+1. Go to handspeak.com or signingsavvy.com
+2. Search for the word
+3. Download the GIF or video clip
+4. Rename it to lowercase: LOVE → love.gif (or love.mp4)
+5. Drop into: signify/backend/data/signs/
+
+PRIORITY (appears 3+ times in song — do these first):
+  angels
+  up
+  clouds
+  jealous
+  know
+  we
+  found
+  you
+  me
+  my
+  i
+  something
+  so
+  out
+  ordinary
+  shatter
+  touch
+  lord
+  return
+  dust
+  want
+  lay
+  down
+  until
+  dead
+  buried
+  edge
+  knife
+  drunk
+  stay
+  vine
+  kiss
+  ground
+  sanctuary
+  oh
+  love
+
+REMAINING (appears 1-2 times):
+  after
+  altar
+  angel
+  away
+  black
+  breath
+  breathe
+  clay
+  cloud
+  color
+  day
+  die
+  ecstasy
+  eventually
+  fade
+  faith
+  find
+  for
+  gate
+  got
+  hallelujah
+  have
+  heaven
+  heavenly
+  higher
+  holy
+  hopeless
+  how
+  if
+  knife
+  lay-down
+  life
+  light
+  look-at
+  lose
+  make
+  masterpiece
+  mundane
+  must
+  next-to
+  on
+  one-time
+  our
+  pray
+  run-out
+  sanctuary
+  say
+  sculptor
+  see
+  side
+  take
+  than
+  they
+  think
+  this
+  time
+  town
+  watered-down
+  water
+  whenever
+  white
+  will
+  world
+  your
+
+FINGERSPELLING ALPHABET (also needed for fallback):
+  a b c d e f g h i j k l m n o p q r s t u v w x y z
+
+For compound signs like "lay-down" or "run-out", look up as one sign.
+If a sign isn't found, it will be fingerspelled automatically.

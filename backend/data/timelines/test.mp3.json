@@ -1,0 +1,5137 @@
+{
+  "duration": 191.611,
+  "tempo": 112.3,
+  "beats": [
+    0.731,
+    1.265,
+    1.811,
+    2.345,
+    2.879,
+    3.413,
+    3.947,
+    4.481,
+    5.016,
+    5.561,
+    6.095,
+    6.629,
+    7.163,
+    7.709,
+    8.266,
+    8.824,
+    9.323,
+    9.845,
+    10.379,
+    10.913,
+    11.447,
+    11.935,
+    12.492,
+    13.131,
+    13.607,
+    14.129,
+    14.629,
+    15.197,
+    15.755,
+    16.277,
+    16.811,
+    17.345,
+    17.879,
+    18.402,
+    18.913,
+    19.54,
+    20.039,
+    20.55,
+    21.072,
+    21.618,
+    22.163,
+    22.721,
+    23.197,
+    23.603,
+    24.126,
+    24.66,
+    25.159,
+    25.704,
+    26.273,
+    26.982,
+    27.527,
+    28.061,
+    28.584,
+    29.129,
+    29.663,
+    30.186,
+    30.743,
+    31.289,
+    31.823,
+    32.334,
+    32.798,
+    33.239,
+    33.715,
+    34.424,
+    35.016,
+    35.561,
+    36.095,
+    36.641,
+    37.164,
+    37.698,
+    38.232,
+    38.777,
+    39.3,
+    39.834,
+    40.368,
+    40.914,
+    41.448,
+    41.982,
+    42.527,
+    43.038,
+    43.595,
+    44.083,
+    44.664,
+    45.186,
+    45.732,
+    46.266,
+    46.811,
+    47.345,
+    47.88,
+    48.367,
+    48.959,
+    49.447,
+    49.981,
+    50.573,
+    51.096,
+    51.595,
+    52.164,
+    52.709,
+    53.243,
+    53.789,
+    54.311,
+    54.846,
+    55.38,
+    55.89,
+    56.448,
+    56.993,
+    57.527,
+    58.061,
+    58.596,
+    59.13,
+    59.664,
+    60.198,
+    60.732,
+    61.277,
+    61.812,
+    62.334,
+    62.868,
+    63.414,
+    63.959,
+    64.482,
+    65.016,
+    65.55,
+    66.096,
+    66.618,
+    67.14,
+    67.709,
+    68.243,
+    68.778,
+    69.3,
+    69.846,
+    70.391,
+    70.844,
+    71.436,
+    71.993,
+    72.528,
+    73.062,
+    73.596,
+    74.13,
+    74.664,
+    75.198,
+    75.743,
+    76.278,
+    76.812,
+    77.346,
+    77.868,
+    78.414,
+    78.948,
+    79.482,
+    80.028,
+    80.562,
+    81.084,
+    81.618,
+    82.164,
+    82.709,
+    83.244,
+    83.766,
+    84.265,
+    84.846,
+    85.38,
+    85.914,
+    86.436,
+    86.982,
+    87.528,
+    88.062,
+    88.596,
+    89.13,
+    89.664,
+    90.21,
+    90.744,
+    91.289,
+    91.8,
+    92.346,
+    92.88,
+    93.414,
+    93.948,
+    94.482,
+    95.016,
+    95.562,
+    96.096,
+    96.63,
+    97.164,
+    97.71,
+    98.232,
+    98.766,
+    99.3,
+    99.846,
+    100.38,
+    100.926,
+    101.46,
+    101.994,
+    102.516,
+    103.05,
+    103.596,
+    104.141,
+    104.664,
+    105.186,
+    105.732,
+    106.278,
+    106.8,
+    107.346,
+    107.88,
+    108.426,
+    108.948,
+    109.482,
+    109.981,
+    110.562,
+    111.096,
+    111.642,
+    112.164,
+    112.698,
+    113.244,
+    113.778,
+    114.312,
+    114.846,
+    115.38,
+    115.902,
+    116.448,
+    116.994,
+    117.528,
+    118.062,
+    118.596,
+    119.142,
+    119.676,
+    120.198,
+    120.732,
+    121.278,
+    121.812,
+    122.334,
+    122.868,
+    123.414,
+    123.948,
+    124.482,
+    125.028,
+    125.55,
+    126.096,
+    126.63,
+    127.141,
+    127.71,
+    128.232,
+    128.766,
+    129.312,
+    129.846,
+    130.38,
+    130.914,
+    131.448,
+    131.982,
+    132.528,
+    133.062,
+    133.596,
+    134.13,
+    134.664,
+    135.21,
+    135.744,
+    136.278,
+    136.812,
+    137.346,
+    137.88,
+    138.426,
+    138.948,
+    139.482,
+    140.028,
+    140.562,
+    141.096,
+    141.63,
+    142.164,
+    142.71,
+    143.232,
+    143.766,
+    144.3,
+    144.811,
+    145.322,
+    145.845,
+    146.437,
+    146.982,
+    147.516,
+    148.05,
+    148.596,
+    149.13,
+    149.641,
+    150.187,
+    150.698,
+    151.266,
+    151.777,
+    152.346,
+    152.88,
+    153.403,
+    153.89,
+    154.424,
+    155.005,
+    155.539,
+    156.073,
+    156.584,
+    157.129,
+    157.687,
+    158.232,
+    158.778,
+    159.3,
+    159.811,
+    160.322,
+    160.81,
+    161.379,
+    161.878,
+    162.493,
+    163.051,
+    163.596,
+    164.13,
+    164.676,
+    165.21,
+    165.732,
+    166.278,
+    166.801,
+    167.323,
+    167.88,
+    168.414,
+    168.948,
+    169.494,
+    170.028,
+    170.562,
+    171.085,
+    171.63,
+    172.141,
+    172.698,
+    173.232,
+    173.767,
+    174.301,
+    174.846,
+    175.38,
+    175.914,
+    176.448,
+    176.982,
+    177.517,
+    178.062,
+    178.573,
+    179.13,
+    179.664
+  ],
+  "segments": [
+    {
+      "line": 1,
+      "start": 7.72,
+      "end": 12.38,
+      "lyric": "They say, \"The holy water's watered down",
+      "mood": "dark",
+      "tokens": [
+        {
+          "gloss": "THEY",
+          "start": 7.72,
+          "end": 8.652,
+          "type": "sign",
+          "file": "they.mp4"
+        },
+        {
+          "gloss": "SAY",
+          "start": 8.652,
+          "end": 9.584,
+          "type": "sign",
+          "file": "say.mp4"
+        },
+        {
+          "gloss": "HOLY",
+          "start": 9.584,
+          "end": 10.516,
+          "type": "sign",
+          "file": "holy.mp4"
+        },
+        {
+          "gloss": "WATER",
+          "start": 10.516,
+          "end": 11.448,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "WATERED-DOWN",
+          "start": 11.448,
+          "end": 12.38,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        8.266,
+        8.824,
+        9.323,
+        9.845,
+        10.379,
+        10.913,
+        11.447,
+        11.935
+      ]
+    },
+    {
+      "line": 2,
+      "start": 12.38,
+      "end": 17.04,
+      "lyric": "And this town's lost its faith",
+      "mood": "sad",
+      "tokens": [
+        {
+          "gloss": "THIS",
+          "start": 12.38,
+          "end": 13.545,
+          "type": "sign",
+          "file": "this.mp4"
+        },
+        {
+          "gloss": "TOWN",
+          "start": 13.545,
+          "end": 14.71,
+          "type": "sign",
+          "file": "town.mp4"
+        },
+        {
+          "gloss": "LOSE",
+          "start": 14.71,
+          "end": 15.875,
+          "type": "sign",
+          "file": "lose.mp4"
+        },
+        {
+          "gloss": "FAITH",
+          "start": 15.875,
+          "end": 17.04,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "f",
+              "file": "fs_f.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        12.492,
+        13.131,
+        13.607,
+        14.129,
+        14.629,
+        15.197,
+        15.755,
+        16.277,
+        16.811
+      ]
+    },
+    {
+      "line": 3,
+      "start": 17.04,
+      "end": 21.7,
+      "lyric": "Our colors will fade eventually\"",
+      "mood": "sad",
+      "tokens": [
+        {
+          "gloss": "OUR",
+          "start": 17.04,
+          "end": 17.972,
+          "type": "sign",
+          "file": "our.mp4"
+        },
+        {
+          "gloss": "COLOR",
+          "start": 17.972,
+          "end": 18.904,
+          "type": "sign",
+          "file": "color.mp4"
+        },
+        {
+          "gloss": "FUTURE",
+          "start": 18.904,
+          "end": 19.836,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "f",
+              "file": "fs_f.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "FADE",
+          "start": 19.836,
+          "end": 20.768,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "f",
+              "file": "fs_f.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "EVENTUALLY",
+          "start": 20.768,
+          "end": 21.7,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "v",
+              "file": "fs_v.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        17.345,
+        17.879,
+        18.402,
+        18.913,
+        19.54,
+        20.039,
+        20.55,
+        21.072,
+        21.618
+      ]
+    },
+    {
+      "line": 4,
+      "start": 21.7,
+      "end": 26.36,
+      "lyric": "So, if our time is runnin' out",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "SO",
+          "start": 21.7,
+          "end": 22.632,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            }
+          ]
+        },
+        {
+          "gloss": "IF",
+          "start": 22.632,
+          "end": 23.564,
+          "type": "sign",
+          "file": "if.mp4"
+        },
+        {
+          "gloss": "OUR",
+          "start": 23.564,
+          "end": 24.496,
+          "type": "sign",
+          "file": "our.mp4"
+        },
+        {
+          "gloss": "TIME",
+          "start": 24.496,
+          "end": 25.428,
+          "type": "sign",
+          "file": "time.mp4"
+        },
+        {
+          "gloss": "RUN-OUT",
+          "start": 25.428,
+          "end": 26.36,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        22.163,
+        22.721,
+        23.197,
+        23.603,
+        24.126,
+        24.66,
+        25.159,
+        25.704,
+        26.273
+      ]
+    },
+    {
+      "line": 5,
+      "start": 26.36,
+      "end": 31.57,
+      "lyric": "Day after day",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "DAY",
+          "start": 26.36,
+          "end": 28.097,
+          "type": "sign",
+          "file": "day.mp4"
+        },
+        {
+          "gloss": "AFTER",
+          "start": 28.097,
+          "end": 29.833,
+          "type": "sign",
+          "file": "after.mp4"
+        },
+        {
+          "gloss": "DAY",
+          "start": 29.833,
+          "end": 31.57,
+          "type": "sign",
+          "file": "day.mp4"
+        }
+      ],
+      "beats": [
+        26.982,
+        27.527,
+        28.061,
+        28.584,
+        29.129,
+        29.663,
+        30.186,
+        30.743,
+        31.289
+      ]
+    },
+    {
+      "line": 6,
+      "start": 31.57,
+      "end": 36.78,
+      "lyric": "We'll make the mundane our masterpiece",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "WE",
+          "start": 31.57,
+          "end": 32.438,
+          "type": "sign",
+          "file": "we.mp4"
+        },
+        {
+          "gloss": "FUTURE",
+          "start": 32.438,
+          "end": 33.307,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "f",
+              "file": "fs_f.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "MAKE",
+          "start": 33.307,
+          "end": 34.175,
+          "type": "sign",
+          "file": "make.mp4"
+        },
+        {
+          "gloss": "MUNDANE",
+          "start": 34.175,
+          "end": 35.043,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "OUR",
+          "start": 35.043,
+          "end": 35.912,
+          "type": "sign",
+          "file": "our.mp4"
+        },
+        {
+          "gloss": "MASTERPIECE",
+          "start": 35.912,
+          "end": 36.78,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        31.823,
+        32.334,
+        32.798,
+        33.239,
+        33.715,
+        34.424,
+        35.016,
+        35.561,
+        36.095,
+        36.641
+      ]
+    },
+    {
+      "line": 7,
+      "start": 37.86,
+      "end": 39.915,
+      "lyric": "Oh, my, my",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "OH",
+          "start": 37.86,
+          "end": 38.545,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "MY",
+          "start": 38.545,
+          "end": 39.23,
+          "type": "sign",
+          "file": "my.mp4"
+        },
+        {
+          "gloss": "MY",
+          "start": 39.23,
+          "end": 39.915,
+          "type": "sign",
+          "file": "my.mp4"
+        }
+      ],
+      "beats": [
+        38.232,
+        38.777,
+        39.3,
+        39.834
+      ]
+    },
+    {
+      "line": 8,
+      "start": 39.915,
+      "end": 41.97,
+      "lyric": "Oh, my, my love",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "OH",
+          "start": 39.915,
+          "end": 40.429,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "MY",
+          "start": 40.429,
+          "end": 40.942,
+          "type": "sign",
+          "file": "my.mp4"
+        },
+        {
+          "gloss": "MY",
+          "start": 40.942,
+          "end": 41.456,
+          "type": "sign",
+          "file": "my.mp4"
+        },
+        {
+          "gloss": "LOVE",
+          "start": 41.456,
+          "end": 41.97,
+          "type": "sign",
+          "file": "love.mp4"
+        }
+      ],
+      "beats": [
+        40.368,
+        40.914,
+        41.448
+      ]
+    },
+    {
+      "line": 9,
+      "start": 41.97,
+      "end": 44.025,
+      "lyric": "I take one look at you",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "I",
+          "start": 41.97,
+          "end": 42.484,
+          "type": "sign",
+          "file": "i.mp4"
+        },
+        {
+          "gloss": "LOOK-AT",
+          "start": 42.484,
+          "end": 42.998,
+          "type": "sign",
+          "file": "look-at.mp4"
+        },
+        {
+          "gloss": "YOU",
+          "start": 42.998,
+          "end": 43.511,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "ONE-TIME",
+          "start": 43.511,
+          "end": 44.025,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "m",
+              "file": "fs_m.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        41.982,
+        42.527,
+        43.038,
+        43.595
+      ]
+    },
+    {
+      "line": 10,
+      "start": 44.025,
+      "end": 46.08,
+      "lyric": "You're takin' me out of the ordinary",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "YOU",
+          "start": 44.025,
+          "end": 44.436,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "TAKE",
+          "start": 44.436,
+          "end": 44.847,
+          "type": "sign",
+          "file": "take.mp4"
+        },
+        {
+          "gloss": "ME",
+          "start": 44.847,
+          "end": 45.258,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "OUT",
+          "start": 45.258,
+          "end": 45.669,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ORDINARY",
+          "start": 45.669,
+          "end": 46.08,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        44.083,
+        44.664,
+        45.186,
+        45.732
+      ]
+    },
+    {
+      "line": 11,
+      "start": 47.14,
+      "end": 48.845,
+      "lyric": "I want you layin' me down 'til we're dead and buried",
+      "mood": "dark",
+      "tokens": [
+        {
+          "gloss": "I",
+          "start": 47.14,
+          "end": 47.329,
+          "type": "sign",
+          "file": "i.mp4"
+        },
+        {
+          "gloss": "WANT",
+          "start": 47.329,
+          "end": 47.519,
+          "type": "sign",
+          "file": "want.mp4"
+        },
+        {
+          "gloss": "YOU",
+          "start": 47.519,
+          "end": 47.708,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "LAY-DOWN",
+          "start": 47.708,
+          "end": 47.898,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 47.898,
+          "end": 48.087,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "UNTIL",
+          "start": 48.087,
+          "end": 48.277,
+          "type": "sign",
+          "file": "until.mp4"
+        },
+        {
+          "gloss": "WE",
+          "start": 48.277,
+          "end": 48.466,
+          "type": "sign",
+          "file": "we.mp4"
+        },
+        {
+          "gloss": "DEAD",
+          "start": 48.466,
+          "end": 48.656,
+          "type": "sign",
+          "file": "dead.mp4"
+        },
+        {
+          "gloss": "BURY",
+          "start": 48.656,
+          "end": 48.845,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        47.345,
+        47.88,
+        48.367
+      ]
+    },
+    {
+      "line": 12,
+      "start": 48.845,
+      "end": 50.55,
+      "lyric": "On the edge of your knife, stayin' drunk on your vine",
+      "mood": "dark",
+      "tokens": [
+        {
+          "gloss": "ON",
+          "start": 48.845,
+          "end": 49.058,
+          "type": "sign",
+          "file": "on.mp4"
+        },
+        {
+          "gloss": "EDGE",
+          "start": 49.058,
+          "end": 49.271,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "YOUR",
+          "start": 49.271,
+          "end": 49.484,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "KNIFE",
+          "start": 49.484,
+          "end": 49.698,
+          "type": "sign",
+          "file": "knife.mp4"
+        },
+        {
+          "gloss": "STAY",
+          "start": 49.698,
+          "end": 49.911,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        },
+        {
+          "gloss": "DRUNK",
+          "start": 49.911,
+          "end": 50.124,
+          "type": "sign",
+          "file": "drunk.mp4"
+        },
+        {
+          "gloss": "YOUR",
+          "start": 50.124,
+          "end": 50.337,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "VINE",
+          "start": 50.337,
+          "end": 50.55,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "v",
+              "file": "fs_v.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        48.959,
+        49.447,
+        49.981
+      ]
+    },
+    {
+      "line": 13,
+      "start": 50.55,
+      "end": 52.255,
+      "lyric": "The angels up in the clouds are jealous knowin' we found",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "ANGEL",
+          "start": 50.55,
+          "end": 50.794,
+          "type": "sign",
+          "file": "angel.mp4"
+        },
+        {
+          "gloss": "UP",
+          "start": 50.794,
+          "end": 51.037,
+          "type": "sign",
+          "file": "up.mp4"
+        },
+        {
+          "gloss": "CLOUD",
+          "start": 51.037,
+          "end": 51.281,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        },
+        {
+          "gloss": "JEALOUS",
+          "start": 51.281,
+          "end": 51.524,
+          "type": "sign",
+          "file": "jealous.mp4"
+        },
+        {
+          "gloss": "KNOW",
+          "start": 51.524,
+          "end": 51.768,
+          "type": "sign",
+          "file": "know.mp4"
+        },
+        {
+          "gloss": "WE",
+          "start": 51.768,
+          "end": 52.011,
+          "type": "sign",
+          "file": "we.mp4"
+        },
+        {
+          "gloss": "FIND",
+          "start": 52.011,
+          "end": 52.255,
+          "type": "sign",
+          "file": "find.mp4"
+        }
+      ],
+      "beats": [
+        50.573,
+        51.096,
+        51.595,
+        52.164
+      ]
+    },
+    {
+      "line": 14,
+      "start": 52.255,
+      "end": 53.96,
+      "lyric": "Somethin' so out of the ordinary",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "SOMETHING",
+          "start": 52.255,
+          "end": 52.681,
+          "type": "sign",
+          "file": "something.mp4"
+        },
+        {
+          "gloss": "SO",
+          "start": 52.681,
+          "end": 53.108,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            }
+          ]
+        },
+        {
+          "gloss": "OUT",
+          "start": 53.108,
+          "end": 53.534,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ORDINARY",
+          "start": 53.534,
+          "end": 53.96,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        52.709,
+        53.243,
+        53.789
+      ]
+    },
+    {
+      "line": 15,
+      "start": 54.96,
+      "end": 58.42,
+      "lyric": "You got me kissin' th\u0435 ground of your sanctuary",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "YOU",
+          "start": 54.96,
+          "end": 55.454,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "HAVE",
+          "start": 55.454,
+          "end": 55.949,
+          "type": "sign",
+          "file": "have.mp4"
+        },
+        {
+          "gloss": "ME",
+          "start": 55.949,
+          "end": 56.443,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "KISS",
+          "start": 56.443,
+          "end": 56.937,
+          "type": "sign",
+          "file": "kiss.mp4"
+        },
+        {
+          "gloss": "GROUND",
+          "start": 56.937,
+          "end": 57.431,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        },
+        {
+          "gloss": "YOUR",
+          "start": 57.431,
+          "end": 57.926,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "SANCTUARY",
+          "start": 57.926,
+          "end": 58.42,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        55.38,
+        55.89,
+        56.448,
+        56.993,
+        57.527,
+        58.061
+      ]
+    },
+    {
+      "line": 16,
+      "start": 59.44,
+      "end": 63.6,
+      "lyric": "Shatter me with your touch, oh, Lord, return m\u0435 to dust",
+      "mood": "dark",
+      "tokens": [
+        {
+          "gloss": "SHATTER",
+          "start": 59.44,
+          "end": 59.902,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 59.902,
+          "end": 60.364,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "YOUR",
+          "start": 60.364,
+          "end": 60.827,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "TOUCH",
+          "start": 60.827,
+          "end": 61.289,
+          "type": "sign",
+          "file": "touch.mp4"
+        },
+        {
+          "gloss": "OH",
+          "start": 61.289,
+          "end": 61.751,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "LORD",
+          "start": 61.751,
+          "end": 62.213,
+          "type": "sign",
+          "file": "lord.mp4"
+        },
+        {
+          "gloss": "RETURN",
+          "start": 62.213,
+          "end": 62.676,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 62.676,
+          "end": 63.138,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "DUST",
+          "start": 63.138,
+          "end": 63.6,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        59.664,
+        60.198,
+        60.732,
+        61.277,
+        61.812,
+        62.334,
+        62.868,
+        63.414
+      ]
+    },
+    {
+      "line": 17,
+      "start": 64.6,
+      "end": 69.22,
+      "lyric": "The angels up in the clouds are jealous knowin' we found",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "ANGEL",
+          "start": 64.6,
+          "end": 65.26,
+          "type": "sign",
+          "file": "angel.mp4"
+        },
+        {
+          "gloss": "CLOUD",
+          "start": 65.26,
+          "end": 65.92,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        },
+        {
+          "gloss": "UP",
+          "start": 65.92,
+          "end": 66.58,
+          "type": "sign",
+          "file": "up.mp4"
+        },
+        {
+          "gloss": "JEALOUS",
+          "start": 66.58,
+          "end": 67.24,
+          "type": "sign",
+          "file": "jealous.mp4"
+        },
+        {
+          "gloss": "KNOW",
+          "start": 67.24,
+          "end": 67.9,
+          "type": "sign",
+          "file": "know.mp4"
+        },
+        {
+          "gloss": "WE",
+          "start": 67.9,
+          "end": 68.56,
+          "type": "sign",
+          "file": "we.mp4"
+        },
+        {
+          "gloss": "FIND",
+          "start": 68.56,
+          "end": 69.22,
+          "type": "sign",
+          "file": "find.mp4"
+        }
+      ],
+      "beats": [
+        65.016,
+        65.55,
+        66.096,
+        66.618,
+        67.14,
+        67.709,
+        68.243,
+        68.778
+      ]
+    },
+    {
+      "line": 18,
+      "start": 70.22,
+      "end": 71.187,
+      "lyric": "Hopeless hallelujah",
+      "mood": "sad",
+      "tokens": [
+        {
+          "gloss": "HOPELESS",
+          "start": 70.22,
+          "end": 70.703,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        },
+        {
+          "gloss": "HALLELUJAH",
+          "start": 70.703,
+          "end": 71.187,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "j",
+              "file": "fs_j.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        70.391,
+        70.844
+      ]
+    },
+    {
+      "line": 19,
+      "start": 71.187,
+      "end": 72.153,
+      "lyric": "On this side of Heaven's gate",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "THIS",
+          "start": 71.187,
+          "end": 71.428,
+          "type": "sign",
+          "file": "this.mp4"
+        },
+        {
+          "gloss": "SIDE",
+          "start": 71.428,
+          "end": 71.67,
+          "type": "sign",
+          "file": "side.mp4"
+        },
+        {
+          "gloss": "HEAVEN",
+          "start": 71.67,
+          "end": 71.912,
+          "type": "sign",
+          "file": "heaven.mp4"
+        },
+        {
+          "gloss": "GATE",
+          "start": 71.912,
+          "end": 72.153,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        71.436,
+        71.993
+      ]
+    },
+    {
+      "line": 20,
+      "start": 72.153,
+      "end": 73.12,
+      "lyric": "Oh, my life, how do ya",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "OH",
+          "start": 72.153,
+          "end": 72.346,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "MY",
+          "start": 72.346,
+          "end": 72.54,
+          "type": "sign",
+          "file": "my.mp4"
+        },
+        {
+          "gloss": "LIFE",
+          "start": 72.54,
+          "end": 72.733,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "f",
+              "file": "fs_f.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "HOW",
+          "start": 72.733,
+          "end": 72.927,
+          "type": "sign",
+          "file": "how.mp4"
+        },
+        {
+          "gloss": "YOU",
+          "start": 72.927,
+          "end": 73.12,
+          "type": "sign",
+          "file": "you.mp4"
+        }
+      ],
+      "beats": [
+        72.528,
+        73.062
+      ]
+    },
+    {
+      "line": 21,
+      "start": 74.62,
+      "end": 78.38,
+      "lyric": "Breathe and take my breath away?",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "BREATHE",
+          "start": 74.62,
+          "end": 75.372,
+          "type": "sign",
+          "file": "breathe.mp4"
+        },
+        {
+          "gloss": "TAKE",
+          "start": 75.372,
+          "end": 76.124,
+          "type": "sign",
+          "file": "take.mp4"
+        },
+        {
+          "gloss": "MY",
+          "start": 76.124,
+          "end": 76.876,
+          "type": "sign",
+          "file": "my.mp4"
+        },
+        {
+          "gloss": "BREATH",
+          "start": 76.876,
+          "end": 77.628,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "AWAY",
+          "start": 77.628,
+          "end": 78.38,
+          "type": "sign",
+          "file": "away.mp4"
+        }
+      ],
+      "beats": [
+        74.664,
+        75.198,
+        75.743,
+        76.278,
+        76.812,
+        77.346,
+        77.868
+      ]
+    },
+    {
+      "line": 22,
+      "start": 78.94,
+      "end": 82.82,
+      "lyric": "At your altar, I will pray",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "YOUR",
+          "start": 78.94,
+          "end": 79.716,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ALTAR",
+          "start": 79.716,
+          "end": 80.492,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "I",
+          "start": 80.492,
+          "end": 81.268,
+          "type": "sign",
+          "file": "i.mp4"
+        },
+        {
+          "gloss": "WILL",
+          "start": 81.268,
+          "end": 82.044,
+          "type": "sign",
+          "file": "will.mp4"
+        },
+        {
+          "gloss": "PRAY",
+          "start": 82.044,
+          "end": 82.82,
+          "type": "sign",
+          "file": "pray.mp4"
+        }
+      ],
+      "beats": [
+        78.948,
+        79.482,
+        80.028,
+        80.562,
+        81.084,
+        81.618,
+        82.164,
+        82.709
+      ]
+    },
+    {
+      "line": 23,
+      "start": 82.82,
+      "end": 86.7,
+      "lyric": "You're the sculptor, I'm the clay",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "YOU",
+          "start": 82.82,
+          "end": 83.79,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "SCULPTOR",
+          "start": 83.79,
+          "end": 84.76,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "p",
+              "file": "fs_p.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "I",
+          "start": 84.76,
+          "end": 85.73,
+          "type": "sign",
+          "file": "i.mp4"
+        },
+        {
+          "gloss": "CLAY",
+          "start": 85.73,
+          "end": 86.7,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        83.244,
+        83.766,
+        84.265,
+        84.846,
+        85.38,
+        85.914,
+        86.436
+      ]
+    },
+    {
+      "line": 24,
+      "start": 88.24,
+      "end": 90.2,
+      "lyric": "Oh, my, my",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "OH",
+          "start": 88.24,
+          "end": 88.893,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "MY",
+          "start": 88.893,
+          "end": 89.547,
+          "type": "sign",
+          "file": "my.mp4"
+        },
+        {
+          "gloss": "MY",
+          "start": 89.547,
+          "end": 90.2,
+          "type": "sign",
+          "file": "my.mp4"
+        }
+      ],
+      "beats": [
+        88.596,
+        89.13,
+        89.664
+      ]
+    },
+    {
+      "line": 25,
+      "start": 90.2,
+      "end": 92.16,
+      "lyric": "You're takin' me out of the ordinary",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "YOU",
+          "start": 90.2,
+          "end": 90.592,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "TAKE",
+          "start": 90.592,
+          "end": 90.984,
+          "type": "sign",
+          "file": "take.mp4"
+        },
+        {
+          "gloss": "ME",
+          "start": 90.984,
+          "end": 91.376,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "OUT",
+          "start": 91.376,
+          "end": 91.768,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ORDINARY",
+          "start": 91.768,
+          "end": 92.16,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        90.21,
+        90.744,
+        91.289,
+        91.8
+      ]
+    },
+    {
+      "line": 26,
+      "start": 92.74,
+      "end": 96.78,
+      "lyric": "I want you layin' me down 'til we're dead and buried",
+      "mood": "dark",
+      "tokens": [
+        {
+          "gloss": "I",
+          "start": 92.74,
+          "end": 93.144,
+          "type": "sign",
+          "file": "i.mp4"
+        },
+        {
+          "gloss": "WANT",
+          "start": 93.144,
+          "end": 93.548,
+          "type": "sign",
+          "file": "want.mp4"
+        },
+        {
+          "gloss": "YOU",
+          "start": 93.548,
+          "end": 93.952,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "LAY",
+          "start": 93.952,
+          "end": 94.356,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 94.356,
+          "end": 94.76,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "DOWN",
+          "start": 94.76,
+          "end": 95.164,
+          "type": "sign",
+          "file": "down.mp4"
+        },
+        {
+          "gloss": "UNTIL",
+          "start": 95.164,
+          "end": 95.568,
+          "type": "sign",
+          "file": "until.mp4"
+        },
+        {
+          "gloss": "WE",
+          "start": 95.568,
+          "end": 95.972,
+          "type": "sign",
+          "file": "we.mp4"
+        },
+        {
+          "gloss": "DEAD",
+          "start": 95.972,
+          "end": 96.376,
+          "type": "sign",
+          "file": "dead.mp4"
+        },
+        {
+          "gloss": "BURIED",
+          "start": 96.376,
+          "end": 96.78,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        92.88,
+        93.414,
+        93.948,
+        94.482,
+        95.016,
+        95.562,
+        96.096,
+        96.63
+      ]
+    },
+    {
+      "line": 27,
+      "start": 98.04,
+      "end": 106.08,
+      "lyric": "On the edge of your knife, stayin' drunk on your vine",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "ON",
+          "start": 98.04,
+          "end": 99.045,
+          "type": "sign",
+          "file": "on.mp4"
+        },
+        {
+          "gloss": "EDGE",
+          "start": 99.045,
+          "end": 100.05,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "YOUR",
+          "start": 100.05,
+          "end": 101.055,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "KNIFE",
+          "start": 101.055,
+          "end": 102.06,
+          "type": "sign",
+          "file": "knife.mp4"
+        },
+        {
+          "gloss": "STAY",
+          "start": 102.06,
+          "end": 103.065,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        },
+        {
+          "gloss": "DRUNK",
+          "start": 103.065,
+          "end": 104.07,
+          "type": "sign",
+          "file": "drunk.mp4"
+        },
+        {
+          "gloss": "YOUR",
+          "start": 104.07,
+          "end": 105.075,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "VINE",
+          "start": 105.075,
+          "end": 106.08,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "v",
+              "file": "fs_v.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        98.232,
+        98.766,
+        99.3,
+        99.846,
+        100.38,
+        100.926,
+        101.46,
+        101.994,
+        102.516,
+        103.05,
+        103.596,
+        104.141,
+        104.664,
+        105.186,
+        105.732
+      ]
+    },
+    {
+      "line": 28,
+      "start": 107.34,
+      "end": 110.62,
+      "lyric": "The angels up in the clouds are jealous knowin' we found",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "ANGELS",
+          "start": 107.34,
+          "end": 107.809,
+          "type": "sign",
+          "file": "angel.mp4"
+        },
+        {
+          "gloss": "UP",
+          "start": 107.809,
+          "end": 108.277,
+          "type": "sign",
+          "file": "up.mp4"
+        },
+        {
+          "gloss": "CLOUDS",
+          "start": 108.277,
+          "end": 108.746,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        },
+        {
+          "gloss": "JEALOUS",
+          "start": 108.746,
+          "end": 109.214,
+          "type": "sign",
+          "file": "jealous.mp4"
+        },
+        {
+          "gloss": "KNOW",
+          "start": 109.214,
+          "end": 109.683,
+          "type": "sign",
+          "file": "know.mp4"
+        },
+        {
+          "gloss": "WE",
+          "start": 109.683,
+          "end": 110.151,
+          "type": "sign",
+          "file": "we.mp4"
+        },
+        {
+          "gloss": "FOUND",
+          "start": 110.151,
+          "end": 110.62,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "f",
+              "file": "fs_f.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        107.346,
+        107.88,
+        108.426,
+        108.948,
+        109.482,
+        109.981,
+        110.562
+      ]
+    },
+    {
+      "line": 29,
+      "start": 110.62,
+      "end": 113.9,
+      "lyric": "Somethin' so out (Out) of the ordinary (Ordinary)",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "SOMETHING",
+          "start": 110.62,
+          "end": 111.44,
+          "type": "sign",
+          "file": "something.mp4"
+        },
+        {
+          "gloss": "SO",
+          "start": 111.44,
+          "end": 112.26,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            }
+          ]
+        },
+        {
+          "gloss": "OUT",
+          "start": 112.26,
+          "end": 113.08,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ORDINARY",
+          "start": 113.08,
+          "end": 113.9,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        111.096,
+        111.642,
+        112.164,
+        112.698,
+        113.244,
+        113.778
+      ]
+    },
+    {
+      "line": 30,
+      "start": 115.36,
+      "end": 118.32,
+      "lyric": "You got me kissing the ground (Ground) of your sanctuary (Sanctuary)",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "YOU",
+          "start": 115.36,
+          "end": 115.783,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "HAVE",
+          "start": 115.783,
+          "end": 116.206,
+          "type": "sign",
+          "file": "have.mp4"
+        },
+        {
+          "gloss": "ME",
+          "start": 116.206,
+          "end": 116.629,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "KISS",
+          "start": 116.629,
+          "end": 117.051,
+          "type": "sign",
+          "file": "kiss.mp4"
+        },
+        {
+          "gloss": "GROUND",
+          "start": 117.051,
+          "end": 117.474,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        },
+        {
+          "gloss": "YOUR",
+          "start": 117.474,
+          "end": 117.897,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "SANCTUARY",
+          "start": 117.897,
+          "end": 118.32,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        115.38,
+        115.902,
+        116.448,
+        116.994,
+        117.528,
+        118.062
+      ]
+    },
+    {
+      "line": 31,
+      "start": 118.32,
+      "end": 123.42,
+      "lyric": "Shatter me with your touch, oh, Lord, return me to dust",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "SHATTER",
+          "start": 118.32,
+          "end": 118.887,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 118.887,
+          "end": 119.453,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "YOUR",
+          "start": 119.453,
+          "end": 120.02,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "TOUCH",
+          "start": 120.02,
+          "end": 120.587,
+          "type": "sign",
+          "file": "touch.mp4"
+        },
+        {
+          "gloss": "OH",
+          "start": 120.587,
+          "end": 121.153,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "LORD",
+          "start": 121.153,
+          "end": 121.72,
+          "type": "sign",
+          "file": "lord.mp4"
+        },
+        {
+          "gloss": "RETURN",
+          "start": 121.72,
+          "end": 122.287,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 122.287,
+          "end": 122.853,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "DUST",
+          "start": 122.853,
+          "end": 123.42,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        118.596,
+        119.142,
+        119.676,
+        120.198,
+        120.732,
+        121.278,
+        121.812,
+        122.334,
+        122.868,
+        123.414
+      ]
+    },
+    {
+      "line": 32,
+      "start": 124.44,
+      "end": 128.88,
+      "lyric": "The angels up in the clouds are jealous knowin' we found",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "ANGELS",
+          "start": 124.44,
+          "end": 125.074,
+          "type": "sign",
+          "file": "angel.mp4"
+        },
+        {
+          "gloss": "UP",
+          "start": 125.074,
+          "end": 125.709,
+          "type": "sign",
+          "file": "up.mp4"
+        },
+        {
+          "gloss": "CLOUDS",
+          "start": 125.709,
+          "end": 126.343,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        },
+        {
+          "gloss": "JEALOUS",
+          "start": 126.343,
+          "end": 126.977,
+          "type": "sign",
+          "file": "jealous.mp4"
+        },
+        {
+          "gloss": "KNOW",
+          "start": 126.977,
+          "end": 127.611,
+          "type": "sign",
+          "file": "know.mp4"
+        },
+        {
+          "gloss": "WE",
+          "start": 127.611,
+          "end": 128.246,
+          "type": "sign",
+          "file": "we.mp4"
+        },
+        {
+          "gloss": "FOUND",
+          "start": 128.246,
+          "end": 128.88,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "f",
+              "file": "fs_f.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        124.482,
+        125.028,
+        125.55,
+        126.096,
+        126.63,
+        127.141,
+        127.71,
+        128.232,
+        128.766
+      ]
+    },
+    {
+      "line": 33,
+      "start": 129.68,
+      "end": 132.54,
+      "lyric": "Somethin' so heavenly, higher than ecstasy",
+      "mood": "joyful",
+      "tokens": [
+        {
+          "gloss": "SOMETHING",
+          "start": 129.68,
+          "end": 130.157,
+          "type": "sign",
+          "file": "something.mp4"
+        },
+        {
+          "gloss": "SO",
+          "start": 130.157,
+          "end": 130.633,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            }
+          ]
+        },
+        {
+          "gloss": "HEAVENLY",
+          "start": 130.633,
+          "end": 131.11,
+          "type": "sign",
+          "file": "heaven.mp4"
+        },
+        {
+          "gloss": "HIGHER",
+          "start": 131.11,
+          "end": 131.587,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "THAN",
+          "start": 131.587,
+          "end": 132.063,
+          "type": "sign",
+          "file": "than.mp4"
+        },
+        {
+          "gloss": "ECSTASY",
+          "start": 132.063,
+          "end": 132.54,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        129.846,
+        130.38,
+        130.914,
+        131.448,
+        131.982,
+        132.528
+      ]
+    },
+    {
+      "line": 34,
+      "start": 132.54,
+      "end": 135.4,
+      "lyric": "Whenever you're next to me, oh, my, my",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "WHENEVER",
+          "start": 132.54,
+          "end": 132.949,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "v",
+              "file": "fs_v.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "YOU",
+          "start": 132.949,
+          "end": 133.357,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "NEXT-TO",
+          "start": 133.357,
+          "end": 133.766,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "x",
+              "file": "fs_x.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 133.766,
+          "end": 134.174,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "OH",
+          "start": 134.174,
+          "end": 134.583,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "MY",
+          "start": 134.583,
+          "end": 134.991,
+          "type": "sign",
+          "file": "my.mp4"
+        },
+        {
+          "gloss": "MY",
+          "start": 134.991,
+          "end": 135.4,
+          "type": "sign",
+          "file": "my.mp4"
+        }
+      ],
+      "beats": [
+        133.062,
+        133.596,
+        134.13,
+        134.664,
+        135.21
+      ]
+    },
+    {
+      "line": 35,
+      "start": 135.4,
+      "end": 138.91,
+      "lyric": "World was in black and white until I saw your light",
+      "mood": "hopeful",
+      "tokens": [
+        {
+          "gloss": "WORLD",
+          "start": 135.4,
+          "end": 135.839,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "w",
+              "file": "fs_w.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        },
+        {
+          "gloss": "BLACK",
+          "start": 135.839,
+          "end": 136.278,
+          "type": "sign",
+          "file": "black.mp4"
+        },
+        {
+          "gloss": "WHITE",
+          "start": 136.278,
+          "end": 136.716,
+          "type": "sign",
+          "file": "white.mp4"
+        },
+        {
+          "gloss": "UNTIL",
+          "start": 136.716,
+          "end": 137.155,
+          "type": "sign",
+          "file": "until.mp4"
+        },
+        {
+          "gloss": "I",
+          "start": 137.155,
+          "end": 137.594,
+          "type": "sign",
+          "file": "i.mp4"
+        },
+        {
+          "gloss": "SEE",
+          "start": 137.594,
+          "end": 138.032,
+          "type": "sign",
+          "file": "see.mp4"
+        },
+        {
+          "gloss": "YOUR",
+          "start": 138.032,
+          "end": 138.471,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "LIGHT",
+          "start": 138.471,
+          "end": 138.91,
+          "type": "sign",
+          "file": "light.mp4"
+        }
+      ],
+      "beats": [
+        135.744,
+        136.278,
+        136.812,
+        137.346,
+        137.88,
+        138.426
+      ]
+    },
+    {
+      "line": 36,
+      "start": 138.91,
+      "end": 142.42,
+      "lyric": "I thought you had to die to find",
+      "mood": "dark",
+      "tokens": [
+        {
+          "gloss": "I",
+          "start": 138.91,
+          "end": 139.411,
+          "type": "sign",
+          "file": "i.mp4"
+        },
+        {
+          "gloss": "THINK",
+          "start": 139.411,
+          "end": 139.913,
+          "type": "sign",
+          "file": "think.mp4"
+        },
+        {
+          "gloss": "YOU",
+          "start": 139.913,
+          "end": 140.414,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "MUST",
+          "start": 140.414,
+          "end": 140.916,
+          "type": "sign",
+          "file": "must.mp4"
+        },
+        {
+          "gloss": "DIE",
+          "start": 140.916,
+          "end": 141.417,
+          "type": "sign",
+          "file": "die.mp4"
+        },
+        {
+          "gloss": "FOR",
+          "start": 141.417,
+          "end": 141.919,
+          "type": "sign",
+          "file": "for.mp4"
+        },
+        {
+          "gloss": "FIND",
+          "start": 141.919,
+          "end": 142.42,
+          "type": "sign",
+          "file": "find.mp4"
+        }
+      ],
+      "beats": [
+        138.948,
+        139.482,
+        140.028,
+        140.562,
+        141.096,
+        141.63,
+        142.164
+      ]
+    },
+    {
+      "line": 37,
+      "start": 142.66,
+      "end": 144.82,
+      "lyric": "Somethin' so out of the ordinary",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "SOMETHING",
+          "start": 142.66,
+          "end": 143.2,
+          "type": "sign",
+          "file": "something.mp4"
+        },
+        {
+          "gloss": "SO",
+          "start": 143.2,
+          "end": 143.74,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            }
+          ]
+        },
+        {
+          "gloss": "OUT",
+          "start": 143.74,
+          "end": 144.28,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ORDINARY",
+          "start": 144.28,
+          "end": 144.82,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        142.71,
+        143.232,
+        143.766,
+        144.3,
+        144.811
+      ]
+    },
+    {
+      "line": 38,
+      "start": 144.82,
+      "end": 146.98,
+      "lyric": "I want you laying me down 'til we're dead and buried",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "I",
+          "start": 144.82,
+          "end": 145.036,
+          "type": "sign",
+          "file": "i.mp4"
+        },
+        {
+          "gloss": "WANT",
+          "start": 145.036,
+          "end": 145.252,
+          "type": "sign",
+          "file": "want.mp4"
+        },
+        {
+          "gloss": "YOU",
+          "start": 145.252,
+          "end": 145.468,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "LAY",
+          "start": 145.468,
+          "end": 145.684,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 145.684,
+          "end": 145.9,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "DOWN",
+          "start": 145.9,
+          "end": 146.116,
+          "type": "sign",
+          "file": "down.mp4"
+        },
+        {
+          "gloss": "UNTIL",
+          "start": 146.116,
+          "end": 146.332,
+          "type": "sign",
+          "file": "until.mp4"
+        },
+        {
+          "gloss": "WE",
+          "start": 146.332,
+          "end": 146.548,
+          "type": "sign",
+          "file": "we.mp4"
+        },
+        {
+          "gloss": "DEAD",
+          "start": 146.548,
+          "end": 146.764,
+          "type": "sign",
+          "file": "dead.mp4"
+        },
+        {
+          "gloss": "BURIED",
+          "start": 146.764,
+          "end": 146.98,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "b",
+              "file": "fs_b.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        145.322,
+        145.845,
+        146.437
+      ]
+    },
+    {
+      "line": 39,
+      "start": 147.32,
+      "end": 147.81,
+      "lyric": "On the edge of your knife, stayin' drunk on your vine",
+      "mood": "dark",
+      "tokens": [
+        {
+          "gloss": "ON",
+          "start": 147.32,
+          "end": 147.381,
+          "type": "sign",
+          "file": "on.mp4"
+        },
+        {
+          "gloss": "EDGE",
+          "start": 147.381,
+          "end": 147.442,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        },
+        {
+          "gloss": "YOUR",
+          "start": 147.442,
+          "end": 147.504,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "KNIFE",
+          "start": 147.504,
+          "end": 147.565,
+          "type": "sign",
+          "file": "knife.mp4"
+        },
+        {
+          "gloss": "STAY",
+          "start": 147.565,
+          "end": 147.626,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        },
+        {
+          "gloss": "DRUNK",
+          "start": 147.626,
+          "end": 147.688,
+          "type": "sign",
+          "file": "drunk.mp4"
+        },
+        {
+          "gloss": "YOUR",
+          "start": 147.688,
+          "end": 147.749,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "VINE",
+          "start": 147.749,
+          "end": 147.81,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "v",
+              "file": "fs_v.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        147.516
+      ]
+    },
+    {
+      "line": 40,
+      "start": 147.81,
+      "end": 148.3,
+      "lyric": "The angels up in the clouds are jealous knowin' we found",
+      "mood": "joyful",
+      "tokens": [
+        {
+          "gloss": "ANGELS",
+          "start": 147.81,
+          "end": 147.88,
+          "type": "sign",
+          "file": "angel.mp4"
+        },
+        {
+          "gloss": "UP",
+          "start": 147.88,
+          "end": 147.95,
+          "type": "sign",
+          "file": "up.mp4"
+        },
+        {
+          "gloss": "CLOUDS",
+          "start": 147.95,
+          "end": 148.02,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        },
+        {
+          "gloss": "JEALOUS",
+          "start": 148.02,
+          "end": 148.09,
+          "type": "sign",
+          "file": "jealous.mp4"
+        },
+        {
+          "gloss": "KNOW",
+          "start": 148.09,
+          "end": 148.16,
+          "type": "sign",
+          "file": "know.mp4"
+        },
+        {
+          "gloss": "WE",
+          "start": 148.16,
+          "end": 148.23,
+          "type": "sign",
+          "file": "we.mp4"
+        },
+        {
+          "gloss": "FOUND",
+          "start": 148.23,
+          "end": 148.3,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "f",
+              "file": "fs_f.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        148.05
+      ]
+    },
+    {
+      "line": 41,
+      "start": 149.16,
+      "end": 152.0,
+      "lyric": "Somethin' so out (Out) of the ordinary",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "SOMETHING",
+          "start": 149.16,
+          "end": 149.87,
+          "type": "sign",
+          "file": "something.mp4"
+        },
+        {
+          "gloss": "SO",
+          "start": 149.87,
+          "end": 150.58,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            }
+          ]
+        },
+        {
+          "gloss": "OUT",
+          "start": 150.58,
+          "end": 151.29,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ORDINARY",
+          "start": 151.29,
+          "end": 152.0,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "i",
+              "file": "fs_i.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        149.641,
+        150.187,
+        150.698,
+        151.266,
+        151.777
+      ]
+    },
+    {
+      "line": 42,
+      "start": 152.0,
+      "end": 154.84,
+      "lyric": "You got me kissing the ground (Ground) of your sanctuary (Sanctuary)",
+      "mood": "tender",
+      "tokens": [
+        {
+          "gloss": "YOU",
+          "start": 152.0,
+          "end": 152.406,
+          "type": "sign",
+          "file": "you.mp4"
+        },
+        {
+          "gloss": "MAKE",
+          "start": 152.406,
+          "end": 152.811,
+          "type": "sign",
+          "file": "make.mp4"
+        },
+        {
+          "gloss": "ME",
+          "start": 152.811,
+          "end": 153.217,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "KISS",
+          "start": 153.217,
+          "end": 153.623,
+          "type": "sign",
+          "file": "kiss.mp4"
+        },
+        {
+          "gloss": "GROUND",
+          "start": 153.623,
+          "end": 154.029,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "g",
+              "file": "fs_g.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        },
+        {
+          "gloss": "YOUR",
+          "start": 154.029,
+          "end": 154.434,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "SANCTUARY",
+          "start": 154.434,
+          "end": 154.84,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        152.346,
+        152.88,
+        153.403,
+        153.89,
+        154.424
+      ]
+    },
+    {
+      "line": 43,
+      "start": 154.84,
+      "end": 157.68,
+      "lyric": "Shatter me with your touch, oh, Lord, return me to dust",
+      "mood": "intense",
+      "tokens": [
+        {
+          "gloss": "SHATTER",
+          "start": 154.84,
+          "end": 155.156,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            },
+            {
+              "letter": "a",
+              "file": "fs_a.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 155.156,
+          "end": 155.471,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "YOUR",
+          "start": 155.471,
+          "end": 155.787,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "y",
+              "file": "fs_y.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            }
+          ]
+        },
+        {
+          "gloss": "TOUCH",
+          "start": 155.787,
+          "end": 156.102,
+          "type": "sign",
+          "file": "touch.mp4"
+        },
+        {
+          "gloss": "OH",
+          "start": 156.102,
+          "end": 156.418,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "h",
+              "file": "fs_h.png"
+            }
+          ]
+        },
+        {
+          "gloss": "LORD",
+          "start": 156.418,
+          "end": 156.733,
+          "type": "sign",
+          "file": "lord.mp4"
+        },
+        {
+          "gloss": "RETURN",
+          "start": 156.733,
+          "end": 157.049,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "e",
+              "file": "fs_e.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "r",
+              "file": "fs_r.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            }
+          ]
+        },
+        {
+          "gloss": "ME",
+          "start": 157.049,
+          "end": 157.364,
+          "type": "sign",
+          "file": "me.mp4"
+        },
+        {
+          "gloss": "DUST",
+          "start": 157.364,
+          "end": 157.68,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            },
+            {
+              "letter": "t",
+              "file": "fs_t.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        155.005,
+        155.539,
+        156.073,
+        156.584,
+        157.129
+      ]
+    },
+    {
+      "line": 44,
+      "start": 158.72,
+      "end": 165.36,
+      "lyric": "The angels up in the clouds are jealous knowin' we found",
+      "mood": "joyful",
+      "tokens": [
+        {
+          "gloss": "ANGELS",
+          "start": 158.72,
+          "end": 159.669,
+          "type": "sign",
+          "file": "angel.mp4"
+        },
+        {
+          "gloss": "UP",
+          "start": 159.669,
+          "end": 160.617,
+          "type": "sign",
+          "file": "up.mp4"
+        },
+        {
+          "gloss": "CLOUDS",
+          "start": 160.617,
+          "end": 161.566,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "c",
+              "file": "fs_c.png"
+            },
+            {
+              "letter": "l",
+              "file": "fs_l.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            },
+            {
+              "letter": "s",
+              "file": "fs_s.png"
+            }
+          ]
+        },
+        {
+          "gloss": "JEALOUS",
+          "start": 161.566,
+          "end": 162.514,
+          "type": "sign",
+          "file": "jealous.mp4"
+        },
+        {
+          "gloss": "KNOW",
+          "start": 162.514,
+          "end": 163.463,
+          "type": "sign",
+          "file": "know.mp4"
+        },
+        {
+          "gloss": "WE",
+          "start": 163.463,
+          "end": 164.411,
+          "type": "sign",
+          "file": "we.mp4"
+        },
+        {
+          "gloss": "FOUND",
+          "start": 164.411,
+          "end": 165.36,
+          "type": "fingerspell",
+          "letters": [
+            {
+              "letter": "f",
+              "file": "fs_f.png"
+            },
+            {
+              "letter": "o",
+              "file": "fs_o.png"
+            },
+            {
+              "letter": "u",
+              "file": "fs_u.png"
+            },
+            {
+              "letter": "n",
+              "file": "fs_n.png"
+            },
+            {
+              "letter": "d",
+              "file": "fs_d.png"
+            }
+          ]
+        }
+      ],
+      "beats": [
+        158.778,
+        159.3,
+        159.811,
+        160.322,
+        160.81,
+        161.379,
+        161.878,
+        162.493,
+        163.051,
+        163.596,
+        164.13,
+        164.676,
+        165.21
+      ]
+    }
+  ]
+}
